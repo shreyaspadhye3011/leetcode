@@ -1,3 +1,8 @@
+# Source: https://leetcode.com/problems/fruit-into-baskets/
+# Author: Shreyas Padhye
+# Algorithm:
+# Percentile: 
+
 def calculateMaxSelection(A):
     max = 0
     currentSet = []
