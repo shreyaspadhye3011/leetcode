@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[13]:
-
-
 # https://leetcode.com/problems/two-sum/description/
 # Status: Accepted
 # Percentile: 79%
