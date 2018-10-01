@@ -1,7 +1,7 @@
 # Source: https://leetcode.com/problems/fruit-into-baskets/
 # Author: Shreyas Padhye
 # Algorithm:
-# Percentile: 
+# Percentile: Wrong Answer in [0,1,6,6,4,4,6]
 
 def calculateMaxSelection(A):
     max = 0
@@ -39,3 +39,4 @@ def calculateMaxSelection(A):
 # calculateMaxSelection([1,2,1,3,4,3,5,1,2])   #O: 3
 # calculateMaxSelection([1,2,1,3,3,3,3,1])   #O: 5
 # calculateMaxSelection([1,1,2,2,3,2,2,3])   #O: 6 -> [2,2,3,2,2,3]
+# calculateMaxSelection([0,1,6,6,4,4,6])   #O: 6
