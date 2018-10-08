@@ -17,7 +17,7 @@ def brute_force_max_count(A, S):
         if (currCount > maxCount):
             maxItem = currItem
             maxCount = currCount
-        return maxItem
+    return maxItem
 
 brute_force_max_count([1, 2, 3, 4, 2, 3, 3], [2, 3, 1])    #3
 # brute_force_max_count([1, 2, 3, 4, 2, 1, 1], [1, 2])    #1
