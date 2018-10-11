@@ -9,6 +9,8 @@
 
 def transform_conquer_max_count(A, S):
     '''For an unsorted array, this function returns a value that appears most often in a given subarray. In case of ties, it returns the leftmost element from S which has the max count'''
+    assert (type(A) == list), 'Function expects the first parameter to be of list type'
+    assert (len(A) > 0), 'Function expects A[] to be non-empty list'
     
     # sort the main list as a transformation step
     # A.sort()
