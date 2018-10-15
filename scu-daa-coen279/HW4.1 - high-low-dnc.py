@@ -40,6 +40,6 @@ def high_low_dnc(A):
     # rearranged_list[0] & rearranged_list[-1] will have max & min elements respectively
     return [rearranged_list[0], rearranged_list[-1]]
 
-def high_low_dnc([13, 8, 2, 7, 41, 1, 7, 81])
+high_low_dnc([13, 8, 2, 7, 41, 1, 7, 81])
 
 
