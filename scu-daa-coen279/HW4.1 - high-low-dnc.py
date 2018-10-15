@@ -6,14 +6,21 @@
 def high_low_dnc(A):
     '''For an unsorted array, this function returns the [max, min] from the array'''
     n = len(A)
+#     print(n)
     rearranged_list = []
     if n == 1:
-        return A[0]
+#         print('FLOWWW!!!')
+        return [A[0]]
+    
+#     print(A)
+#     print(A[(int(n/2) + 1):])
+#     print(int(n/2))
+#     print('***************88')
     
     # TODO: handle / test odd case
     # Divide step: call function recursively on two halves
-    left = high_low_dnc(A[:n/2])
-    right = high_low_dnc(A[(n/2) + 1])
+    left = high_low_dnc(A[:int(n/2)])
+    right = high_low_dnc(A[(int(n/2)):])
     left_index = 0
     right_index = 0
 
@@ -32,14 +39,23 @@ def high_low_dnc(A):
         while right_index < len(right):
             rearranged_list.append(right[right_index])
             right_index += 1
+        while left_index < len(left):
+            rearranged_list.append(left[left_index])
+            left_index += 1
     else:
         while left_index < len(left):
             rearranged_list.append(left[left_index])
             left_index += 1
+        while right_index < len(right):
+            rearranged_list.append(right[right_index])
+            right_index += 1
 
     # rearranged_list[0] & rearranged_list[-1] will have max & min elements respectively
     return [rearranged_list[0], rearranged_list[-1]]
 
-high_low_dnc([13, 8, 2, 7, 41, 1, 7, 81])
-
-
+high_low_dnc([13, 8, 2, 7, 41, 1, 7, 81])   #O: [81, 1]
+# high_low_dnc([13, 8, 2, 7, 41, 79, 7, 6])   #O: [79, 2]
+# high_low_dnc([101, 3, 7, 41, 79, 7, 6])   #O: [101, 3]
+# high_low_dnc([7, 3, 1])   #O: [7, 1]
+# high_low_dnc([7, 7, 1, 1])   #O: [7, 1]
+# high_low_dnc([7, 7])   #O: [7, 7]
