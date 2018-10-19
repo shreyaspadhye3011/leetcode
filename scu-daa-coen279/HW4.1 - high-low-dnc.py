@@ -9,13 +9,7 @@ def high_low_dnc(A):
 #     print(n)
     rearranged_list = []
     if n == 1:
-#         print('FLOWWW!!!')
         return [A[0]]
-    
-#     print(A)
-#     print(A[(int(n/2) + 1):])
-#     print(int(n/2))
-#     print('***************88')
     
     # TODO: handle / test odd case
     # Divide step: call function recursively on two halves
