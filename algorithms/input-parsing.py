@@ -10,5 +10,3 @@ for i in range(1, t + 1):
 
 ## File Reading: reads input format from `input_file.txt` and writes to `output_file.txt`
 # python3 input-parsing.py < input_file.txt > output_file.txt
- 
- 
