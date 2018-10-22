@@ -30,6 +30,8 @@ class Solution:
         for i in range(0, len(str)):
             if str[i] in str[:i]:
                 break
+            else:
+                count += 1
         if count == len(str):
             return True
         else:
