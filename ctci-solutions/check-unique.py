@@ -19,7 +19,7 @@ class Solution:
             else:
                 dict[char] = True
                 count += 1
-        
+            
         if count == len(str):
             return True
         else:
