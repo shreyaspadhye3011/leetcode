@@ -5,6 +5,7 @@
 
 class solution:
     def greedy_schedule_2(self, A):
+        A.sort()
         # pre: A[start:stop:step] - used for list slicing. Start at 'start', go till 'stop' with step size = 'step'
         # keep all elements at even positions of the list in `job_1`
         schedule_1 = A[0::2]
@@ -28,5 +29,8 @@ class solution:
         # TODO: figure out if the sum can be done in the loop itself
         # TODO: see if you can improvr the code by adding map or other list methods / manipulations
         return sum(wait_list_1) + sum(wait_list_2)
+
+sol = solution()
+sol.greedy_schedule_2([6, 8, 10, 14, 1, 7, 11, 12])
 
 
