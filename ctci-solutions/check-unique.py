@@ -27,6 +27,7 @@ class Solution:
     
     def check_unique_no_extra_space(self, str):
         count = 0
+        # TODO: can be improved to nlogn if you sort and just check neighbours. created separate function and implement
         for i in range(0, len(str)):
             if str[i] in str[:i]:
                 break
