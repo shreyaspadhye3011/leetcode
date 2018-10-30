@@ -7,10 +7,10 @@ class solution:
     def greedy_schedule_2(self, A):
         A.sort()
         # pre: A[start:stop:step] - used for list slicing. Start at 'start', go till 'stop' with step size = 'step'
-        # keep all elements at even positions of the list in `job_1`
+        # keep all elements at even positions of the list in `schedule_1`
         schedule_1 = A[0::2]
 
-        # keep all elements at odd positions of the list in `job_2`
+        # keep all elements at odd positions of the list in `schedule_2`
         schedule_2 = A[1::2]
 
         # compute wait lists for both schedules
