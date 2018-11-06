@@ -24,10 +24,10 @@ hosts = {}
 # read from file and create dictionary
 for line in file:
     entries = line.split(" ")
-    
-    if entries[0] in hosts:
-        hosts[entries[0]] = 0
-    hosts[entries[0]] += 1
+    # if entries[0] in hosts:
+    #     hosts[entries[0]] += 1
+    # else:
+    #     hosts[entries[0]] = 1
     
     if entries[0] not in hosts:
         hosts[entries[0]] = 0
