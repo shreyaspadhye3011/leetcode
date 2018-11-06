@@ -1,7 +1,7 @@
 # Reference: CTCI
 # Author: Shreyas Padhye
 
-# Problem: Given a string, check that it has all unique characters
+# Problem 1.1 (Pg 94): Given a string, check that it has all unique characters
 
 # Solution 1: (extra space allowed): do a single pass and keep storing all items in a dict. If at any point an element already exists in the dict, break. If all elements passed without break, the string has unique elements
 #
