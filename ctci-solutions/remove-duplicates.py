@@ -5,7 +5,7 @@
 # Solution Approach: Do a single pass. Create a dictionary to keep track of already passed elements and delete from dictionary if you encounter repeats. Merge dict elements to get string back
 
 class solution():
-    def remove-duplicates(self, s):
+    def remove_duplicates(self, s):
         d = {}
 
         # single pass and delete on duplicate entry
@@ -22,5 +22,5 @@ class solution():
 
         return res
     
-t = new solution()
-t.remove-duplicates("abssateryyv")
+t = solution()
+t.remove_duplicates("abssateryyv")
