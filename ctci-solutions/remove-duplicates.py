@@ -11,7 +11,6 @@ class solution():
         d = OrderedDict()
 
         # single pass, delete on duplicate entry and add to res string otherwise
-        res = ""
         for char in s:
             if char not in d:
                 d[char] = True
