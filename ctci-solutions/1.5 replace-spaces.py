@@ -5,7 +5,7 @@ class solution():
         res = ""
         for char in s:
             if char == ' ':
-                res += '20%'
+                res += '%20'
             else:
                 res += char
         return res
@@ -17,7 +17,7 @@ t.replace_spaces("abc")
 t.replace_spaces("  abc")
 t.replace_spaces("a b c")
 t.replace_spaces("   ")
-t.replace_spaces("20%")
-t.replace_spaces("20%a")
-t.replace_spaces("2x10%20%")
+t.replace_spaces("%20")
+t.replace_spaces("%20a")
+t.replace_spaces("%2x10%20")
 
