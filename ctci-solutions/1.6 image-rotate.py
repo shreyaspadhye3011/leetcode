@@ -5,4 +5,4 @@ class solution():
         return
     
 t = solution()
-t.rotate_image([[1, 2], [3, 4], [2, 6]])
+t.rotate_image([[1, 2], [3, 4], [2, 7]])
