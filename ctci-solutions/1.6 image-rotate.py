@@ -35,6 +35,7 @@ class solution():
                 
                 # top -> right
                 matrix[i][last] = top # right <- saved top
+                # print('rotated ', first, i, ' ', last-offset, first, ' ', last, last - offset, ' ', i, last)
         return matrix
     
 t = solution()
