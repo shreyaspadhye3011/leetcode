@@ -1,6 +1,7 @@
 # Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
 class solution():
+    # Algoerithm: extra matrix created, transformation qquation between row and cloumns created based on observation
     def rotate_image(self, M):
         # retrieve order of matrix
         n = len(M)     
@@ -15,6 +16,7 @@ class solution():
                 R[col][n - row - 1] = M[row][col]
         return R
 
+    # ALgorithm: In place rotation. No extra space used. Places that switch places in a cyclic order observed and coded. Basically switch 4 corners of the outer polygon and keep moving in.
     def rotate_in_place(self, matrix):
         n = len(matrix)
         for layer in range(0, n/2):
