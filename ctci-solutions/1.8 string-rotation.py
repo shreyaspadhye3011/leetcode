@@ -2,12 +2,15 @@
 
 class solution():
     def check_string_rotation(self, s1, s2):
+        if s1[0] in s2:
+            print(s1.index(s1[0]))
         return True
 
 obj = solution()
+obj.check_string_rotation("terbottlewa", "erbottlewat")    # True
 obj.check_string_rotation("waterbottle", "erbottlewat")    # True
 obj.check_string_rotation("waterbottle", "rbottlewat")     # False
-obj.check_string_rotation("waterbottle", "rbottlewat")     # False
+obj.check_string_rotation("waterbottle", "erbottlewa")     # False
 obj.check_string_rotation("aabc", "aabc")     # True
 obj.check_string_rotation("abAc", "abac")     # False
 obj.check_string_rotation("abac", "aabc")     # False
