@@ -5,4 +5,12 @@ class solution():
         return True
 
 obj = solution()
-obj.check_string_rotation("waterbottle", "erbottlewat")     # true
+obj.check_string_rotation("waterbottle", "erbottlewat")    # True
+obj.check_string_rotation("waterbottle", "rbottlewat")     # False
+obj.check_string_rotation("waterbottle", "rbottlewat")     # False
+obj.check_string_rotation("aabc", "aabc")     # True
+obj.check_string_rotation("abAc", "abac")     # False
+obj.check_string_rotation("abac", "aabc")     # False
+obj.check_string_rotation("kklmo", "klmo")     # False
+obj.check_string_rotation("kkkk", "kkkk")     # True
+obj.check_string_rotation("akkb", "bakk")     # True
