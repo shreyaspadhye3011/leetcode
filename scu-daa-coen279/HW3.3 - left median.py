@@ -34,3 +34,7 @@ t = solution()
 # t.left_median([0, 1, 3, 5, 2])   #2
 # t.left_median([0, 1, 3, 5])   #1
 t.left_median([0, 1, 3, 5])   #1
+t.left_median([5, 1, 3, 8, 2])   #5
+t.left_median([7, 0, 1, 12, 1, 45, 2])   #7
+t.left_median([7, 0, 1, 12, 45, 2, 11, 8, 101, 14])   #correct: 8, mine: 12
+# t.left_median([7, 0, 1, 12, 1, 45, 2, 11, 8, 101, 14])   #correct: 8, mine: 1
