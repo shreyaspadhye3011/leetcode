@@ -16,6 +16,11 @@ from util.linked_list_lib import linked_list
 
 # Algorithm 2.B (appropriate for lists): for every element in list, look back and see all elements if already exist
 
+# Algorithm 1: keep a secondary buffer that keeps value of already iterated elements and while iterating keep checking this
+
+# Algorithm 2 : as no extra buffer is allowed, we can sort the linked list and just check immediate neighbours (actually only left neighbour) to check duplicacy
+# def remove_dup_nobuffer(self):
+
 class list_remove_dup():
     def __init__(self, Arr):
         self.input_list = linked_list()
@@ -23,8 +28,7 @@ class list_remove_dup():
             self.input_list.append(item)
     
     def remove_dup(self):
-        # print("JEE")
-        # print(self.input_list.display())
+        print(self.input_list.display())
         curr = self.input_list.head
         prev = curr
         iterated = []
@@ -35,13 +39,11 @@ class list_remove_dup():
                 prev.next = curr.next
             else:
                 iterated.append(curr.data)
-        # print(self.input_list.display())
-        return self.input_list
+        # print(iterated)
+        print(self.input_list.display())
 
-# mylist = list_remove_dup([3, 5, 6, 3, 1, 3])
-# mylist = list_remove_dup([5, 5, 3, 5, 3])
+mylist = list_remove_dup([3, 5, 6, 3, 1, 3])
+mylist = list_remove_dup([5, 5, 3, 5, 3])
 mylist = list_remove_dup([5, 5, 5, 5, 5])
-print(mylist)
-# mylist = list_remove_dup([1, 2, 3, 5, 5])
-# mylist.remove_dup()
+mylist.remove_dup()
 
