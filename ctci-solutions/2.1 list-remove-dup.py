@@ -5,7 +5,7 @@
 # FOLLOW UP
 # How would you solve this problem if a temporary buffer is not allowed?
 
-from util.linked_list_util import linked_list
+from util.linked_list_lib import linked_list
 
 ### Buffer allowed
 # Algorithm 1: keep a secondary buffer that keeps value of already iterated elements and while iterating keep checking this
@@ -23,7 +23,8 @@ class list_remove_dup():
             self.input_list.append(item)
     
     def remove_dup(self):
-        print(self.input_list.display())
+        # print("JEE")
+        # print(self.input_list.display())
         curr = self.input_list.head
         prev = curr
         iterated = []
@@ -34,11 +35,13 @@ class list_remove_dup():
                 prev.next = curr.next
             else:
                 iterated.append(curr.data)
-        # print(iterated)
-        print(self.input_list.display())
+        # print(self.input_list.display())
+        return self.input_list
 
-mylist = list_remove_dup([3, 5, 6, 3, 1, 3])
-mylist = list_remove_dup([5, 5, 3, 5, 3])
+# mylist = list_remove_dup([3, 5, 6, 3, 1, 3])
+# mylist = list_remove_dup([5, 5, 3, 5, 3])
 mylist = list_remove_dup([5, 5, 5, 5, 5])
-mylist.remove_dup()
+print(mylist)
+# mylist = list_remove_dup([1, 2, 3, 5, 5])
+# mylist.remove_dup()
 
