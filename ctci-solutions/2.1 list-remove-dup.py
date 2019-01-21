@@ -47,4 +47,8 @@ class list_remove_dup():
 # mylist = list_remove_dup([3, 5, 6, 3, 1, 3])
 # mylist = list_remove_dup([5, 5, 3, 5, 3])
 mylist = list_remove_dup([5, 5, 5, 5, 5])
+mylist = list_remove_dup([1, 3, 8, 5, 8, 3, 5, 1, 7])
+mylist = list_remove_dup([1, 3, 8, 8, 1])
+mylist = list_remove_dup([3, 3, 3, 4])
+mylist = list_remove_dup([1, 2, 3, 4])
 mylist.remove_dup()
