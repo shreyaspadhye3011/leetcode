@@ -28,7 +28,7 @@ class linked_list:
             # VIMP - `curr = curr.next` has to be before the rest of the code if while condition is `curr.next != None` to iterate correctly so that both head and last element are correctly iterated
             curr = curr.next
             elems.append(curr.data)
-        print(elems)
+        return elems
 
     def temp(self):
         print("HEllop!")
