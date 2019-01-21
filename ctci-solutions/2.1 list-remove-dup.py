@@ -5,8 +5,6 @@
 # FOLLOW UP
 # How would you solve this problem if a temporary buffer is not allowed?
 
-from util.linked_list_lib import linked_list
-
 ### Buffer allowed
 # Algorithm 1: keep a secondary buffer that keeps value of already iterated elements and while iterating keep checking this
 
@@ -21,6 +19,8 @@ from util.linked_list_lib import linked_list
 # Algorithm 2 : as no extra buffer is allowed, we can sort the linked list and just check immediate neighbours (actually only left neighbour) to check duplicacy
 # def remove_dup_nobuffer(self):
 
+from util.linked_list_lib import linked_list
+
 class list_remove_dup():
     def __init__(self, Arr):
         self.input_list = linked_list()
@@ -34,16 +34,17 @@ class list_remove_dup():
         iterated = []
         while curr.next != None:
             # VIMP - `curr = curr.next` has to be before the rest of the code if while condition is `curr.next != None` to iterate correctly so that both head and last element are correctly iterated
+#             prev = curr
             curr = curr.next
             if curr.data in iterated:
                 prev.next = curr.next
             else:
+                prev = curr
                 iterated.append(curr.data)
-        # print(iterated)
+        print(iterated)
         print(self.input_list.display())
 
-mylist = list_remove_dup([3, 5, 6, 3, 1, 3])
-mylist = list_remove_dup([5, 5, 3, 5, 3])
+# mylist = list_remove_dup([3, 5, 6, 3, 1, 3])
+# mylist = list_remove_dup([5, 5, 3, 5, 3])
 mylist = list_remove_dup([5, 5, 5, 5, 5])
 mylist.remove_dup()
-
