@@ -1,4 +1,4 @@
-# Reference: CTCI. Pg 50
+## Reference: CTCI. Pg 50
 # Author: Shreyas Padhye
 
 # Write code to remove duplicates from an unsorted linked list.
@@ -37,18 +37,37 @@ class list_remove_dup():
 #             prev = curr
             curr = curr.next
             if curr.data in iterated:
-                prev.next = curr.next
+                prev.next = curr.next   # remove link of duplicate element from linked list
             else:
-                prev = curr
+                prev = curr         # update prev only to values that are legit, i.e those values whose duplicate is not found
                 iterated.append(curr.data)
         print(iterated)
         print(self.input_list.display())
 
+    def remove_dup_nobuffer(self):
+        print(self.input_list.display())
+        curr = self.input_list.head
+        prev = curr
+        while curr.next != None:
+            curr = curr.next
+            temp = self.input_list.head
+            foundDuplicate = False
+            while temp != curr:
+                if (temp.data == curr.data):
+                    foundDuplicate = True
+                    prev.next = curr.next
+                    break
+                temp = temp.next
+            if foundDuplicate == False:
+                prev = curr
+        print(self.input_list.display())
+
 # mylist = list_remove_dup([3, 5, 6, 3, 1, 3])
 # mylist = list_remove_dup([5, 5, 3, 5, 3])
-mylist = list_remove_dup([5, 5, 5, 5, 5])
-mylist = list_remove_dup([1, 3, 8, 5, 8, 3, 5, 1, 7])
-mylist = list_remove_dup([1, 3, 8, 8, 1])
-mylist = list_remove_dup([3, 3, 3, 4])
-mylist = list_remove_dup([1, 2, 3, 4])
-mylist.remove_dup()
+# mylist = list_remove_dup([5, 5, 5, 5, 5])
+mylist = list_remove_dup([1, 3, 8, 5, 8, 3, 5, 1, 7, 7, 2])
+# mylist = list_remove_dup([1, 3, 8, 8, 1])
+# mylist = list_remove_dup([3, 3, 3, 4])
+# mylist = list_remove_dup([1, 5, 5, 7])
+# mylist = list_remove_dup([1, 2, 3, 4])
+mylist.remove_dup_nobuffer()
