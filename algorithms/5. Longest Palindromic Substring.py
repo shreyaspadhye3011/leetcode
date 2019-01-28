@@ -12,6 +12,12 @@ class Solution:
         """
 
         s = "aabaaba"
+        s = "addaldaaa"
+        s = "addalidaaa"
+        s = "addaliidaaa"
+        # s = "aa 
+        # change algo to not break and keep going even if one char mismatches cz there can be some palindrome on the inner side that you can miss
+
         # s[0] + s[-1]
         # s[1] + s[-2]
         # s[2] + s[-3]
@@ -24,14 +30,16 @@ class Solution:
             temp_len = len(s[i:])
             mid = temp_len / 2
             inner = 0
+            curr_counter = 0
             while inner < mid:
                 back_index = -(inner + 1)
                 if temp[inner] == temp[back_index]:
-                    inner += 1
+                    curr_counter += 1
                 else:
-                    break
-            if inner == mid:
-                if temp_len > max_palindrome:
-                    max_palindrome = temp_len
+                    curr_counter = 0
+                inner += 1
+                
+            if curr_counter > max_palindrome:
+                max_palindrome = temp_len
 
         max_palindrome
