@@ -11,12 +11,13 @@ class Solution:
         :rtype: str
         """
 
-        s = "aabaaba"
-        s[::-1]         # get reverse of a string
+        # s = "aabaaba"
+        # s[::-1]
         # s = "addaldaaa"
-        # s = "addalidaaa"
-        # s = "addaliidaaa"
-        # s = "aa 
+        # s = "asadasaa"
+        # s = "addaliladaa"
+        # s = "addaladaa"
+        s = "aa" 
         # change algo to not break and keep going even if one char mismatches cz there can be some palindrome on the inner side that you can miss
 
         # s[0] + s[-1]
@@ -45,7 +46,7 @@ class Solution:
 
         # max_palindrome
 
-        max_palindrome = 0
+        max_palindrome = 1
         for i in range(len(s)):
             curr_len = 0
             back_index = 0
@@ -55,16 +56,16 @@ class Solution:
             while check_len > 1:
                 mid = check_len / 2
                 if check_len % 2 == 0:
-                    if(check_str[:mid] == check_str[mid:]):
+                    if(check_str[:mid] == check_str[mid:][::-1]):
                         break
                 else:
-                    if(check_str[:mid] == check_str[(mid+1):]):
+                    if(check_str[:mid] == check_str[(mid+1):][::-1]):
                         break
-                        
+                
+                print('Check str: ', check_str)
                 back_index -= 1
                 check_str = s[i:back_index]
                 check_len = len(check_str)
-                print('Check str: ', check_str)
                 
             if check_len > max_palindrome:
                 max_palindrome = check_len
