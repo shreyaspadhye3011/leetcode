@@ -46,6 +46,8 @@ class Solution:
 
         # max_palindrome
 
+        ### TODO: handle single char input
+
         max_palindrome = 0
         max_palindrome_str = ""
         for i in range(len(s)):
@@ -53,8 +55,7 @@ class Solution:
             back_index = 0
             check_str = s[i:]
             check_len = len(s[i:])
-            
-            while check_len > 1:
+            while check_len >= 1:
                 mid = check_len / 2
                 if check_len % 2 == 0:
                     if(check_str[:mid] == check_str[mid:][::-1]):
