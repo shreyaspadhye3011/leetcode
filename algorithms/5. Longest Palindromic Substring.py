@@ -46,13 +46,14 @@ class Solution:
 
         # max_palindrome
 
-        max_palindrome = 1
+        max_palindrome = 0
+        max_palindrome_str = ""
         for i in range(len(s)):
             curr_len = 0
             back_index = 0
-        #     temp = s[i:]
             check_str = s[i:]
             check_len = len(s[i:])
+            
             while check_len > 1:
                 mid = check_len / 2
                 if check_len % 2 == 0:
@@ -61,14 +62,11 @@ class Solution:
                 else:
                     if(check_str[:mid] == check_str[(mid+1):][::-1]):
                         break
-                
-                print('Check str: ', check_str)
                 back_index -= 1
                 check_str = s[i:back_index]
                 check_len = len(check_str)
-                
+
             if check_len > max_palindrome:
                 max_palindrome = check_len
                 max_palindrome_str = check_str
-
-        max_palindrome, max_palindrome_str
+        return max_palindrome_str
