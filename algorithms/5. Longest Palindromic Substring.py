@@ -46,8 +46,6 @@ class Solution:
 
         # max_palindrome
 
-        ### TODO: handle single char input
-
         max_palindrome = 0
         max_palindrome_str = ""
         for i in range(len(s)):
