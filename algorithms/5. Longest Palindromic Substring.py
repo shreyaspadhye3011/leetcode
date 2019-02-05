@@ -49,7 +49,6 @@ class Solution:
         max_palindrome = 0
         max_palindrome_str = ""
         for i in range(len(s)):
-            curr_len = 0
             back_index = 0
             check_str = s[i:]
             check_len = len(s[i:])
