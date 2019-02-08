@@ -1,0 +1,46 @@
+Shreyas Padhye
+
+
+select * from movie
+select table_name from user_tables
+
+select * from person
+
+
+IMDB ID	Email 	First Name	Last Name	DOB	BirthPlace	Gender
+ID1	
+john@yahoo.com
+John 	Smith     	10/5/95	FL	M
+ID2	
+juan@gmail.com
+Juan 	Carlos      	4/12/94	AK	M
+ID3	
+Jane@gmail.com
+Jane 	Chapel      	11/2/93	IL	F
+ID4	
+adi@yahoo.com
+Aditya	Awasthi	12/12/92	CA	M
+ID5	
+james@hotmail.com
+James 	Williams     	5/5/91	NY	M
+ID6	
+mike@yahoo.com
+Mike 	Brown      	3/1/88	NC	M
+ID7	
+bob@yahoo.com
+Bob 	Jones     	2/7/88	NY 	M
+ID8	
+wei@gmail.com
+ Wei 	Zhang 	8/12/85	NV	F
+ID9	
+mark@gmail.com
+Mark 	Davis   	5/10/84	CA	M
+ID10	
+daniel@yahoo.com
+Daniel  	Garcia      	6/1/80	NJ	M
+ID11	
+maria@hotmail.com
+Maria	Rodriguez        	3/18/75	CA	F
+ID12	
+freya@yahoo.com
+Freya	Wilson     	2/19/70	NJ	F
