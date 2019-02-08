@@ -13,6 +13,7 @@ create table MOVIE_ACTOR_LIST (
     MID varchar2(5),
     ACTOR varchar2(5),
     FOREIGN KEY (MID) REFERENCES MOVIE(MID)
+    ON DELETE CASCADE
 );
 /
 
@@ -20,6 +21,7 @@ create table MOVIE_GENRE_LIST (
     MID varchar2(5),
     GENRE varchar2(15),
     FOREIGN KEY (MID) REFERENCES MOVIE(MID)
+    ON DELETE CASCADE
 );
 /
 
@@ -53,39 +55,40 @@ create table PERSON (
 
 INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P1', 'Brian de foma', TO_DATE('9/11/40', 'mm/dd/yyyy'), 'M', 'New York', 'Director');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P2', 'Martin Brest', '8/8/51', 'M', 'San Jose', 'Director');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P2', 'Martin Brest', TO_DATE('8/8/51', 'mm/dd/yyyy'), 'M', 'San Jose', 'Director');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P3', 'Scarlett Johanson', '11/22/84', 'F', 'Austin', 'Actor');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P3', 'Scarlett Johanson', TO_DATE('11/22/84','mm/dd/yyyy'), 'F', 'Austin', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P4', 'Luc Besson', TO_DATE('5/30/75','mm/dd/yyyy'), 'F', 'Paris', 'Director');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P5', 'Morgan Freeman', TO_DATE('6/5/53','mm/dd/yyyy'), 'M', 'Canberra', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P6', 'Al Pacino', TO_DATE('11/12/26','mm/dd/yyyy'), 'M', 'Portland', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P7', 'Angelina Jolie', TO_DATE('3/3/70','mm/dd/yyyy'), 'F', 'Seattle', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P8', 'Brad Pitt', TO_DATE('4/4/75','mm/dd/yyyy'), 'M', 'London', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P9', 'Tom Hanks', TO_DATE('5/19/64','mm/dd/yyyy'), 'M', 'Perth', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P10', 'Jessica Alba', TO_DATE('8/7/83','mm/dd/yyyy'), 'F', 'Seoul', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P12', 'Alex Parish', TO_DATE('7/9/77','mm/dd/yyyy'), 'F', 'San Jose', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P13', 'Jack Nicholson', TO_DATE('11/13/58','mm/dd/yyyy'), 'M', 'Austin', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P15', 'Harrison Ford', TO_DATE('9/11/57','mm/dd/yyyy'), 'M', 'Canberra', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P16', 'Julia Roberts', TO_DATE('1/1/67','mm/dd/yyyy'), 'F', 'Portland', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P17', 'Matt Damon', TO_DATE('1/7/71','mm/dd/yyyy'), 'M', 'Seattle' 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P18', 'Jennifer Lawrence', TO_DATE('2/2/62','mm/dd/yyyy'), 'F', 'London', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('', '', '', '', '');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P19', 'George clooney', TO_DATE('3/3/65','mm/dd/yyyy'), 'M', 'Perth', 'Actor');
+
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P20', 'Jennifer Aniston', TO_DATE('4/4/68','mm/dd/yyyy'), 'F', 'Seoul', 'Actor');
 
 
 
