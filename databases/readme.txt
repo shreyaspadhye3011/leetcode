@@ -12,3 +12,4 @@ Tables:
 
 Assumptions:
 Q2. num ratings - considered as the number of times the movie was rated
+Q3. highest number of ratings - considered the movie that was rated highest number of times and still had least average rating
