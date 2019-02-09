@@ -8,6 +8,7 @@ Tables:
 4. PERSON
 5. IMDB_USER
 6. REVIEWS
+7. Roles
 
 
 Note:
