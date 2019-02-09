@@ -187,11 +187,11 @@ create table IMDB_USER (
 );
 
 create table REVIEWS (
-    MOVIE varchar2(5) PRIMARY KEY,
+    MOVIE varchar2(5),
     AUTHOR varchar2(5),
     RATING number,
     VOTES number,
-    PUBLISH_DATE DATE,
+    PUBLISH_DATE TIMESTAMP,
     FOREIGN KEY (MOVIE) REFERENCES MOVIE(MID) ON DELETE CASCADE,
     FOREIGN KEY (AUTHOR) REFERENCES IMDB_USER(ID) ON DELETE CASCADE
 );
@@ -222,6 +222,47 @@ INSERT INTO IMDB_USER VALUES('ID11', 'maria@hotmail.com', 'Maria', 'Rodriguez', 
 INSERT INTO IMDB_USER VALUES('ID12', 'freya@yahoo.com', 'Freya', 'Wilson', TO_DATE('2/19/70','mm/dd/yyyy'), 'NJ', 'F');
 
 
+INSERT INTO REVIEWS VALUES('M1', 'ID1', 7, 25, TO_DATE('10/02/07 09:10:54','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M2', 'ID2', 8, 35, TO_DATE('09/29/07 13:45:00','mm/dd/yyyy hh24:mi:ss'));
 
 
 
+
+INSERT INTO REVIEWS VALUES('M2', 'ID3', 9, 24, TO_DATE('09/29/07 10:38:25','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M3', 'ID4', 10, 8, TO_DATE('10/02/13  13:05:56','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M3', 'ID5', 9, 11, TO_DATE('10/25/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M4', 'ID6', 8, 6, TO_DATE('09/26/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M4', 'ID7', 7, 23, TO_DATE('09/26/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M5', 'ID9', 9, 22, TO_DATE('09/28/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M6', 'ID10', 8, 26, TO_DATE('10/29/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M7', 'ID11', 8, 27, TO_DATE('09/30/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M7', 'ID12', 8, 18, TO_DATE('10/25/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M8', 'ID1', 7, 19, TO_DATE('09/25/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M9', 'ID2', 7, 16, TO_DATE('09/25/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M10', 'ID3', 8, 18, TO_DATE('09/29/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M11', 'ID4', 9, 22, TO_DATE('06/07/15 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M11', 'ID5', 10, 13, TO_DATE('05/05/15 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M12', 'ID6', 9, 50, TO_DATE('05/05/15 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M13', 'ID7', 5, 34, TO_DATE('10/25/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M13', 'ID1', 4, 34, TO_DATE('10/25/07 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M15', 'ID10', 8, 25, TO_DATE('05/05/15 17:15:00','mm/dd/yyyy hh24:mi:ss'));
+
+INSERT INTO REVIEWS VALUES('M16', 'ID4', 7, 12, TO_DATE('05/05/15 17:15:00','mm/dd/yyyy hh24:mi:ss'));
