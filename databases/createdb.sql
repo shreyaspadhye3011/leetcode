@@ -196,7 +196,30 @@ create table REVIEWS (
     FOREIGN KEY (AUTHOR) REFERENCES IMDB_USER(ID) ON DELETE CASCADE
 );
 
+INSERT INTO IMDB_USER VALUES('ID1', 'john@yahoo.com', 'John', 'Smith', TO_DATE('10/5/95','mm/dd/yyyy'), 'FL', 'M');
 
+INSERT INTO IMDB_USER VALUES('ID2', 'juan@gmail.com', 'Juan', 'Carlos', TO_DATE('4/12/94','mm/dd/yyyy'), 'AK', 'M');
+
+INSERT INTO IMDB_USER VALUES('ID3', 'Jane@gmail.com', 'Jane', 'Chapel', TO_DATE('11/2/93','mm/dd/yyyy'), 'IL', 'F');
+
+INSERT INTO IMDB_USER VALUES('ID4', 'adi@yahoo.com', 'Aditya', 'Awasthi', TO_DATE('12/12/92','mm/dd/yyyy'), 'CA', 'M');
+
+INSERT INTO IMDB_USER VALUES('ID5', 'james@hotmail.com', 'James', 'Williams', TO_DATE('5/5/91','mm/dd/yyyy'), 'NY', 'M');
+
+INSERT INTO IMDB_USER VALUES('ID6', 'mike@yahoo.com', 'Mike', 'Brown', TO_DATE('3/1/88','mm/dd/yyyy'), 'NC', 'M');
+
+
+INSERT INTO IMDB_USER VALUES('ID7', 'bob@yahoo.com', 'Bob', 'Jones', TO_DATE('2/7/88','mm/dd/yyyy'), 'NY', 'M');
+
+INSERT INTO IMDB_USER VALUES('ID8', 'wei@gmail.com', 'Wei', 'Zhang', TO_DATE('8/12/85','mm/dd/yyyy'), 'NV', 'F');
+
+INSERT INTO IMDB_USER VALUES('ID9', 'mark@gmail.com', 'Mark', 'Davis', TO_DATE('5/10/84','mm/dd/yyyy'), 'CA', 'M');
+
+INSERT INTO IMDB_USER VALUES('ID10', 'daniel@yahoo.com', 'Daniel', 'Garcia', TO_DATE('6/1/80','mm/dd/yyyy'), 'NJ', 'M');
+
+INSERT INTO IMDB_USER VALUES('ID11', 'maria@hotmail.com', 'Maria', 'Rodriguez', TO_DATE('3/18/75','mm/dd/yyyy'), 'CA', 'F');
+
+INSERT INTO IMDB_USER VALUES('ID12', 'freya@yahoo.com', 'Freya', 'Wilson', TO_DATE('2/19/70','mm/dd/yyyy'), 'NJ', 'F');
 
 
 

@@ -6,6 +6,7 @@ select * from movie_actor_list
 select table_name from user_tables
 
 select * from person
+select * from IMDB_USER
 
 
 IMDB ID	Email 	First Name	Last Name	DOB	BirthPlace	Gender
