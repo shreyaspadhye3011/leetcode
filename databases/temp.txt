@@ -1,5 +1,6 @@
 Shreyas Padhye
 
+6 -- IMPROVE INTO SINGLE QUERY
 
 select * from movie
 select * from movie_actor_list
