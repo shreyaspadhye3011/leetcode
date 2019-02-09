@@ -1,4 +1,4 @@
-create or replace table MOVIE (
+create table MOVIE (
     MID varchar2(5) not null constraint movie_pk primary key,
     NAME varchar2(50),
     YEAR number,
@@ -12,16 +12,14 @@ create or replace table MOVIE (
 create table MOVIE_ACTOR_LIST (
     MID varchar2(5),
     ACTOR varchar2(5),
-    FOREIGN KEY (MID) REFERENCES MOVIE(MID)
-    ON DELETE CASCADE
+    FOREIGN KEY (MID) REFERENCES MOVIE(MID) ON DELETE CASCADE
 );
 /
 
 create table MOVIE_GENRE_LIST (
     MID varchar2(5),
     GENRE varchar2(15),
-    FOREIGN KEY (MID) REFERENCES MOVIE(MID)
-    ON DELETE CASCADE
+    FOREIGN KEY (MID) REFERENCES MOVIE(MID) ON DELETE CASCADE
 );
 /
 
@@ -177,6 +175,26 @@ INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('
 
 INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P20', 'Jennifer Aniston', TO_DATE('4/4/68','mm/dd/yyyy'), 'F', 'Seoul', 'Actor');
 
+
+create table IMDB_USER (
+    ID varchar2(5) PRIMARY KEY,
+    EMAIL varchar2(80),
+    FNAME varchar2(30),
+    LNAME varchar2(30),
+    DOB DATE,
+    BIRTHPLACE varchar2(50),
+    GENDER varchar2(1)
+);
+
+create table REVIEWS (
+    MOVIE varchar2(5) PRIMARY KEY,
+    AUTHOR varchar2(5),
+    RATING number,
+    VOTES number,
+    PUBLISH_DATE DATE,
+    FOREIGN KEY (MOVIE) REFERENCES MOVIE(MID) ON DELETE CASCADE,
+    FOREIGN KEY (AUTHOR) REFERENCES IMDB_USER(ID) ON DELETE CASCADE
+);
 
 
 

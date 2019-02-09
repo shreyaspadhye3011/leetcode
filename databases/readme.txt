@@ -6,7 +6,8 @@ Tables:
 2. MOVIE_ACTOR_LIST
 3. MOVIE_GENRE_LIST
 4. PERSON
-5. 
+5. IMDB_USER
+6. REVIEWS
 
 
 Assumptions:
