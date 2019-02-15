@@ -1,3 +1,13 @@
+/// Run-length coding
+// input : abcd
+// output: abcd
+
+// input : ababbba
+// output: abab3a
+
+// input : aaabbbbbbbbbb
+// output: a3b10
+
 import java.util.*;
 
 class Solution {
