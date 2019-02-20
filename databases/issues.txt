@@ -1,6 +1,13 @@
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P17', 'Matt Damon', TO_DATE('1/7/71','mm/dd/yyyy'), 'M', 'Seattle', 'Actor');
+Problem -- Working on LiveSQL. 
+1. So made some corrections there and didn't copy here
+2. working on live SQL & with views just commenting view creation so missed semi colons
 
-INSERT INTO ROLES VALUES('M9', 'P17', 'Martin')
+__
+
+
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P17', 'Matt Damon', TO_DATE('1/7/71','mm/dd/yyyy'), 'M', 'Seattle', 'Actor'); (comma missing)
+
+INSERT INTO ROLES VALUES('M9', 'P17', 'Martin') (based on above - nothing wrong with query)
 
 _____
 
