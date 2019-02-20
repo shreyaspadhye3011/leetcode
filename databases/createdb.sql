@@ -167,7 +167,7 @@ INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('
 
 INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P16', 'Julia Roberts', TO_DATE('1/1/67','mm/dd/yyyy'), 'F', 'Portland', 'Actor');
 
-INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P17', 'Matt Damon', TO_DATE('1/7/71','mm/dd/yyyy'), 'M', 'Seattle' 'Actor');
+INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P17', 'Matt Damon', TO_DATE('1/7/71','mm/dd/yyyy'), 'M', 'Seattle', 'Actor');
 
 INSERT INTO PERSON(PID, Name, Birthdate, Gender, birthplace, Attribute) VALUES('P18', 'Jennifer Lawrence', TO_DATE('2/2/62','mm/dd/yyyy'), 'F', 'London', 'Actor');
 
@@ -331,7 +331,7 @@ INSERT INTO ROLES VALUES('M16', 'P16', 'Emilia');
 create table SHOW (
     NAME varchar2(25),
     NETWORK varchar2(25),
-    CATEGORY varchar2(10)
+    CATEGORY varchar2(10),
     PRIMARY KEY (NAME, NETWORK)
 );
 
