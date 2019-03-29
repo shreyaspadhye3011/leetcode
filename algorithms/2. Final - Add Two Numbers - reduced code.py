@@ -1,4 +1,5 @@
 # uses unnecessary space for swap. temp buffer. but that swapping or choice of larger array can be made in a multitude of ways. Use, but mention in interview
+# to avoid - just call same function with reversed parameters in place of swap
 
 class addTwoNum:
     #Todo: add code to work on lists
