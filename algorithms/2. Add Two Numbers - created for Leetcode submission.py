@@ -81,7 +81,7 @@ def addTwoNumbers(self, l1, l2):
     return result
 
 # Test cases won't work directly as this expects a listNode input as given by Leetcode. These are for reference
-# addTwoNumbers([2, 4, 3], [5, 6, 2w]) # A: 706 -> O: 6 -> 0 -> 7 
+# addTwoNumbers([2, 4, 3], [5, 6, 2]) # A: 706 -> O: 6 -> 0 -> 7 
 # addTwoNumbers([2, 4, 3], [5, 6]) # A: 407
 # addTwoNumbers([2, 8, 9, 2], [8]) # A: 2990
 # addTwoNumbers([9, 9, 9, 1], [1]) # A: 2000

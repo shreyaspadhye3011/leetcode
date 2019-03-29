@@ -14,11 +14,6 @@
 
 # Algorithm 2.B (appropriate for lists): for every element in list, look back and see all elements if already exist
 
-# Algorithm 1: keep a secondary buffer that keeps value of already iterated elements and while iterating keep checking this
-
-# Algorithm 2 : as no extra buffer is allowed, we can sort the linked list and just check immediate neighbours (actually only left neighbour) to check duplicacy
-# def remove_dup_nobuffer(self):
-
 from util.linked_list_lib import linked_list
 
 class list_remove_dup():
