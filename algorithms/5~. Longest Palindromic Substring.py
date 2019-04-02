@@ -1,5 +1,6 @@
+# Todo: work on optimized solutions. DP? -- see Leetcode
 # https://leetcode.com/problems/longest-palindromic-substring/
-# Status: 
+# Status: Submitted & Accepted
 # Percentile: 
 
 # Approach: 
