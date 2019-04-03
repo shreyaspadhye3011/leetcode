@@ -15,8 +15,14 @@ class zigzag:
                 
             key += change
         
-        return tot
+#         tot.join('', for c in tot)
+        str = ""
+        for charList in tot:
+            for c in charList:
+               str += c
+        print str
 
 obj = zigzag()
-obj.find_zigzag("PAYPALISHIRING", 3)
+obj.find_zigzag("PAYPALISHIRING", 4) #O: PINALSIGYAHRPI
+obj.find_zigzag("PAYPALISHIRING", 3) #O: PAHNAPLSIIGYIR
             
