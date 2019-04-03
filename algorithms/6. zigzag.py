@@ -8,21 +8,24 @@ class zigzag:
             else:
                 tot.append([char])
                 
-            if key == numRows - 1:
-                change = -1
-            elif key == 0:
+            if key == 0:
                 change = 1
+            elif key == numRows - 1:
+                change = -1
                 
             key += change
-        
-#         tot.join('', for c in tot)
+            
         str = ""
+        # Though looks like n**2 complexity but won't be as the number of times this loop will work will br n - for every element
         for charList in tot:
             for c in charList:
                str += c
-        print str
+        return str
 
 obj = zigzag()
 obj.find_zigzag("PAYPALISHIRING", 4) #O: PINALSIGYAHRPI
 obj.find_zigzag("PAYPALISHIRING", 3) #O: PAHNAPLSIIGYIR
+obj.find_zigzag("PAY", 3) #O: PAY
+obj.find_zigzag("PAY", 4) #O: PAY
+obj.find_zigzag("PAY", 2) #O: PYA
             
