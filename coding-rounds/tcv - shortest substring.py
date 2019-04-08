@@ -1,3 +1,4 @@
+# status - Correct answer but TLE. Optimize!
 def smallest_substr(str):
     length = len(str)
     min = length
