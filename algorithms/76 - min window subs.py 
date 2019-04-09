@@ -1,19 +1,21 @@
 # https://leetcode.com/problems/minimum-window-substring/
 
 # status - Correct answer but TLE. Optimize!
-def smallest_substr(str):
+def smallest_substr(str, pattern):
     length = len(str)
-    min = length
+    min = ""
+    minLength = length
     for i in range(0, length - 1):
         j = i
         while j <= length:
-            if set(str[i:j]) == set(str):
-                if len(str[i:j]) < min:
-                    min = len(str[i:j])
+            if set(str[i:j]) == set(pattern):
+                if len(str[i:j]) < minLength:
+                    min = str[i:j]
+                    minLength = len(str[i:j])
             j += 1
     return min
 
-# smallest_substr('abaacbab') #3
-# smallest_substr('bcaacbc')  #3
-# smallest_substr('aabaaccbcbcca')  #4
-smallest_substr('bbcbbdbccccabbbbd')  #7
+# smallest_substr('abaacbab', 'abc') #3
+# smallest_substr('bcaacbc', 'abc')  #3
+# smallest_substr('aabaaccbcbcca', 'abc')  #4
+smallest_substr('bbcbbdbccccabbbbd', 'abcd')  #7
