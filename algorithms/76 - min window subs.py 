@@ -15,7 +15,9 @@ def smallest_substr(str, pattern):
             j += 1
     return min
 
-# smallest_substr('abaacbab', 'abc') #3
-# smallest_substr('bcaacbc', 'abc')  #3
-# smallest_substr('aabaaccbcbcca', 'abc')  #4
-smallest_substr('bbcbbdbccccabbbbd', 'abcd')  #7
+# smallest_substr('abaacbab', 'abc') #acb
+# smallest_substr('bcaacbc', 'abc')  #bca
+# smallest_substr('aabaaccbcbcca', 'abc')  #baac
+# smallest_substr('bbcbbdbccccabbbbd', 'abcd')  #dbcccca
+smallest_substr('abaacbab', 'abc') #acb
+# smallest_substr('ADOBECODEBANC', 'ABC') #BANC
