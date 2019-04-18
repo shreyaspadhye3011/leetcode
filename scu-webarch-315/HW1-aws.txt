@@ -1,7 +1,20 @@
 # ssh -i web-arch-001.pem ec2-user@ec2-54-215-191-46.us-west-1.compute.amazonaws.com
 
 Working:
-ssh -i "web-arch-001.pem" ubuntu@ec2-54-215-191-46.us-west-1.compute.amazonaws.com
+ssh -i "web-arch-001.pem" ubuntu@ec2-52-8-220-170.us-west-1.compute.amazonaws.com
 
 Elastic IP:
 52.8.220.170
+
+ sudo systemctl restart apache2
+
+
+### Not Rqd:
+NS: Route 53 default 
+ns-254.awsdns-31.com.
+ns-752.awsdns-30.net.
+ns-1423.awsdns-49.org.
+ns-1876.awsdns-42.co.uk.
+
+SOA:
+ns-254.awsdns-31.com. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400
