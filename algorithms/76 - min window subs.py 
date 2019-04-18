@@ -26,4 +26,5 @@ def smallest_substr(str, pattern):
 # smallest_substr('ADOBECODEBANC', 'ABC') #BANC
 # smallest_substr('a', 'a') #a
 # smallest_substr('ba', 'ab') #ba
-smallest_substr('bac', 'abc') #bac
+# smallest_substr('bac', 'abc') #bac
+smallest_substr('bac', 'A') #''
