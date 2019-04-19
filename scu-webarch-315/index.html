@@ -1,0 +1,108 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>About Me</title>
+    <style type="text/css" media="screen">
+        body, html {
+            padding: 3px 3px 3px 3px;
+            background-color: #D8DBE2;
+            font-family: Verdana, sans-serif;
+            font-size: 11pt;
+            color: #D8DBE2;
+            text-align: center;
+        }
+        #video {
+            margin-top: 100px
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+            cursor: pointer;
+            border-right:1px solid #bbb;
+        }
+
+        li:last-child {
+            border-right: none;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: red;
+        }
+    </style>
+  </head>
+  <body style="background-image:url(bg.png)">
+    <nav>
+        <ul>
+            <li><a class="active" id="hm" onclick="return navigate('Home');">Home</a></li>
+            <li><a id="blg" onclick="return navigate('Blog');">Blog</a></li>
+        </ul>
+    </nav>
+
+    <header><h3> Hi, Welcome to my page! </h3></header>
+
+    <article style="margin-top: 20px">
+        <em>These are exciting times! As we begin a new adventure with Prof. Amr Elkady in the realm of the "Internet". This website is currently only meant for educational purposes. It is the very first demo of a working website hosted on AWS for this class. </em>
+    </article>
+
+    <article style="margin-top: 140px" id="home">
+        <em> So I'm Shreyas. Passionate, Curious, Inquisitive and at times an extreme workaholic. More on it, coming soon!</em>
+    </article>
+
+    <article style="margin-top: 140px; margin-bottom: 60px; display: none" id="blog">
+        <em> I like to write. A lot! Express. Like a "lot" lot! So this place is reserved for some blogs coming up soon. <br> For now, please enjoy this wonderful music from Hans Zimmer.</em>
+    </article>
+
+    <aside id="dp">
+        <figure >
+            <img src="Dp.jpg" width="210" height="250" alt="img"/>
+            <figcaption>Yep, that's me</figcaption>
+        </figure>
+    </aside>
+
+    <section id="video" style="margin-bottom: 20px">
+        <iframe width="700" height="200" src="https://www.youtube.com/embed/RxabLA7UQ9k" frameborder="0" allow="accelerometer; autoplay; picture-in-picture" allowfullscreen></iframe>
+    </section>
+  </body>
+    <script>
+        function navigate(dest) {
+            switch(dest) {
+                case 'Home':
+                    document.getElementById("home").style.display = 'block';
+                    document.getElementById("dp").style.display = 'block';
+                    document.getElementById("blog").style.display = 'none';
+                    document.getElementById("hm").className = 'active';
+                    document.getElementById("blg").className = '';
+                    break;
+                case 'Blog':
+                    document.getElementById("home").style.display = 'none';
+                    document.getElementById("dp").style.display = 'none';
+                    document.getElementById("blog").style.display = 'block';
+                    document.getElementById("blg").className = 'active';
+                    document.getElementById("hm").className = '';
+                    break;
+            }
+        }
+    </script>
+</html>
+
