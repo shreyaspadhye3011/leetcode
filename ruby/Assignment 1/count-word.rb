@@ -25,4 +25,5 @@ class String
 end
 
 # Test
-CountWord.new.count_word_occurence("I am a stranger to this world but this world does not decide what I believe in and create", "I")
+# CountWord.new.count_word_occurence("I am a stranger to this world but this world does not decide what I believe in and create", "a")
+CountWord.new.count_word_occurence(2, "a")
