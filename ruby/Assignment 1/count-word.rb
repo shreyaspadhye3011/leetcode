@@ -10,10 +10,6 @@ end
 
 class String
     def count_word(word)
-        # puts self + " ~ " + word
-        # puts /am/ =~ self
-        # puts /\${word}/ =~ self
-        # puts self.scan(word)
         count = 0
         self.scan(/\w+/).each do |paraword|
             if paraword === word
@@ -26,4 +22,4 @@ end
 
 # Test
 # CountWord.new.count_word_occurence("I am a stranger to this world but this world does not decide what I believe in and create", "a")
-CountWord.new.count_word_occurence(2, "a")
+# CountWord.new.count_word_occurence(2, "a")
