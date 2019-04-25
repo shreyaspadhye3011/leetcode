@@ -6,11 +6,14 @@ class CountWord
             puts "Both parameters should be string"
         end
     end
+end
 
 class String
     def count_word(word)
-        puts self + " ~ " + word
+        # puts self + " ~ " + word
+        
     end
+end
 
 # Test
 CountWord.new.count_word_occurence("I am", "strong")
