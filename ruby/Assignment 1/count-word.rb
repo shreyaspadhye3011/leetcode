@@ -11,9 +11,11 @@ end
 class String
     def count_word(word)
         # puts self + " ~ " + word
-        
+        # puts /am/ =~ self
+        # puts /\${word}/ =~ self
+        # puts self.scan(word)
     end
 end
 
 # Test
-CountWord.new.count_word_occurence("I am", "strong")
+CountWord.new.count_word_occurence("I am", "am")
