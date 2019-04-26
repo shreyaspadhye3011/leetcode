@@ -1,16 +1,12 @@
 require 'erb'
 
-def get_items() 
-    ['bread', 'milk', 'eggs', 'spam'] 
-end
-
 class TemplateRenderer
     include ERB::Util 
     attr_accessor :items, :template, :date
     
-    def initialize(items, template, date=Time.now) 
+    def initialize(itemsHash, template, date=Time.now) 
         @date = date 
-        @items = items 
+        @items = itemsHash[:items] 
         @template = template 
     end
 
@@ -24,12 +20,12 @@ template = %{ <!DOCTYPE html>
     <html> 
     <head> 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
-    <title>Shopping List for <%= @date.strftime('%A, %d %B %Y') %></title> 
+    <title>Reminders</title> 
     </head>
 
     <body>
-    <h1>Shopping List for <%= @date.strftime('%A, %d %B %Y') %></h1>
-    <p>You need to buy:</p>
+    <h1>Reminders for <%= @date.strftime('%d %m %Y') %></h1>
+    <p>Items in Todo:</p>
     <ul>
     <% for item in @items %> 
     <li> <%= h(item) %> </li>
@@ -37,6 +33,7 @@ template = %{ <!DOCTYPE html>
     </ul>
     </body>
     </html>
-} 
-contents = TemplateRenderer.new(get_items, template)
+}  
+reminderList = {:title => 'Todo List', :items => ['Ruby Assignment', 'Resume Corrections', 'Grocery Shopping']}
+contents = TemplateRenderer.new(reminderList, template)
 contents.filter_template
