@@ -34,11 +34,11 @@ class Compress
       end
     end
 
-    def get_word_set
+    def word_set
         return @word_set
     end
 
-    def get_index_array
+    def index_array
         return @index_array
     end
 end
