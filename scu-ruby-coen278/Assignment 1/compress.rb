@@ -1,14 +1,15 @@
 class Compress
-    attr_accessor :hash, :index_array
+    attr_accessor :word_set, :index_array
     def initialize(str = '')
         @str = str
-        self.create_hash
+        @word_set = []
+        @index_array = []
+        self.create_word_set
     end
   
-    def create_hash
+    def create_word_set
       if @str != ''
         hash_str = {}
-        index_array = []
         curr_index = 0
         arr = @str.split(' ')
         arr.each do |x|
@@ -24,18 +25,17 @@ class Compress
           else
             hash_str[x] = curr_index
             curr_index += 1
+            @word_set.push(x)
           end
-          index_array.push(hash_str[x])
-          @hash = hash_str
-          @index_array = index_array
+          @index_array.push(hash_str[x])
         end
       else
         'The input string is empty!'
       end
     end
 
-    def get_hash
-        return @hash
+    def get_word_set
+        return @word_set
     end
 
     def get_index_array
@@ -47,5 +47,5 @@ end
 # str = 'i love you but do you love me'
 # str = 'make me a me of a make'
 # obj = Compress.new(str)
-# puts obj.get_hash
-# puts obj.get_index_array  
+# p obj.get_word_set
+# p obj.get_index_array  
