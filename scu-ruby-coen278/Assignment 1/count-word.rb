@@ -11,6 +11,7 @@ end
 class String
     def count_word(word)
         count = 0
+        # get all words and check for passed word match
         self.scan(/\w+/).each do |paraword|
             if paraword === word
                 count += 1

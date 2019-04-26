@@ -17,6 +17,7 @@ class TemplateRenderer
 end
 
 #Test
+# given template is used to list reminders for a day
 template = %{ <!DOCTYPE html> 
     <html> 
     <head> 
