@@ -7,6 +7,7 @@ class TemplateRenderer
     def initialize(itemsHash, template, date=Time.now) 
         @date = date 
         @items = itemsHash[:items] 
+        @listTitle = itemsHash[:title]
         @template = template 
     end
 
@@ -25,7 +26,7 @@ template = %{ <!DOCTYPE html>
 
     <body>
     <h1>Reminders for <%= @date.strftime('%d %m %Y') %></h1>
-    <p>Items in Todo:</p>
+    <p>Items in <%=@listTitle%>:</p>
     <ul>
     <% for item in @items %> 
     <li> <%= h(item) %> </li>
