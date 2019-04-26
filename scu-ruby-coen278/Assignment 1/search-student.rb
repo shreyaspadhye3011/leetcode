@@ -8,6 +8,7 @@ class SearchStudent
             key = hash.keys[0]
             value = hash.values[0]
             hashVal = student[key]
+            # handle case when phone number search and avoid downcase
             if key != :phonenumber
                 result = student[key].downcase.eql?(value.downcase)
             else
