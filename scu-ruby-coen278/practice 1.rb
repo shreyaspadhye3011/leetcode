@@ -109,12 +109,31 @@ arr = %w{d b e f z h a l a b e a z m}
 # x,(y,z) = 1,[2,3] 
 # p x, y, z
 
-a,b,c,d = [1,[2,[3,4]]]
-p a, b, c
+# a,b,c,d = [1,[2,[3,4]]]
+# p a, b, c
 
 # a,(b,(c,d)) = [1,[2,[3,4]]]
 # p a, b, c, d
 
+# def say(what, *people)  
+#     people.each{|person| puts "#{person}: #{what}"}
+# end
+# say "Hello!", "Alice", "Bob", "Carl"
+# people = ["Rudy", "Sarah", "Thomas"]
+# say "Howdy!", *people
 
+# ["Hi", "there"].each {|x| puts x}
 
+# def arguments_and_opts(*args, opts)  
+#     puts "arguments: #{args} options: #{opts}"
+# end
+# arguments_and_opts 1,2,3, :a=>5
 
+def m(a, *b, **c)
+    p a
+    p b
+    p c
+end
+
+h = {a: 4, b: 2}
+m(10,**h, e: 5)
