@@ -71,8 +71,15 @@ arr = %w{d b e f z h a l a b e a z m}
 # p arr
 # p arr.uniq
 # p arr.reverse
+# [1,2,3,4,5].select { |num|  num.even?  }   #=> [2, 4]
+# a = %w{ a b c d e f }
+# a.select { |v| v =~ /[aeiou]/ }  #=> ["a", "e"]
 
-p "make".split("", 3)
+# p "make".split("", 3)
+# p "make".split("")
+p "hello ".gsub(" ", '$')
+p "hello".gsub(/[aeiou]/, '*')
+
 
 
 
