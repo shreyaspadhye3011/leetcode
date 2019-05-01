@@ -26,13 +26,53 @@ a = 10
 # a.upto(20) {|x| puts x}
 # a.upto(1) {|x| puts x}
 
-# b = 10..20
+# b = 10...20
 # puts b.first
 # puts b.last
+# b.each { |x| puts x}
+# b.each do |x| puts x end
 
-puts 'it’s a wonderful year'
-puts "it’s a wonderful year"
-puts %q/it’s a wonderful year/
-puts %q/i spent #{a} years to get this degree/
-puts %Q/i spent #{a} years to get this degree/
+# puts 'it’s a wonderful year'
+# puts "it’s a wonderful year"
+# puts %q/it’s a wonderful year/
+# puts %q/i spent #{a} years to get this degree/
+# puts %Q/i spent #{a} years to get this degree/  # %Q -> ""
+# puts 'i spent #{a}'  # %q -> ''
+# puts 'i am ' + a.to_s + ' years old'
+# puts 'i am ' << a.to_s << ' years old'
+# puts "i am ""#{a}"" years old"
+
+# p "car" <=> "car"
+
+# "abcdefghijklmnopqrstuvwxyz".each_char {|x| puts x}
+# puts 10 * "love"
+# p "love " * 10 
+
+# p ["apple", "banana", "orange"].include?("apple")
+# p ["apple", "banana", "orange"].join
+# p ["apple", "banana", "orange"].join(" ")
+
+# str = "capital"
+# p str.upcase
+# p str
+# p str.capitalize
+# p str.capitalize!
+# p str.upcase!
+# p str
+# p str.downcase
+# p "aBcDeFg".swapcase
+# p "Abc".swapcase
+
+arr = %w{d b e f z h a l a b e a z m}
+# arr = %w{d b e f}
+# # p arr
+# print arr.shuffle
+# p arr.slice!(2)
+# p arr
+# p arr.uniq
+# p arr.reverse
+
+p "make".split("", 3)
+
+
 
