@@ -20,6 +20,19 @@
 # puts 4.14152.round(3)
 
 a = 10
-a.times { |x|  puts x}
-a.times { |x|  print x}
+# a.times { |x|  puts x}
+# a.times { |x|  print x}
+
+# a.upto(20) {|x| puts x}
+# a.upto(1) {|x| puts x}
+
+# b = 10..20
+# puts b.first
+# puts b.last
+
+puts 'it’s a wonderful year'
+puts "it’s a wonderful year"
+puts %q/it’s a wonderful year/
+puts %q/i spent #{a} years to get this degree/
+puts %Q/i spent #{a} years to get this degree/
 
