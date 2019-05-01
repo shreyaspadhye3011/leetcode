@@ -77,8 +77,15 @@ arr = %w{d b e f z h a l a b e a z m}
 
 # p "make".split("", 3)
 # p "make".split("")
-p "hello ".gsub(" ", '$')
-p "hello".gsub(/[aeiou]/, '*')
+# p "hello ".gsub(" ", '$')
+# p "hello".gsub(/[aeiou]/, '*')
+
+# puts "love".reverse
+# puts "love".respond_to?(:reverse)
+mysymbol = :love
+# puts mysymbol.reverse
+puts mysymbol.respond_to?(:reverse)
+
 
 
 
