@@ -82,10 +82,38 @@ arr = %w{d b e f z h a l a b e a z m}
 
 # puts "love".reverse
 # puts "love".respond_to?(:reverse)
-mysymbol = :love
+# mysymbol = :love
 # puts mysymbol.reverse
-puts mysymbol.respond_to?(:reverse)
+# puts mysymbol.respond_to?(:reverse)
 
+# snowy_owl = { "type" => "Bird", "diet" => "Carnivore", "life_span" => "12 years" }
+# puts snowy_owl["type"]
+# snowy_owl["weight"] = "0.5 ounces"
+# puts snowy_owl
+# puts snowy_owl.keys
+# puts snowy_owl.values
+
+# n1 = 1
+# n2 = 2
+# n1, n2 = n2, n1+ n2
+# puts n1, n2
+
+# first, second = 1
+# p first, second
+
+# x,*y = 1
+# p x, y
+
+# x, y, *z = 1, *[2,3,4]
+# p x, y, z
+# x,(y,z) = 1,[2,3] 
+# p x, y, z
+
+a,b,c,d = [1,[2,[3,4]]]
+p a, b, c
+
+# a,(b,(c,d)) = [1,[2,[3,4]]]
+# p a, b, c, d
 
 
 
