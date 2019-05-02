@@ -32,3 +32,20 @@
 #     arr.push(peo[:name])
 # end
 # p arr
+
+class Hash
+    def select(&block)
+        self.each do |key, val|
+            if block_given? && key?(key)
+                res = yield(key, self[key])
+                # res = block.call(key, self[key], val)
+                # puts res
+                if(!res)
+                    self.delete(key)
+                end
+            end
+        end
+    end
+end
+h = { "a" => 100, "b" => 200, "c" => 300 }
+puts h.select{|k, v| v > 100}

@@ -129,11 +129,17 @@ arr = %w{d b e f z h a l a b e a z m}
 # end
 # arguments_and_opts 1,2,3, :a=>5
 
-def m(a, *b, **c)
-    p a
-    p b
-    p c
-end
+# def m(a, *b, **c)
+#     p a
+#     p b
+#     p c
+# end
 
-h = {a: 4, b: 2}
-m(10,**h, e: 5)
+# h = {a: 4, b: 2}
+# m(10,**h, e: 5)
+
+# a = [1, 2 ,3]
+# b = [1, 3, 4]
+# p a | b
+
+p Float(2) / 3
