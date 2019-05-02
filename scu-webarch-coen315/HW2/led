@@ -25,7 +25,11 @@ WiFiServer server(80);
 
 
 void setup() {
-//  pinMode(LED_BUILTIN, OUTPUT);
+   pinMode(LED_BUILTIN, OUTPUT);
+   pinMode(4, OUTPUT);
+   pinMode(3, OUTPUT);
+   digitalWrite(4, LOW);
+   digitalWrite(3, LOW);
 
   Serial.begin(115200);
   Serial.println();
@@ -39,10 +43,6 @@ void setup() {
   server.begin();
 
   Serial.println("Server started");
-
-   pinMode(4, OUTPUT);
-   pinMode(3, OUTPUT);
-   digitalWrite(4, LOW);
 }
 
 void loop() {
@@ -75,7 +75,10 @@ void loop() {
             // break out of the while loop:
 
             client.print("Click <a href=\"/on\">here</a> to turn ON the LED.<br>"); 
-            client.print("Click <a href=\"/off\">here</a> to turn OFF the LED.<br>");
+            client.print("Click <a href=\"/off\">here</a> to turn OFF the LED<br><br>");
+
+            client.print("Click <a href=\"/on2\">here</a> to turn ON the LED - 2.<br>"); 
+            client.print("Click <a href=\"/off2\">here</a> to turn OFF the LED - 2<br><br>");
             
             break;
           } else {    // if you got a newline, then clear currentLine:
@@ -95,13 +98,22 @@ void loop() {
           digitalWrite(4, LOW);
         }
 
+        else if (currentLine.endsWith("GET /on2")) {
+          digitalWrite(3, HIGH);
+        }
+        else if (currentLine.endsWith("GET /off2")) {
+          digitalWrite(3, LOW);
+        }
+
+        
+
         // Check to see if the client request was "GET /H" or "GET /L":
-        if (currentLine.endsWith("GET /H")) {
-          digitalWrite(LED_BUILTIN, HIGH);               // GET /H turns the LED on
-        }
-        if (currentLine.endsWith("GET /L")) {
-          digitalWrite(LED_BUILTIN, LOW);                // GET /L turns the LED off
-        }
+//        if (currentLine.endsWith("GET /H")) {
+//          digitalWrite(LED_BUILTIN, HIGH);               // GET /H turns the LED on
+//        }
+//        if (currentLine.endsWith("GET /L")) {
+//          digitalWrite(LED_BUILTIN, LOW);                // GET /L turns the LED off
+//        }
       }
     }
     // close the connection:
