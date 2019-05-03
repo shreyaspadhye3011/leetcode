@@ -74,11 +74,19 @@ void loop() {
             client.println();
             // break out of the while loop:
 
-            client.print("Click <a href=\"/on\">here</a> to turn ON the LED.<br>"); 
-            client.print("Click <a href=\"/off\">here</a> to turn OFF the LED<br><br>");
+//            client.print("Click <a href=\"/on\">here</a> to turn ON the LED.<br>"); 
+//            client.print("Click <a href=\"/off\">here</a> to turn OFF the LED<br><br>");
+//
+//            client.print("Click <a href=\"/on2\">here</a> to turn ON the LED - 2.<br>"); 
+//            client.print("Click <a href=\"/off2\">here</a> to turn OFF the LED - 2<br><br>");
+            client.print("<style> .button { color: #ffffff; } .red-button { background-color: #f44336; } .green-button { background-color: #4CAF50; } </style>");
+            client.print("<body> <div style=\"margin-top: 150px; margin-left: 600px\">");
+            client.print("<a href='/on'><button class=\"button green-button\">LED 1 On</button></a> <br>");
+            client.print("<a href='/off'><button class=\"button red-button\">LED 1 Off</button></a> <br><br>");
 
-            client.print("Click <a href=\"/on2\">here</a> to turn ON the LED - 2.<br>"); 
-            client.print("Click <a href=\"/off2\">here</a> to turn OFF the LED - 2<br><br>");
+            client.print("<a href='/on2'><button class=\"button green-button\">LED 2 On</button></a> <br>");
+            client.print("<a href='/off2'><button class=\" button red-button\">LED 2 Off</button></a> <br><br>");
+            client.print("</div> </body>");
             
             break;
           } else {    // if you got a newline, then clear currentLine:
