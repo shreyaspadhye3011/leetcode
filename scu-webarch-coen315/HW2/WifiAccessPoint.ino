@@ -14,6 +14,8 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <WiFiAP.h>
+#include "SPIFFS.h"
+#include <ESPAsyncWebServer.h>
 
 #define LED_BUILTIN 2   // Set the GPIO pin where you connected your test LED or comment this line out if your dev board has a built-in LED
 
@@ -28,11 +30,15 @@ WiFiServer server(80);
 void setup() {
    pinMode(LED_BUILTIN, OUTPUT);
    pinMode(4, OUTPUT);
-   pinMode(3, OUTPUT);
+   pinMode(14, OUTPUT);
    digitalWrite(4, LOW);
-   digitalWrite(3, LOW);
+   digitalWrite(14, LOW);
 
   Serial.begin(115200);
+  if(!SPIFFS.begin()){
+    Serial.println("SPIFFS Error");
+    return;
+  }
   Serial.println();
   Serial.println("Configuring access point...");
 
@@ -41,7 +47,12 @@ void setup() {
   IPAddress myIP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
   Serial.println(myIP);
+  
+  servers.on("/img", HTTP_GET, [](AsyncWebServerRequest *request){
+    request->send(SPIFFS, "/bg.jpg", "image/jpeg");
+  });
   server.begin();
+  servers.begin();
 
   Serial.println("Server started");
 }
@@ -80,13 +91,13 @@ void loop() {
 //
 //            client.print("Click <a href=\"/on2\">here</a> to turn ON the LED - 2.<br>"); 
 //            client.print("Click <a href=\"/off2\">here</a> to turn OFF the LED - 2<br><br>");
-            client.print("<style> .button { border-radius: 8px; color: #ffffff; width: 165; height: 20; margin: 5px } .red-button { background-color: #f44336; } .green-button { background-color: #4CAF50; } </style>");
-            client.print("<body style=\"background-image: '/bg.jpg'\"> <div style=\"margin-top: 150px; margin-left: 600px\">");
+            client.print("<style> .button { border-radius: 8px; color: #ffffff; width: 165; height: 40; margin: 5px } .red-button { background-color: #f44336; margin-bottom: 70px} .green-button { background-color: #4CAF50; } </style>");
+            client.print("<body background = \"http://192.168.4.1:90/img\"> <div style=\"margin-top: 200px; margin-left: 600px\">");
             client.print("<a href='/on'><button class=\"button green-button\">LED 1 On</button></a> <br>");
             client.print("<a href='/off'><button class=\"button red-button\">LED 1 Off</button></a> <br><br>");
 
-            client.print("<a href='/on2'><button class=\"button green-button\">LED 2 On</button></a> <br>");
-            client.print("<a href='/off2'><button class=\" button red-button\">LED 2 Off</button></a> <br><br> <img src='http://192.168.4.1/bg.jpg'>");
+            client.print("<a href='/led2on'><button class=\"button green-button\">LED 2 On</button></a> <br>");
+            client.print("<a href='/led2off'><button class=\" button red-button\">LED 2 Off</button></a> <br><br>");
             client.print("</div> </body>");
             
             break;
@@ -107,11 +118,11 @@ void loop() {
           digitalWrite(4, LOW);
         }
 
-        else if (currentLine.endsWith("GET /on2")) {
-          digitalWrite(3, HIGH);
+        else if (currentLine.endsWith("GET /led2on")) {
+          digitalWrite(14, HIGH);
         }
-        else if (currentLine.endsWith("GET /off2")) {
-          digitalWrite(3, LOW);
+        else if (currentLine.endsWith("GET /led2off")) {
+          digitalWrite(14, LOW);
         }
 
         
