@@ -1,8 +1,3 @@
-// WiFiAccess
-// Reference:
-// https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
-// https://techtutorialsx.com/2017/04/24/esp32-connecting-to-a-wifi-network/
-// https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/using-arduino-ide
 /*
   WiFiAccessPoint.ino creates a WiFi access point and provides a web server on it.
 
@@ -30,7 +25,11 @@ WiFiServer server(80);
 
 
 void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+   pinMode(LED_BUILTIN, OUTPUT);
+   pinMode(4, OUTPUT);
+   pinMode(3, OUTPUT);
+   digitalWrite(4, LOW);
+   digitalWrite(3, LOW);
 
   Serial.begin(115200);
   Serial.println();
@@ -68,12 +67,27 @@ void loop() {
             client.println();
 
             // the content of the HTTP response follows the header:
-            client.print("Click <a href=\"/H\">here</a> to turn ON the LED.<br>");
-            client.print("Click <a href=\"/L\">here</a> to turn OFF the LED.<br>");
+//            client.print("Click <a href=\"/H\">here</a> to turn ON the LED.<br>");
+//            client.print("Click <a href=\"/L\">here</a> to turn OFF the LED.<br>");
 
             // The HTTP response ends with another blank line:
             client.println();
             // break out of the while loop:
+
+//            client.print("Click <a href=\"/on\">here</a> to turn ON the LED.<br>"); 
+//            client.print("Click <a href=\"/off\">here</a> to turn OFF the LED<br><br>");
+//
+//            client.print("Click <a href=\"/on2\">here</a> to turn ON the LED - 2.<br>"); 
+//            client.print("Click <a href=\"/off2\">here</a> to turn OFF the LED - 2<br><br>");
+            client.print("<style> .button { border-radius: 8px; color: #ffffff; width: 165; height: 20; margin: 5px } .red-button { background-color: #f44336; } .green-button { background-color: #4CAF50; } </style>");
+            client.print("<body style=\"background-image: '/bg.jpg'\"> <div style=\"margin-top: 150px; margin-left: 600px\">");
+            client.print("<a href='/on'><button class=\"button green-button\">LED 1 On</button></a> <br>");
+            client.print("<a href='/off'><button class=\"button red-button\">LED 1 Off</button></a> <br><br>");
+
+            client.print("<a href='/on2'><button class=\"button green-button\">LED 2 On</button></a> <br>");
+            client.print("<a href='/off2'><button class=\" button red-button\">LED 2 Off</button></a> <br><br> <img src='http://192.168.4.1/bg.jpg'>");
+            client.print("</div> </body>");
+            
             break;
           } else {    // if you got a newline, then clear currentLine:
             currentLine = "";
@@ -82,13 +96,32 @@ void loop() {
           currentLine += c;      // add it to the end of the currentLine
         }
 
+        if (currentLine.endsWith("GET /on")) {
+          Serial.println("\ninside on\n");
+          digitalWrite(4, HIGH);
+        }
+
+        else if (currentLine.endsWith("GET /off")) {
+          Serial.println("\ninside off\n");
+          digitalWrite(4, LOW);
+        }
+
+        else if (currentLine.endsWith("GET /on2")) {
+          digitalWrite(3, HIGH);
+        }
+        else if (currentLine.endsWith("GET /off2")) {
+          digitalWrite(3, LOW);
+        }
+
+        
+
         // Check to see if the client request was "GET /H" or "GET /L":
-        if (currentLine.endsWith("GET /H")) {
-          digitalWrite(LED_BUILTIN, HIGH);               // GET /H turns the LED on
-        }
-        if (currentLine.endsWith("GET /L")) {
-          digitalWrite(LED_BUILTIN, LOW);                // GET /L turns the LED off
-        }
+//        if (currentLine.endsWith("GET /H")) {
+//          digitalWrite(LED_BUILTIN, HIGH);               // GET /H turns the LED on
+//        }
+//        if (currentLine.endsWith("GET /L")) {
+//          digitalWrite(LED_BUILTIN, LOW);                // GET /L turns the LED off
+//        }
       }
     }
     // close the connection:
