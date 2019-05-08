@@ -2,13 +2,13 @@
 # FOLLOW UP: Implement a function popAt(int index) which performs a pop operation on a specific sub-stack
 
 class SetOfStacks:
-    def __init__(self, A=[[]], currentPos=0, limit=10):
+    def __init__(self, A=[[]], currentPos=0, limit=2):
         self.A = A
         self.currentPos = currentPos
         self.limit = limit
     
     def push(self, item):
-        if len(self.A[self.currentPos] > self.limit):
+        if len(self.A[self.currentPos]) > self.limit:
             self.A.append([item])
             self.currentPos += 1
         else:
@@ -16,3 +16,15 @@ class SetOfStacks:
     
     def show(self):
         return self.A
+
+obj = SetOfStacks()
+obj.push(3)
+obj.push(4)
+obj.push(7)
+obj.push(1)
+obj.push(2)
+obj.push(4)
+obj.push(6)
+obj.push(9)
+obj.push(0)
+obj.show()
