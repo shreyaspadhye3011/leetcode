@@ -13,6 +13,13 @@ class SetOfStacks:
             self.currentPos += 1
         else:
            self.A[self.currentPos].append(item)
+
+    def pop(self):
+        if len(self.A[self.currentPos]) == 1:
+            self.A[self.currentPos].pop()
+            self.currentPos -= 1
+        else:
+            self.A[self.currentPos].pop()
     
     def show(self):
         return self.A
