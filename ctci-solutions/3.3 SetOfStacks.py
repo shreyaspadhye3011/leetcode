@@ -15,12 +15,13 @@ class SetOfStacks:
            self.A[self.currentPos].append(item)
 
     def pop(self):
-        if self.currentPos == 0 and len(self.A[self.currentPos] == 0):
+        if self.currentPos == 0 and len(self.A[self.currentPos]) == 0:
             return "No items left in the SetOfStacks"
         if len(self.A[self.currentPos]) == 1:
             self.A[self.currentPos].pop()
-            del self.A[self.currentPos]
-            self.currentPos -= 1
+            if self.currentPos != 0:
+                del self.A[self.currentPos]
+                self.currentPos -= 1
         else:
             self.A[self.currentPos].pop()
     
@@ -37,6 +38,13 @@ obj.push(4)
 obj.push(6)
 obj.push(9)
 obj.push(0)
+obj.show()
+obj.pop()
+obj.pop()
+obj.pop()
+obj.pop()
+obj.pop()
+obj.pop()
 obj.show()
 obj.pop()
 obj.pop()
