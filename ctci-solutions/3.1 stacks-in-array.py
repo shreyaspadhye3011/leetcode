@@ -1,6 +1,7 @@
 # Problem: Implement 3 stacks in one array & keep min (3.1 + 3.2)
 # Solution: Create push, pop, length functions for all 3 stacks and this should solve our purpose
 import math
+# TODO: Add check condition on pop when there's nothing in stack to respond with a message
 class stackinarr:
     def __init__(self, A=[[], [], []]):
         self.A = A 
