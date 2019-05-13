@@ -7,6 +7,7 @@ class SetOfStacks:
         self.currentPos = currentPos
         self.limit = limit
     
+    #TODO: modify code to accept list of characters. Use extend() function to append lists
     def push(self, item):
         if len(self.A[self.currentPos]) > self.limit:
             self.A.append([item])
@@ -24,6 +25,9 @@ class SetOfStacks:
                 self.currentPos -= 1
         else:
             self.A[self.currentPos].pop()
+
+    def popAt(self, pos):
+        return
     
     def show(self):
         return self.A
@@ -38,25 +42,25 @@ obj.push(4)
 obj.push(6)
 obj.push(9)
 obj.push(0)
-obj.show()
-obj.pop()
-obj.pop()
-obj.pop()
-obj.pop()
-obj.pop()
-obj.pop()
-obj.show()
-obj.pop()
-obj.pop()
-obj.pop()
-obj.pop()
+# obj.show()
+# obj.pop()
+# obj.pop()
+# obj.pop()
+# obj.pop()
+# obj.pop()
+# obj.pop()
+# obj.show()
+# obj.pop()
+# obj.pop()
+# obj.pop()
+# obj.pop()
 obj.push(6)
 obj.push(9)
 obj.push(0)
 obj.push(2)
-obj.pop()
-obj.pop()
-obj.pop()
+# obj.pop()
+# obj.pop()
+# obj.pop()
 # obj.pop()
 # obj.pop()
 obj.show()
