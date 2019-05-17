@@ -10,7 +10,6 @@
   The webpage should open with all instances of the word "HTTP" in the content replaced with "WHAT-IS-THIS"
 
   Test links:
-  * 192.168.4.1/www.esqsoft.com/examples/troubleshooting-http-using-telnet.htm
   * http://192.168.4.1/http://esqsoft.com/examples/troubleshooting-http-using-telnet.htm
   * http://192.168.4.1/http://esqsoft.com/javascript/free-online-time-sheet.htm
 */
