@@ -17,28 +17,26 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
 #include <WiFiAP.h>
-#include <HTTPClient.h>
 #include <WebServer.h>
+#include <HTTPClient.h>
 
-const char* WIFIID = "AL";
-const char* WIFIPWD = "silverwinter"; 
 const char* ACCESS_PT_SSID = "shreyas";
+const char* WIFIID = "AL";    // add your wifi ssid
+const char* WIFIPWD = "silverwinter";   // add your wifi password
 
 WebServer server(80);
 
-void givePage() {
-  Serial.println("rrrrr");
+void renderWebContent() {
   HTTPClient http;
-  String str = server.uri();
-  str.remove(0,1);
-  Serial.println(str);
-  http.begin(str);
+  String url = server.uri();
+  url.remove(0,1);
+  Serial.println(url);
+
+  http.begin(url);
   int httpCode = http.GET();          
   String payload = http.getString();   
  
   Serial.println(httpCode);  
-  Serial.println(payload);   
-
   http.end();
   String content = payload;
   content.replace("HTTP","WHAT-IS-THIS");
@@ -64,7 +62,7 @@ void setup()
     }
     Serial.println("");
     Serial.println(WiFi.localIP());
-    server.onNotFound(givePage);
+    server.onNotFound(renderWebContent);
     server.begin();
 }
 void loop() {
