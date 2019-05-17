@@ -21,49 +21,45 @@
 #include <HTTPClient.h>
 
 const char* ACCESS_PT_SSID = "shreyas";
-const char* WIFIID = "AL";    // add your wifi ssid
-const char* WIFIPWD = "silverwinter";   // add your wifi password
+const char* WIFIID = "";    // add your wifi ssid
+const char* WIFIPWD = "";   // add your wifi password
 
 WebServer server(80);
 
 void renderWebContent() {
-  HTTPClient http;
+  // Get target URL & load it using HTTPClient
   String url = server.uri();
   url.remove(0,1);
-  Serial.println(url);
+  HTTPClient http;
+  http.begin(url);    
+  Serial.println("*****");  
+  Serial.println(http.GET());  
 
-  http.begin(url);
-  int httpCode = http.GET();          
-  String payload = http.getString();   
- 
-  Serial.println(httpCode);  
-  http.end();
-  String content = payload;
+  // Replace "HTTP" with "WHAT-IS-THIS"
+  String content = http.getString();
   content.replace("HTTP","WHAT-IS-THIS");
   server.send(200, "text/html", content);
+  http.end();
+}
+
+void setup() {
+  delay(10);
+  Serial.begin(115200);
+  WiFi.softAP(ACCESS_PT_SSID);
+  IPAddress accessPointIP = WiFi.softAPIP();
+  Serial.print("Access Point IP: ");
+  Serial.println(accessPointIP);
+
+  WiFi.begin(WIFIID, WIFIPWD);
+  Serial.print("Connecting");
+  while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.print(".");
   }
-
-void setup()
-{
-    delay(10);
-    Serial.begin(115200);
-    
-    Serial.println();
-    Serial.println(ACCESS_PT_SSID);
-    WiFi.softAP(ACCESS_PT_SSID);
-    IPAddress myIP = WiFi.softAPIP();
-    Serial.println(myIP);
-
-    WiFi.begin(WIFIID, WIFIPWD);
-
-    while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.print(".");
-    }
-    Serial.println("");
-    Serial.println(WiFi.localIP());
-    server.onNotFound(renderWebContent);
-    server.begin();
+  Serial.println("");
+  Serial.println("### Wifi Connected Successfully!");
+  server.onNotFound(renderWebContent);
+  server.begin();
 }
 void loop() {
   server.handleClient();
