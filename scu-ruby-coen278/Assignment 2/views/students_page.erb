@@ -1,0 +1,19 @@
+<h3>List of Students</h3>
+
+<a href='/students/new'>Create a Student Record</a>
+
+<% if @students.any? %>
+	<ul style="list-style-type:circle">
+		<% @students.each do |s| %>
+			<li>
+				<a href="/students/<%=s.id%>">
+					<%=s.scuid%>:
+					<%=s.firstname%>
+					<%=s.lastname%>
+				</a>
+			</li>
+		<%end%>
+	</ul>
+<%else %>
+	<p>No Students Record Present!!!</p>
+<% end %>

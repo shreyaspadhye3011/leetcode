@@ -1,0 +1,11 @@
+<h3>Please sign in <% if @failed %>
+<i>Login failed</i>
+<% end %></h3>
+<form action="/login" method='post'>
+  username:
+  <input type='text' name='username'></input><br>
+  password:
+  <input type='password' name='password'></input>
+  <br>
+  <input type='submit' name='submit'></input>
+</form>

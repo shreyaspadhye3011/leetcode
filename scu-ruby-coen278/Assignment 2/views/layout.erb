@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'>
+    <title>
+      <% @title || "Student Information System"%>
+      </title>
+      <link href="/styles.css" rel="stylesheet" type='text/css'>
+    </head>
+    <body>
+
+      <p style="color: #903;font: 32px/1 Helvetica, Arial, sans-serif;">
+        <img src="/students.jpg" align="middle" alt="Happy Students" width="250" height="200">
+        Student Information System
+      </p>
+      <%=erb :tabs%>
+      <%= yield %>
+    </body>
+  </html>

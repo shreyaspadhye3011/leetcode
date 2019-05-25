@@ -1,0 +1,96 @@
+html {
+  background-color: #ccc;
+}
+
+body {
+  width: 1000px;
+  height: 900px;
+  margin: 2em auto 2em;
+  background-color: #dddcd9;
+  position: relative;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
+#head1 {
+  font-size: 40px;
+  line-height: 80px;
+  background: transparent url(students.jpg) 0 0 no-repeat;
+  padding-left: 105px;
+}
+
+
+h1 {
+  color: #903;
+  font: 32px/1 Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  color: #444;
+  font: 32px/1 Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  color: #444;
+  font: 16px/1 Helvetica, Arial, sans-serif;
+}
+
+header h1 {
+  font-size: 40px;
+  line-height: 100px;
+  padding-left: 500px;
+}
+
+#menu-outer {
+  height: 90px;
+  background: black;
+}
+
+.table {
+  display: table;
+  /* Allow the centering to work */
+  margin: 0 auto;
+}
+
+ul#horizontal-list {
+  min-width: 800px;
+  list-style: none;
+  padding-top: 20px;
+}
+
+ul#horizontal-list li {
+  display: inline;
+}
+
+tabs {
+  @include tabs ($background: black, $color: #fff);
+  font-weight: bold;
+  color: white;
+}
+
+p {
+  font: 14px/1.4 Helvetica, Arial, sans-serif;
+}
+
+label {
+  display: block;
+}
+
+input {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input:focus {
+    background-color: lightblue;
+    width: 50%;
+}
+
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: red;
+}

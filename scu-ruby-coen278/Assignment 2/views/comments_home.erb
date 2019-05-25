@@ -1,0 +1,18 @@
+<h3>Comments Section</h3>
+
+<a href='/comments/new'>Post Comment</a>
+
+<% if @comments.any? %>
+	<ul style="list-style-type:circle">
+		<% @comments.each do |c| %>
+			<li>
+				<a href="/comments/<%=c.id%>"><%= c.comment_txt %>
+				</a>
+				&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+				<%= c.created_at %>
+			</li>
+		<%end%>
+	</ul>
+<%else %>
+	<p>Empty</p>
+<% end %>
