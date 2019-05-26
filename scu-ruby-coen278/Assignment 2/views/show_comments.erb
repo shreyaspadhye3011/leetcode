@@ -5,9 +5,9 @@
 <p>Created at:
 	<%=@comment.created_at%></p>
 
-<a href="/comments">Back to All Comments</a>
-
 <form action="/comments/<%=@comment.id%>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	<input type="submit" value="Delete This Comment">
 </form>
+</br>
+<a href="/comments">Back to All Comments</a>

@@ -3,7 +3,7 @@ Name: Shreyas Padhye
 Enrollment Number: 00001556287
 
 # Description
-This is a sample Student information system which contains student information and comments. Anybody can view the data but to add, edit and delete data, you need to login.
+This is a sample Student information system which contains student information and comments. Anybody can view the data but to add, edit and delete data, you need to login. Once you are logged in, you are redirected to the student listing with a flash message
 
 # Production
 Deployed at: https://scu-student-db.herokuapp.com/
@@ -23,9 +23,10 @@ password: test
 - Change data & test
 - Improve create student & comment validation -- add flash
 - Deploy & test  
-- Add comments
-- Change naming conventions  
-- Add project description or remove  
+- Add comments in code
+- Change naming conventions 
+- Add back button also in singular listing 
+- Improve project description  
 - Improve listing styling  
 - Resolve error at http://localhost:4567/comments/a
 
