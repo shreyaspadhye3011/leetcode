@@ -11,7 +11,7 @@ password: pass
 This is a sample Student information system which contains student information and comments. Anybody can view the data but to add, edit and delete data, you need to login. Once you are logged in, you are redirected to the student listing with a flash message
 
 # Production
-Deployed at: https://scu-student-db.herokuapp.com/
+Deployed at: https://scuruby2.herokuapp.com/
 
 # Dev
 To setup on local, run following commands:
