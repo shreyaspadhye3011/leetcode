@@ -23,7 +23,6 @@ To setup on local, run following commands:
 - Deploy & test  
 
 - Add comments in code
-- Change naming conventions 
 - Add back button in singular listing also  
 - Improve project description  
 - Improve listing styling  
