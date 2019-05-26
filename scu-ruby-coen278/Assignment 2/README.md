@@ -19,10 +19,12 @@ password: test
 
 ### Todo:
 - Read project description. see if something missing  
-- Add YouTube video
-- List View should not be visible when not logged in  
+- 
+- List View should not be visible when not logged in?  
 - Change data & test
 - Deploy & test  
+- Improve incorrect credentials case -- add alert
+- Change naming conventions  
 - Improve listing styling  
 - Add project description or remove
 
