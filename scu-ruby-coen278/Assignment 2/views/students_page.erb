@@ -4,7 +4,7 @@
 
 <h3>List of Students</h3>
 
-<a href='/students/new'>Create a Student Record</a>
+<a href='/students/new'>Create a new student</a>
 
 <% if @students.any? %>
 	<ul style="list-style-type:circle">
@@ -16,8 +16,9 @@
 					<%=s.lastname%>
 				</a>
 			</li>
+			</br>
 		<%end%>
 	</ul>
 <%else %>
-	<p>No Students Record Present!!!</p>
+	<p>No Student Records Found</p>
 <% end %>

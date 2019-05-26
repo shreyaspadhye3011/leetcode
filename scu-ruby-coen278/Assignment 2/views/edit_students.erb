@@ -1,6 +1,10 @@
 <h3>Edit:
 	<%=@student.firstname%>
-	<%=@student.lastname%></h3>
+	<%=@student.lastname%>
+</h3>
+<% if flash[:notice] %>
+<p style="color:red"><i>Please fill all details or it will be defaulted to existing values</i></p>
+<% end %>
 <form action="/students/<%=@student.id%>" method="POST">
 	<input type="hidden" name="_method" value="PUT">
 	<%=erb :students_form%>

@@ -56,7 +56,6 @@ post '/students' do
   if !validate_data
     flash[:notice] = "Please fill all details"
     redirect to('/students/new')
-    # halt(401, 'Incomplete Fields, Please go back and fill all the fields')
   end
   @student.save
   redirect to('/students')
@@ -71,8 +70,8 @@ put '/students/:id' do
   @student.birthday = params[:birthday]
   @student.scuid = params[:scuid]
   if !validate_data
-    # redirect to("/students/#{@student.id}")
-    halt(401, 'Incomplete Fields, Please go back and fill all the fields')
+    flash[:notice] = "Please fill all details"
+    redirect to("/students/#{@student.id}/edit")
   end
   @student.save
   redirect to("/students/#{@student.id}")

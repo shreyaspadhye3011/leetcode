@@ -1,4 +1,4 @@
-<h3>Comments Section</h3>
+<h3>List of Comments</h3>
 
 <a href='/comments/new'>Post Comment</a>
 
@@ -7,12 +7,12 @@
 		<% @comments.each do |c| %>
 			<li>
 				<a href="/comments/<%=c.id%>"><%= c.comment_txt %>
-				</a>
-				&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-				<%= c.created_at %>
+				</a>  </br>
+				Dated: <%= c.created_at %>
 			</li>
+			</br>
 		<%end%>
 	</ul>
 <%else %>
-	<p>Empty</p>
+	<p>No Comments Found</p>
 <% end %>

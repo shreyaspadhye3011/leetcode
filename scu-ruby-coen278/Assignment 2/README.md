@@ -20,7 +20,6 @@ To setup on local, run following commands:
 `ruby main.rb`  
 
 ### Todo:
-- Improve create student & comment validation -- add flash
 - Deploy & test  
 
 - Add comments in code
