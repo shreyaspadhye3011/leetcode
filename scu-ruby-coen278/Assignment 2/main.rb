@@ -17,8 +17,8 @@ end
 configure do
   enable :sessions
   set :session_secrete, 'love'
-  set :username, 'test'
-  set :password, 'test'
+  set :username, 'admin'
+  set :password, 'pass'
 end
 
 get '/login' do

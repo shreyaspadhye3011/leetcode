@@ -1,6 +1,5 @@
 require 'dm-core'
 require 'dm-migrations'
-# require 'sass'
 require './main'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/main.db")
@@ -17,8 +16,6 @@ end
 
 DataMapper.finalize
 DataMapper.auto_upgrade!
-# DB Reset
-# DataMapper.auto_migrate!
 
 # All routes
 get '/students' do
@@ -57,7 +54,9 @@ post '/students' do
   @student.birthday = params[:birthday]
   @student.scuid = params[:scuid]
   if !validate_data
-    halt(401, 'Incomplete Fields, Please go back and fill all the fields')
+    flash[:notice] = "Please fill all details"
+    redirect to('/students/new')
+    # halt(401, 'Incomplete Fields, Please go back and fill all the fields')
   end
   @student.save
   redirect to('/students')
@@ -72,6 +71,7 @@ put '/students/:id' do
   @student.birthday = params[:birthday]
   @student.scuid = params[:scuid]
   if !validate_data
+    # redirect to("/students/#{@student.id}")
     halt(401, 'Incomplete Fields, Please go back and fill all the fields')
   end
   @student.save

@@ -1,4 +1,7 @@
 <h3>Add record</h3>
+<% if flash[:notice] %>
+<p style="color:red"><i>Please fill all details</i></p>
+<% end %>
 <form action="/students" method="POST">
 	<%=erb :students_form%>
 </form>
