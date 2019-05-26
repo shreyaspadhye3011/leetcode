@@ -29,6 +29,7 @@ end
 post '/login' do
   if params[:username] == settings.username && params[:password] == settings.password
     session[:admin] = true
+    flash[:notice] = "Successfully Logged in"
     redirect '/students'
   else
     flash[:notice] = "Login attempt failed. Check credentials"

@@ -3,6 +3,7 @@ Name: Shreyas Padhye
 Enrollment Number: 00001556287
 
 # Description
+This is a sample Student information system which contains student information and comments. Anybody can view the data but to add, edit and delete data, you need to login.
 
 # Production
 Deployed at: https://scu-student-db.herokuapp.com/
@@ -18,12 +19,11 @@ username: test
 password: test
 
 ### Todo:
-- Read project description. see if something missing  
-- List View should not be visible when not logged in?  
+- Student List View should not be visible when not logged in?  
 - Change data & test
-- Improve incorrect credentials case -- add alert
-- Improve create student & comment validation -- add alert?
+- Improve create student & comment validation -- add flash
 - Deploy & test  
+- Add comments
 - Change naming conventions  
 - Add project description or remove  
 - Improve listing styling  
