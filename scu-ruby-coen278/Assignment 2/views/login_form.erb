@@ -1,6 +1,7 @@
-<h3>Please log in <% if @failed %>
-<i>Login failed</i>
-<% end %></h3>
+<h3>Log in to proceed</h3>
+<% if flash[:notice] %>
+<p style="color:red"><i>Login attempt failed. Check credentials</i></p>
+<% end %>
 <form action="/login" method='post'>
   username:
   <input type='text' name='username'></input><br>

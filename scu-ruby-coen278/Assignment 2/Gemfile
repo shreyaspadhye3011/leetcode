@@ -20,6 +20,7 @@ gem "dm-migrations"
 
 gem "thin"
 
+gem "sinatra-flash"
 
 group :production do
 	gem "pg"

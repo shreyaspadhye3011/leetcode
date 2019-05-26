@@ -1,8 +1,10 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sinatra/flash'
 require './comments'
 require './students'
-# require 'sass'
+
+enable :sessions
 
 configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/main.db") # connecting to db
@@ -27,11 +29,10 @@ end
 post '/login' do
   if params[:username] == settings.username && params[:password] == settings.password
     session[:admin] = true
-    erb :logged
+    redirect '/students'
   else
-    halt(401, 'Incorrect ID/PWD')
-    #@failed = true
-    #redirect to('/login')
+    flash[:notice] = "Login attempt failed. Check credentials"
+    redirect '/login'
   end
 end
 

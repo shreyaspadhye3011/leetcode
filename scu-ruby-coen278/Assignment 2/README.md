@@ -19,12 +19,13 @@ password: test
 
 ### Todo:
 - Read project description. see if something missing  
-- 
 - List View should not be visible when not logged in?  
 - Change data & test
-- Deploy & test  
 - Improve incorrect credentials case -- add alert
+- Improve create student & comment validation -- add alert?
+- Deploy & test  
 - Change naming conventions  
+- Add project description or remove  
 - Improve listing styling  
-- Add project description or remove
+- Resolve error at http://localhost:4567/comments/a
 
