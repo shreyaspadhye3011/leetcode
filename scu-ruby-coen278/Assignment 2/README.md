@@ -8,10 +8,10 @@ username: admin
 password: pass
 
 # Description
-This is a sample Student information system which contains student information and comments. Anybody can view the data but to add, edit and delete data, you need to login. Once you are logged in, you are redirected to the student listing with a flash message
+This is a sample Student information system which contains student information and comments. Anybody can view the data but to add, edit and delete data, you need to login.
 
 # Production
-Deployed at: https://scuruby2.herokuapp.com/
+Deployed at: https://scu-student-db.herokuapp.com/
 
 # Dev
 To setup on local, run following commands:
@@ -20,11 +20,6 @@ To setup on local, run following commands:
 `ruby main.rb`  
 
 ### Todo:
-- Deploy & test  
-
-- Add comments in code
 - Add back button in singular listing also  
-- Improve project description  
-- Improve listing styling  
-- Resolve error at http://localhost:4567/comments/a
+- Improve listing styling
 

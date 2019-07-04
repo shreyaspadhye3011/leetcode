@@ -1,6 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
-require 'sinatra/flash'
+# require 'sinatra/flash'
 require './comments'
 require './students'
 
@@ -29,11 +28,12 @@ end
 post '/login' do
   if params[:username] == settings.username && params[:password] == settings.password
     session[:admin] = true
-    flash[:notice] = "Successfully Logged in"
-    redirect '/students'
+    # flash[:notice] = "Successfully Logged in"
+    # redirect '/students'
   else
-    flash[:notice] = "Login attempt failed. Check credentials"
-    redirect '/login'
+    halt(401, 'Incorrect ID/PWD')
+    # flash[:notice] = "Login attempt failed. Check credentials"
+    # redirect '/login'
   end
 end
 

@@ -2,17 +2,17 @@ source 'https://rubygems.org'
 
 gem "sinatra"
 
-gem "sinatra-contrib"
+# gem "sinatra-contrib"
 
-gem "sinatra-erb"
+# gem "sinatra-erb"
 
 gem "sass"
 
-gem "mail"
+# gem "mail"
 
-gem "dm-timestamps"
+# gem "dm-timestamps"
 
-gem "dm-validations"
+# gem "dm-validations"
 
 gem "dm-core"
 
@@ -20,7 +20,7 @@ gem "dm-migrations"
 
 gem "thin"
 
-gem "sinatra-flash"
+# gem "sinatra-flash"
 
 group :production do
 	gem "pg"

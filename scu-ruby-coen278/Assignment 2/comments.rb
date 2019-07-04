@@ -1,7 +1,7 @@
 require 'dm-core'
 require 'dm-migrations'
 # require 'sass'
-require 'dm-timestamps'
+# require 'dm-timestamps'
 require './main'
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/main.db")

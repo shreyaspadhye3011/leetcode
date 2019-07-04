@@ -54,8 +54,9 @@ post '/students' do
   @student.birthday = params[:birthday]
   @student.scuid = params[:scuid]
   if !validate_data
-    flash[:notice] = "Please fill all details"
-    redirect to('/students/new')
+    halt(401, 'Please fill all details')
+    # flash[:notice] = "Please fill all details"
+    # redirect to('/students/new')
   end
   @student.save
   redirect to('/students')
@@ -70,8 +71,9 @@ put '/students/:id' do
   @student.birthday = params[:birthday]
   @student.scuid = params[:scuid]
   if !validate_data
-    flash[:notice] = "Please fill all details"
-    redirect to("/students/#{@student.id}/edit")
+    halt(401, 'Please fill all details')
+    # flash[:notice] = "Please fill all details"
+    # redirect to("/students/#{@student.id}/edit")
   end
   @student.save
   redirect to("/students/#{@student.id}")
