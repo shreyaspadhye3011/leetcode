@@ -23,13 +23,6 @@ class Node:
         if dep > Node.max_dep:
             Node.max_dep = dep
         
-#         # when reached a leaf node, stop recursing
-#         if self.left == None and self.right == None:
-#             print "Call ended at " + str(self.data) + " with max_dep: " + str(Node.max_dep)
-#             return "Hello"
-#         else:
-#             return "hi"
-        
         if self.left != None:
             # if data matches, increase dep or restart count from 0
             if self.left.data == self.data:
