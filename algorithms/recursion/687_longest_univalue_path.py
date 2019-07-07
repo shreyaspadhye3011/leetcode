@@ -60,10 +60,16 @@ class Solution:
 # root.right.right = Node(5)
 
 #Example 3: Output: 2
+# root = Node(1)
+# root.left = Node(4)
+# root.right = Node(1)
+# root.left.left = Node(4)
+# root.right.left = Node(1)
+# root.right.right = Node(1)
+
+#Example 4: Output: 2
 root = Node(1)
-root.left = Node(4)
 root.right = Node(1)
-root.left.left = Node(4)
 root.right.left = Node(1)
 root.right.right = Node(1)
 
