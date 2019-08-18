@@ -25,10 +25,10 @@ class Solution:
 
         if node.data >= low and node.data < high:
             self.sum += node.data
-            print("##########")
-            print(node.data)
-            print(self.sum)
-            print("##########")
+#             print("##########")
+#             print(node.data)
+#             print(self.sum)
+#             print("##########")
             self.rangeSumBST(low, high, node.left)
             self.rangeSumBST(low, high, node.right)
         elif node.data <= low:
@@ -50,9 +50,12 @@ root.left.left.right = Node(32)
 root.right.right.left = Node(58)
 root.right.right.left.right = Node(66)
 # root.PrintTree()
+
 obj = Solution()
 # print(obj.rangeSumBST(40, 70, root))  # output: 322
-print(obj.rangeSumBST(1, 70, root))  # output: 440
+# print(obj.rangeSumBST(1, 70, root))  # output: 440
+# print(obj.rangeSumBST(32, 43, root))  # output: 153
+print(obj.rangeSumBST(0, 9, root))  # output: 153
 
 
 #Example 2: 
