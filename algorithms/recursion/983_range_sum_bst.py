@@ -1,17 +1,18 @@
 # Reference: https://leetcode.com/problems/range-sum-of-bst/
 # Approach: Recursively visit every node and calculate sum. Use BST features to skip lower nodes of out of bounds nodes
+# Status: Accepted. Percentile: 54.21%
 
 class Node:
-    def __init__(self, data=None):
+    def __init__(self, val=None):
         self.left = None
         self.right = None
-        self.data = data
+        self.val = val
 
     # Print the tree
     def PrintTree(self):
         if self.left:
             self.left.PrintTree()
-        print(self.data),
+        print(self.val),
         if self.right:
             self.right.PrintTree()
 
@@ -23,15 +24,11 @@ class Solution:
         if node == None:
             return
 
-        if node.data >= low and node.data <= high:
-            self.sum += node.data
-#             print("##########")
-#             print(node.data)
-#             print(self.sum)
-#             print("##########")
+        if node.val >= low and node.val <= high:
+            self.sum += node.val
             self.rangeSumBST(low, high, node.left)
             self.rangeSumBST(low, high, node.right)
-        elif node.data <= low:
+        elif node.val <= low:
             self.rangeSumBST(low, high, node.right)
         else:
             self.rangeSumBST(low, high, node.left)
@@ -85,3 +82,21 @@ root = Node(1)
 root.right = Node(12)
 obj = Solution()
 print(obj.rangeSumBST(1, 12, root))  # output: 13
+
+
+#### Actual Submission (for Leetcode call):
+# class Solution(object):
+#     def __init__(self):
+#         self.sum = 0
+#     def rangeSumBST(self, node, low, high):
+#         if node == None:
+#             return
+#         if node.val >= low and node.val <= high:
+#             self.sum += node.val
+#             self.rangeSumBST(node.left, low, high)
+#             self.rangeSumBST(node.right, low, high)
+#         elif node.val <= low:
+#             self.rangeSumBST(node.right, low, high)
+#         else:
+#             self.rangeSumBST(node.left, low, high)
+#         return self.sum
