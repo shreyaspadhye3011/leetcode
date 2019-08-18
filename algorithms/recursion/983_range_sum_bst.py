@@ -50,9 +50,9 @@ root.left.left.right = Node(32)
 root.right.right.left = Node(58)
 root.right.right.left.right = Node(66)
 # root.PrintTree()
-
 obj = Solution()
-print(obj.rangeSumBST(40, 70, root))  # output: 322
+# print(obj.rangeSumBST(40, 70, root))  # output: 322
+print(obj.rangeSumBST(1, 70, root))  # output: 440
 
 
 #Example 2: 
