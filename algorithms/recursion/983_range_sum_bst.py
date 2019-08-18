@@ -23,7 +23,7 @@ class Solution:
         if node == None:
             return
 
-        if node.data >= low and node.data < high:
+        if node.data >= low and node.data <= high:
             self.sum += node.data
 #             print("##########")
 #             print(node.data)
@@ -39,32 +39,34 @@ class Solution:
     
 
 #Example 1: 
-root = Node(41)
-root.left = Node(38)
-root.right = Node(55)
-root.left.left = Node(30)
-root.right.left = Node(42)
-root.right.right = Node(60)
-root.left.left.left = Node(18)
-root.left.left.right = Node(32)
-root.right.right.left = Node(58)
-root.right.right.left.right = Node(66)
-# root.PrintTree()
+# root = Node(41)
+# root.left = Node(38)
+# root.right = Node(55)
+# root.left.left = Node(30)
+# root.right.left = Node(42)
+# root.right.right = Node(60)
+# root.left.left.left = Node(18)
+# root.left.left.right = Node(32)
+# root.right.right.left = Node(58)
+# root.right.right.left.right = Node(66)
+# # root.PrintTree()
 
-obj = Solution()
+# obj = Solution()
 # print(obj.rangeSumBST(40, 70, root))  # output: 322
 # print(obj.rangeSumBST(1, 70, root))  # output: 440
 # print(obj.rangeSumBST(32, 43, root))  # output: 153
-print(obj.rangeSumBST(0, 9, root))  # output: 153
+# print(obj.rangeSumBST(0, 0, root))  # output: 153
 
 
 #Example 2: 
-# root = Node(1)
-# root.left = Node(4)
-# root.right = Node(5)
-# root.left.left = Node(4)
-# root.left.right = Node(4)
-# root.right.right = Node(5)
+root = Node(10)
+root.left = Node(5)
+root.right = Node(15)
+root.left.left = Node(3)
+root.left.right = Node(7)
+root.right.right = Node(18)
+obj = Solution()
+print(obj.rangeSumBST(7, 15, root))  # output: 32
 
 #Example 3:
 # root = Node(1)
