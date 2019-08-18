@@ -50,7 +50,6 @@ class Solution:
 # root.right.right.left = Node(58)
 # root.right.right.left.right = Node(66)
 # # root.PrintTree()
-
 # obj = Solution()
 # print(obj.rangeSumBST(40, 70, root))  # output: 322
 # print(obj.rangeSumBST(1, 70, root))  # output: 440
@@ -59,25 +58,30 @@ class Solution:
 
 
 #Example 2: 
-root = Node(10)
-root.left = Node(5)
-root.right = Node(15)
-root.left.left = Node(3)
-root.left.right = Node(7)
-root.right.right = Node(18)
-obj = Solution()
-print(obj.rangeSumBST(7, 15, root))  # output: 32
+# root = Node(10)
+# root.left = Node(5)
+# root.right = Node(15)
+# root.left.left = Node(3)
+# root.left.right = Node(7)
+# root.right.right = Node(18)
+# obj = Solution()
+# print(obj.rangeSumBST(7, 15, root))  # output: 32
 
-#Example 3:
-# root = Node(1)
-# root.left = Node(4)
-# root.right = Node(1)
-# root.left.left = Node(4)
-# root.right.left = Node(1)
-# root.right.right = Node(1)
+#Example 3: 
+# root = Node(10)
+# root.left = Node(5)
+# root.right = Node(15)
+# root.left.left = Node(3)
+# root.left.right = Node(7)
+# root.right.left = Node(13)
+# root.right.right = Node(18)
+# root.left.left.left = Node(1)
+# root.left.right.left = Node(6)
+# obj = Solution()
+# print(obj.rangeSumBST(6, 10, root))  # output: 23
 
 #Example 4: 
-# root = Node(1)
-# root.right = Node(1)
-# root.right.left = Node(1)
-# root.right.right = Node(1)
+root = Node(1)
+root.right = Node(12)
+obj = Solution()
+print(obj.rangeSumBST(1, 12, root))  # output: 13
