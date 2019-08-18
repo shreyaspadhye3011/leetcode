@@ -17,11 +17,24 @@ class Node:
 
 
 class Solution:
+    def __init__(self):
+        self.sum = 0
     def rangeSumBST(self, low, high, node):
         if node == None:
             return
-        if node <= low:
-            rangeSumBST(node.right)
+
+        if node.data >= low and node.data < high:
+            self.sum += node.data
+            print("##########")
+            print(node.data)
+            print(self.sum)
+            print("##########")
+            self.rangeSumBST(low, high, node.left)
+            self.rangeSumBST(low, high, node.right)
+        elif node.data <= low:
+            self.rangeSumBST(low, high, node.right)
+        else:
+            self.rangeSumBST(low, high, node.left)
         return self.sum
     
 
@@ -36,11 +49,10 @@ root.left.left.left = Node(18)
 root.left.left.right = Node(32)
 root.right.right.left = Node(58)
 root.right.right.left.right = Node(66)
-
-
 # root.PrintTree()
-# obj = Solution()
-# print(obj.rangeSumBST(40, 70, root))  # output: 
+
+obj = Solution()
+print(obj.rangeSumBST(40, 70, root))  # output: 322
 
 
 #Example 2: 
