@@ -5,30 +5,17 @@
 # 3. **Special: When n = 3, 7, 15, 31... => there will be a problem of duplicate counting of full binary trees  if we accept all children (draw and check). Handle that case.
 
 import math
-class Node:
-    def __init__(self, data):
-        self.left = None
-        self.right = None
-        self.data = data
-
-    # Print the tree
-    def PrintTree(self):
-        if self.left:
-            self.left.PrintTree()
-        print( self.data),
-        if self.right:
-            self.right.PrintTree()
 
 class Solution():
     def allPossibleFBT(self, n):
         """
-        :type N: int
+        :type n: int
         :rtype: List[TreeNode]
         """
         # 'n' has no solution when it is even
-        if n % 2 == 0:
-            return None
-        if n == 1:
+        if n < 1 or n % 2 == 0:
+            return 0
+        if n == 1 or n == 3:
             return 1
         # TODO: Put this list check in a separate function or logic
         if n not in [3, 7, 15, 31, 63]:
@@ -42,9 +29,14 @@ class Solution():
     
     # formula created out of observation
     def calculateDuplicate(self, n):
-        return pow(2, int(math.log(n,2)) - 1)
+#         print(pow(2, int(math.log(n,2)) - 1))
+        return pow(2, int(math.log(n,2)) - 1) - 1
 
 obj = Solution()
-obj.allPossibleFBT(3)   # output: 1
+# obj.allPossibleFBT(3)   # output: 1
+# obj.allPossibleFBT(5)   # output: 2
+# obj.allPossibleFBT(7)   # output: 5
+# obj.allPossibleFBT(9)   # output: 20
+obj.allPossibleFBT(11)   # output: 100
 
 
