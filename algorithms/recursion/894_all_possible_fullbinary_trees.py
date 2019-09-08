@@ -7,6 +7,8 @@
 import math
 
 class Solution():
+    # initializing iterator as 2
+    self.leafCount = 2
     def allPossibleFBT(self, n):
         """
         :type n: int
