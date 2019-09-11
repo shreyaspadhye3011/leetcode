@@ -1,4 +1,7 @@
-# Reference: https://www.tutorialspoint.com/python/python_binary_tree.htm
+# Reference: 
+# https://www.tutorialspoint.com/python/python_binary_tree.htm
+# https://www.youtube.com/watch?v=zaBhtODEL0w
+
 class Node:
     def __init__(self, data):
         self.left = None
