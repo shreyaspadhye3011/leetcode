@@ -26,9 +26,26 @@ class Node:
     def PrintTree(self):
         if self.left:
             self.left.PrintTree()
-        print( self.data),
+        print(self.data)
         if self.right:
             self.right.PrintTree()
+    
+    def breadthFirstSearch(self):
+        access = [self]
+        while(len(access) > 0):
+            node = access.pop(0)
+            # change to search logic if required
+            print(node.data)
+            childList = node.getChildren()
+            for child in childList:
+                # uncomment if you do not need None in the retrieval
+                if child != None:
+                    access.append(child)
+        return
+    
+    def getChildren(self):
+        # update to facilitate for graphs. Currently made for trees. For graphs, it will be done through adjacency list
+        return [self.left, self.right]
 
 # Use the insert method to add nodes
 # root = Node(12)
@@ -43,4 +60,5 @@ root.left.left = Node(4)
 root.left.right = Node(4)
 root.right.right = Node(5)
 
-root.PrintTree()
+# root.PrintTree()
+root.breadthFirstSearch()
