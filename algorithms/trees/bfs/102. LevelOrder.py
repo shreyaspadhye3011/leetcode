@@ -36,22 +36,29 @@ class Node:
         if self.right:
             self.right.PrintTree()
     
-    def breadthFirstSearch(self):
-        access = [self]
-        while(len(access) > 0):
-            node = access.pop(0)
-            # change to search logic if required
-            print(node.data)
-            childList = node.getChildren()
-            for child in childList:
-                # comment if you need None in the retrieval
-                if child != None:
-                    access.append(child)
-        return
-    
     def getChildren(self):
         # update to facilitate for graphs. Currently made for trees. For graphs, it will be done through adjacency list
-        return [self.left, self.right]
+        if self.left and self.right:
+            return [self.left, self.right]
+        elif self.left:
+            return [self.left]
+        elif self.right:
+            return [self.right]
+        else:
+            return None
+
+
+class Solution():
+    def levelOrder(self, root):
+        access = [root]
+        result = []
+        while(len(access) > 0):
+            node = access.pop(0)
+            childList = node.getChildren()
+            if childList:
+                result.append(childList)
+            for child in childList:
+                access.append(child)
 
 # Use the insert method to add nodes
 # root = Node(12)
@@ -65,6 +72,8 @@ root.right = Node(5)
 root.left.left = Node(4)
 root.left.right = Node(4)
 root.right.right = Node(5)
-
 # root.PrintTree()
-root.breadthFirstSearch()
+# root.breadthFirstSearch()
+
+obj = Solution()
+obj.levelOrder(root)
