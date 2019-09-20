@@ -1,7 +1,7 @@
-# Problem: https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
-# Approach: BFS modified to store every node's children, depth by depth. Add logic to keep track of depth of retrieved parent by keeping a dictionary and update depth by 1 while making subsequent calls
+# Problem: https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+# Approach: Modify BFS to a depth based retrieval using dictionary: (either the final result can be depth based dictionary or access can be turned into a dictionary) + add mode parameter to keep track of order for zigzag
+# TODO: Add zigzag & depth specific retrieval logic
 
-#TODO: Add logic to keep track of depth of retrieved parent by keeping a dictionary and update depth by 1 while making subsequent calls
 class Node:
     def __init__(self, data):
         self.left = None
@@ -16,10 +16,13 @@ class Node:
         if self.right:
             self.right.PrintTree()
     
-    def getChildren(self):
+    def getChildren(self, mode):
         # update to facilitate for graphs. Currently made for trees. For graphs, it will be done through adjacency list
         if self.left and self.right:
-            return [self.left, self.right]
+            if mode == "left":
+                return [self.left, self.right]
+            else:
+                return [self.right, self.left]
         elif self.left:
             return [self.left]
         elif self.right:
@@ -29,12 +32,13 @@ class Node:
 
 
 class Solution():
-    def levelOrder(self, root):
+    def zigZagOrder(self, root):
         access = [root]
         result = []
         while(len(access) > 0):
             node = access.pop(0)
-            childList = node.getChildren()
+            #TODO: update mode to be dynamic in call
+            childList = node.getChildren("left")
             if childList:
                 result.append(childList)
             for child in childList:
@@ -57,4 +61,4 @@ root.right.right = Node(5)
 # root.breadthFirstSearch()
 
 obj = Solution()
-obj.levelOrder(root)
+obj.zigZagOrder(root)
