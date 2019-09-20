@@ -27,18 +27,31 @@ class Node:
         else:
             return None
 
-
 class Solution():
     def levelOrder(self, root):
         access = [root]
-        result = []
+        result = [[root.data]]
+        depth_dict = {}
+        depth_dict[root] = 0
+        # print(root)
         while(len(access) > 0):
             node = access.pop(0)
+            # print("*****")
+            # print(node)
+            depth = depth_dict[node] + 1
             childList = node.getChildren()
+            # if childList:
+            #     result.append(childList)
             if childList:
-                result.append(childList)
-            for child in childList:
-                access.append(child)
+                for child in childList:
+                    access.append(child)
+                    depth_dict[child] = depth
+                    # append to result array when first entry of depth level
+                    if depth == len(result):
+                        result.append([child.data])
+                    # append at depth when entry already exists
+                    else:
+                        result[depth].append(child.data)
         return result
 
 # Use the insert method to add nodes
