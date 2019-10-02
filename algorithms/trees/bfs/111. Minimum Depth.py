@@ -1,3 +1,5 @@
+# Reference: https://leetcode.com/problems/minimum-depth-of-binary-tree/
+
 # Problem: https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
 # Approach: Modify BFS to a depth based retrieval using dictionary: (either the final result can be depth based dictionary or access can be turned into a dictionary) + add mode parameter to keep track of order for zigzag
 # TODO: Add zigzag & depth specific retrieval logic
@@ -64,29 +66,6 @@ class Solution():
 # root.insert(6)
 # root.insert(14)
 # root.insert(3)
-
-# Example 1
-root = Node(1)
-# depth: 1
-root.left = Node(4)
-root.right = Node(5)
-# depth: 2
-root.left.left = Node(4)
-root.left.right = Node(4)
-root.right.right = Node(5)
-# depth: 3
-root.left.left.left = Node(7)
-root.left.left.right = Node(8)
-root.left.right.right = Node(9)
-root.right.right.left = Node(10)
-# depth: 4
-root.left.left.left.left = Node(11)
-root.left.left.left.right = Node(12)
-root.left.left.right.right = Node(13)
-root.right.right.left.left = Node(14)
-root.right.right.left.right = Node(15)
-# root.PrintTree()
-# Output: [[1], [4, 5], [5, 4, 4], [7, 8, 9, 10], [15, 14, 13, 12, 11]]
 
 # Example 2:
 root = Node(1)

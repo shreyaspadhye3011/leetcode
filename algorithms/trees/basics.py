@@ -3,6 +3,7 @@
 # https://www.youtube.com/watch?v=zaBhtODEL0w
 
 #TODO: Create a method that accepts a list and creates a tree using a complete binary tree input assumtion on the list
+#Hint: when question realted to BST, you can directly call insert for every element and your tree will be ready
 #Hint: use the parent index & child index relation
 
 class Node:
