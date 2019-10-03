@@ -23,6 +23,7 @@ class Solution():
         elif root.right:
             return 1 + self.minDepth(root.right)
         else:
+            # when it has no children. Leaf case
             return 0
 
 # Use the insert method to add nodes
@@ -31,13 +32,36 @@ class Solution():
 # root.insert(14)
 # root.insert(3)
 
+# # Example 1:
+# root = Node(1)
+# # depth: 1
+# root.left = Node(4)
+# # depth: 2
+# root.left.left = Node(5)
+# root.left.right = Node(6)
+# Outupt: 2
+
 # Example 2:
 root = Node(1)
 # depth: 1
 root.left = Node(4)
+root.right = Node(5)
 # depth: 2
-root.left.left = Node(5)
-root.left.right = Node(6)
+root.left.left = Node(4)
+root.left.right = Node(4)
+root.right.right = Node(5)
+# depth: 3
+root.left.left.left = Node(7)
+root.left.left.right = Node(8)
+root.left.right.right = Node(9)
+root.right.right.left = Node(10)
+# depth: 4
+root.left.left.left.left = Node(11)
+root.left.left.left.right = Node(12)
+root.left.left.right.right = Node(13)
+root.right.right.left.left = Node(14)
+root.right.right.left.right = Node(15)
+# Output: 3
 
 obj = Solution()
 obj.minDepth(root)
