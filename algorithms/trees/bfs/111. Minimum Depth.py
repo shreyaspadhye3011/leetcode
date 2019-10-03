@@ -1,5 +1,5 @@
 # Problem: https://leetcode.com/problems/minimum-depth-of-binary-tree/
-# Approach: on None, return. Keep track of min_depth all throughout. Once processed, min_depth will have answer
+# Approach: on Leaf, return. As you go lower down in recursive call, keep adding depth
 class Node:
     def __init__(self, data):
         self.left = None
