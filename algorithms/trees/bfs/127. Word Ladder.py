@@ -6,4 +6,5 @@
 
 ############
 
-# Approach 2: 
+# Approach 2: Create a dictionary that stores all possible one letter variations from the wordlist given. Do a BFS like algo. For every word from the access list, get all words from it's "one word varitaion" dictionary key and put them in access list. Return count when endWord is found in access list
+
