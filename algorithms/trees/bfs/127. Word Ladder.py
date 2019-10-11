@@ -8,3 +8,17 @@
 
 # Approach 2: Create a dictionary that stores all possible one letter variations from the wordlist given. Do a BFS like algo. For every word from the access list, get all words from it's "one word varitaion" dictionary key and put them in access list. Return count when endWord is found in access list
 
+class Solution(object):
+    def ladderLength(self, beginWord, endWord, wordList):
+        """
+        :type beginWord: str
+        :type endWord: str
+        :type wordList: List[str]
+        :rtype: int
+        """
+        access = [beginWord]
+        count = 0
+        while len(access) != 0:
+            node = access.pop()
+            if node == endWord:
+                return count
