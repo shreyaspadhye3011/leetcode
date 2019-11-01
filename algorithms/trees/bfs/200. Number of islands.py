@@ -22,30 +22,28 @@ class Solution(object):
 
         for row in range(self.rowLen):
             for col in range(self.colLen):
-                if grid[row][col] == 1:
+                if grid[row][col] == "1":
                     land_locations.append((row, col))
         
         for (row, col) in land_locations:
             # if already visited, do not recurse on marking
             if (row, col) not in self.visited_dict:
                 islandCount += 1
-                # self.visited_dict[(row, col)] = islandCount
+                print((row, col))
+                print(islandCount)
                 # mark self and neighbours
                 self.markNeighbours(row, col, islandCount)
-                # if row + 1 < rowLen:
-                #     self.markNeighbours(row + 1, col, islandCount)
-                # if col + 1 < colLen:
-                #     self.markNeighbours(row, col + 1, islandCount)
         return islandCount
 
     def markNeighbours(self, row, col, islandCountMarker):
         # first mark self
         self.visited_dict[(row, col)] = islandCountMarker
         # check whether neighbours exist and mark if it's a piece of connected land 
-        if row + 1 < self.rowLen and self.grid[row + 1][col] == 1:
+        if row + 1 < self.rowLen and self.grid[row + 1][col] == "1":
             self.markNeighbours(row + 1, col, islandCountMarker)
-        if col + 1 < self.colLen and self.grid[row][col + 1] == 1:
+        if col + 1 < self.colLen and self.grid[row][col + 1] == "1":
             self.markNeighbours(row, col + 1, islandCountMarker)     
     
 obj = Solution()
-obj.numIslands([[1,1,1,1,0],[1,1,0,1,0],[1,1,0,0,0],[0,0,0,0,0]])       # Output: 1
+obj.numIslands([["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]])   # Output: 1
+obj.numIslands([["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]])   # Output: 3 (switching between 2 & 3. Error only happened when string "1" used. May be due to the way DFS is being called. Check)    
