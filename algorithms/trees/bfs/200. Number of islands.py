@@ -9,13 +9,14 @@ class Solution(object):
     visited_dict = {}
     rowLen = 0
     colLen = 0
+    islandCount = 0
     def numIslands(self, grid):
         """
         :type grid: List[List[str]]
         :rtype: int
         """
         self.grid = grid
-        islandCount = 0
+        # islandCount = 0
         land_locations = []
         self.rowLen = len(grid)
         self.colLen = len(grid[0])       # considering symmetric matrix. Also add defensive condition on index 0 access
@@ -28,12 +29,12 @@ class Solution(object):
         for (row, col) in land_locations:
             # if already visited, do not recurse on marking
             if (row, col) not in self.visited_dict:
-                islandCount += 1
+                self.islandCount += 1
                 print((row, col))
-                print(islandCount)
+                print(self.islandCount)
                 # mark self and neighbours
-                self.markNeighbours(row, col, islandCount)
-        return islandCount
+                self.markNeighbours(row, col, self.islandCount)
+        return self.islandCount
 
     def markNeighbours(self, row, col, islandCountMarker):
         # first mark self
@@ -46,4 +47,10 @@ class Solution(object):
     
 obj = Solution()
 obj.numIslands([["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]])   # Output: 1
-obj.numIslands([["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]])   # Output: 3 (switching between 2 & 3. Error only happened when string "1" used. May be due to the way DFS is being called. Check)    
+obj.numIslands([["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]])   # Output: 3 
+
+# Interesting Pointer:
+# When local variable islandCount was used, Test Case 2 had issues. Possibly because the local parameter was colliding. Strange but true.
+# Whereas, when class variable used, it worked perfectly. REM: When you have one value being updated by multiple objects or function calls (here recursive calls), use class variable
+# (switching between 2 & 3. Error only happened when string "1" used)    
+# Possibly due to the way the for loop and recursive calls are interlocked. 
