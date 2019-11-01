@@ -21,7 +21,7 @@ class Solution(object):
         self.colLen = len(grid[0])       # considering symmetric matrix. Also add defensive condition on index 0 access
 
         for row in range(self.rowLen):
-            for col in range(colLen):
+            for col in range(self.colLen):
                 if grid[row][col] == 1:
                     land_locations.append((row, col))
         
@@ -45,34 +45,7 @@ class Solution(object):
         if row + 1 < self.rowLen and self.grid[row + 1][col] == 1:
             self.markNeighbours(row + 1, col, islandCountMarker)
         if col + 1 < self.colLen and self.grid[row][col + 1] == 1:
-            self.markNeighbours(row, col + 1, islandCountMarker)
-
-
-    def recurseNumIslands(self, grid, row, col, rowLen, colLen, continuation):
-        """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
-        # rowLen = len(grid)
-        # for row in range(rowLen):
-        #     colLen = len(grid[row])
-        #     for col in range(colLen):
-        if (row, col) not in self.visited_dict:
-            self.visited_dict[(row, col)] = 'visited'
-            if grid[row][col] == 1 and continuation == False:
-                self.islandCount += 1
-                continuation = True
-            
-            elif grid[row][col] == 0:
-                continuation = False
-
-            # todo: call neighbors recursively with their respective value of continuation
-            if row + 1 < rowLen:
-                self.recurseNumIslands(grid, row + 1, col, rowLen, colLen, continuation)
-            if col + 1 < colLen:
-                self.recurseNumIslands(grid, row, col + 1, rowLen, colLen, continuation)
-
-        # print(self.visited_dict)      
+            self.markNeighbours(row, col + 1, islandCountMarker)     
     
 obj = Solution()
-obj.numIslands([[1,1,1,1,0],[1,1,0,1,0],[1,1,0,0,0],[0,0,0,0,0]])
+obj.numIslands([[1,1,1,1,0],[1,1,0,1,0],[1,1,0,0,0],[0,0,0,0,0]])       # Output: 1
