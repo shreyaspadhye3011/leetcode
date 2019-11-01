@@ -1,17 +1,28 @@
 # Reference: https://leetcode.com/problems/number-of-islands/
+# Approach:
+# 1. Get a list of all locations that have 1 
+# 2. Iterate through this list and call DFS for every unmarked / unvisited 1 and mark all it's reachable locations with the current_island_count
+# 3. The final value of current_island_count is the answer
 
 class Solution(object):
     islandCount = 0
+    land_locations = []
     visited_dict = {}
     def numIslands(self, grid):
         """
         :type grid: List[List[str]]
         :rtype: int
         """
+        # rowLen = len(grid)
+        # colLen = len(grid[0])       # considering symmetric matrix. Also add defensive condition on index 0 access
+        # self.recurseNumIslands(self, grid, 0, 0, rowLen, colLen, False)
+        # return self.islandCount
         rowLen = len(grid)
         colLen = len(grid[0])       # considering symmetric matrix. Also add defensive condition on index 0 access
-        self.recurseNumIslands(self, grid, 0, 0, rowLen, colLen, False)
-        return self.islandCount
+        for row in range(rowLen):
+            for col in range(colLen):
+                if grid[row][col] == 1:
+                    land_locations.append((row, col))
 
     def recurseNumIslands(self, grid, row, col, rowLen, colLen, continuation):
         """
