@@ -4,7 +4,6 @@ import datetime
 class HashTable:
     def __init__(self, rawEvents):
         """ Build a HashTable from a list of raw pipe-delimited DML Events """
-        # pass  # TODO
         self.rawEvents = rawEvents
         self.HashTable = {}
 
@@ -41,7 +40,6 @@ class HashTable:
         -------
         datetime.datetime: the high-watermark
         """
-        # pass  # TODO
         watermark = 0
 
         if not self.rawEvents:
