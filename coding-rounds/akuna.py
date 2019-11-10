@@ -1,3 +1,4 @@
+# Build a hash table representing the state of a DB from a given list of operations: "EPOCH|TYPE|KEY|VAL"
 import fileinput
 import datetime
 class HashTable:
@@ -25,10 +26,10 @@ class HashTable:
                 if action == "INSERT":
                     if key not in self.HashTable:
                         self.HashTable[key] = val
-                    elif action == "UPSERT":
-                        self.HashTable[key] = val
-                    elif action == "DELETE":
-                        del self.HashTable[key]
+                elif action == "UPSERT":
+                    self.HashTable[key] = val
+                elif action == "DELETE":
+                    del self.HashTable[key]
         return self.HashTable
 
     @property
