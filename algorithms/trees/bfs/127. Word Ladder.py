@@ -38,3 +38,6 @@ class solution:
             temp[i] = '*'
             pattern.append(temp)
         return pattern
+
+obj = solution()
+# obj.ladderLength
