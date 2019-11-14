@@ -1,4 +1,7 @@
 # Reference: https://leetcode.com/problems/word-ladder/
+# Status: Working and tested but returns "Wrong Answer" for case obj.ladderLength("hit", "cog", ["hot","dot","dog","lot","log"])
+
+# Return "8" for some reason when tried to submit but when code run independently, gives "0". Strange!
 
 # Approach 1: Create dictionary that stores all possible one letter variations from the wordlist given. Keep checking whether the endWord's variation have arrived in the dictionary. If yes, then return count of how many steps it took. If the whole list is complete and you do not reach any return point means that there is no solution
 
@@ -40,4 +43,6 @@ class solution:
 
 obj = solution()
 obj.ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog"])   # o: 5
+
+obj.ladderLength("hit", "cog", ["hot","dot","dog","lot","log"]) # o: 0. endWord (transformation) not in dictionary. Given in question that all transformations should exist in dictionary
 # obj.dict
