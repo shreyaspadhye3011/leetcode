@@ -4,6 +4,8 @@
 # 2. Iterate through this list and call DFS for every unmarked / unvisited 1 and mark all it's reachable locations with the current_island_count
 # 3. The final value of current_island_count is the answer
 
+# Status: basic test case working. test edge cases and submit
+
 class Solution(object):
     grid = []
     visited_dict = {}
@@ -30,8 +32,8 @@ class Solution(object):
             # if already visited, do not recurse on marking
             if (row, col) not in self.visited_dict:
                 self.islandCount += 1
-                print((row, col))
-                print(self.islandCount)
+                # print((row, col))
+                # print(self.islandCount)
                 # mark self and neighbours
                 self.markNeighbours(row, col, self.islandCount)
         return self.islandCount
