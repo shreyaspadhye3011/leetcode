@@ -12,7 +12,7 @@ class solution:
     def ladderLength(self, beginWord, endWord, wordList):
         self.createDictionary(wordList)
         access = [beginWord]
-        count = 0
+        count = 1    # because solution considers length of the path so that includes beginWord also
         accessed = []
         while len(access) != 0:
             currWord = access.pop()
@@ -34,10 +34,10 @@ class solution:
     def getRegEx(self, word):
         pattern = []
         for i in range(len(word)):
-            temp = word
-            temp[i] = '*'
+            temp = word[:i] + '*' + word[i+1:]
             pattern.append(temp)
         return pattern
 
 obj = solution()
-# obj.ladderLength
+obj.ladderLength("hit", "cog", ["hot","dot","dog","lot","log","cog"])   # o: 5
+# obj.dict
