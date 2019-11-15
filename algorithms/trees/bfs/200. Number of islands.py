@@ -4,7 +4,12 @@
 # 2. Iterate through this list and call DFS for every unmarked / unvisited 1 and mark all it's reachable locations with the current_island_count
 # 3. The final value of current_island_count is the answer
 
-# Status: basic test case working. test edge cases and submit
+# Status: basic test case working.
+# Issue with: 
+# obj.numIslands([["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]])   # o: 3
+# When submitting, leetcode shows my solution as 2, whereas execution in jupyter or even leetcode interactive shows answer as 3?
+# Strange! post on forums and understand
+
 
 class Solution(object):
     grid = []
@@ -25,7 +30,7 @@ class Solution(object):
 
         for row in range(self.rowLen):
             for col in range(self.colLen):
-                if grid[row][col] == "1":
+                if grid[row][col ] == "1":
                     land_locations.append((row, col))
         
         for (row, col) in land_locations:
@@ -52,8 +57,8 @@ obj = Solution()
 # obj.numIslands([["1","1"],["1", "1"]])   # o: 1
 # obj.numIslands([["1","0","0"],["1","0","0"],["1","1","1"]])   # o: 1
 # obj.numIslands([["1","0","1"],["1","0","0"],["0","1","1"]])   # o: 3
-obj.numIslands([["1","0","1"],["1","0","1"],["1","1","0"]])   # o: 2
-
+# obj.numIslands([["1","0","1"],["1","0","1"],["1","1","0"]])   # o: 2
+obj.numIslands([["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]])   # o: 3
 
 # Interesting Pointer:
 # When local variable islandCount was used, Test Case 2 had issues. Possibly because the local parameter was colliding. Strange but true.
