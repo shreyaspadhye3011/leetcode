@@ -32,8 +32,6 @@ class Solution(object):
             # if already visited, do not recurse on marking
             if (row, col) not in self.visited_dict:
                 self.islandCount += 1
-                # print((row, col))
-                # print(self.islandCount)
                 # mark self and neighbours
                 self.markNeighbours(row, col, self.islandCount)
         return self.islandCount
@@ -48,8 +46,14 @@ class Solution(object):
             self.markNeighbours(row, col + 1, islandCountMarker)     
     
 obj = Solution()
-obj.numIslands([["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]])   # Output: 1
-obj.numIslands([["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]])   # Output: 3 
+# obj.numIslands([["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]])   # Output: 1
+# obj.numIslands([["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]])   # Output: 3 
+# obj.numIslands([["1","0"],["0", "1"]])   # o: 2
+# obj.numIslands([["1","1"],["1", "1"]])   # o: 1
+# obj.numIslands([["1","0","0"],["1","0","0"],["1","1","1"]])   # o: 1
+# obj.numIslands([["1","0","1"],["1","0","0"],["0","1","1"]])   # o: 3
+obj.numIslands([["1","0","1"],["1","0","1"],["1","1","0"]])   # o: 2
+
 
 # Interesting Pointer:
 # When local variable islandCount was used, Test Case 2 had issues. Possibly because the local parameter was colliding. Strange but true.
