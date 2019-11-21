@@ -1,4 +1,5 @@
 # Almost similar if same length and character frequency doesn't differ from more than 3 (function working over an array of strings and result as ["YES", "NO", "YES", "YES"] depending on case)
+# status: normal cases working but edge cases failing. not sure what were the cases. debug
 def areAlmostEquivanlent(s, t):
     dict = {}
     result = []
