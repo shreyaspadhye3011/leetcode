@@ -33,3 +33,11 @@ dict.setdefault("key", [])
 del dict["key"]
 # or
 dict.pop("key", "default")     
+
+# sort dictionary in descending order and return a list
+d = {"aa": 3, "bb": 4, "cc": 2, "dd": 1}
+s = [(k, d[k]) for k in sorted(d, key=d.get, reverse=True)]
+
+# character manipulation
+ch = 'a'
+x = chr(ord(ch) + 2) # x -> c
