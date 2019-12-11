@@ -1,6 +1,9 @@
 # Design a firewall: Read firewall rules from a csv and create a function which allows incoming requests only based on the rules
 # accept_packet(direction, protocol, port, ip_address)
 # direction: inbound | outbound
+# protocol: udp | tcp
+# port: can be a number like "80" or a range like "0-5000" (dash separated without space)
+# ip_address: can be a single value or range
 
 import csv
 
