@@ -3,7 +3,6 @@ GEM
   specs:
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    backports (3.15.0)
     daemons (1.3.1)
     data_objects (0.10.17)
       addressable (~> 2.1)
@@ -20,29 +19,18 @@ GEM
     dm-sqlite-adapter (1.2.0)
       dm-do-adapter (~> 1.2.0)
       do_sqlite3 (~> 0.10.6)
-    dm-timestamps (1.2.0)
-      dm-core (~> 1.2.0)
-    dm-validations (1.2.0)
-      dm-core (~> 1.2.0)
     do_postgres (0.10.17)
       data_objects (= 0.10.17)
     do_sqlite3 (0.10.17)
       data_objects (= 0.10.17)
     eventmachine (1.2.7)
     ffi (1.11.1)
-    hoe (3.17.2)
-      rake (>= 0.8, < 13.0)
-    mail (2.7.1)
-      mini_mime (>= 0.1.1)
-    mini_mime (1.0.1)
-    multi_json (1.13.1)
     mustermann (1.0.3)
     pg (1.1.4)
     public_suffix (3.0.3)
-    rack (2.0.7)
+    rack (2.0.8)
     rack-protection (2.0.5)
       rack
-    rake (12.3.2)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -56,18 +44,6 @@ GEM
       rack (~> 2.0)
       rack-protection (= 2.0.5)
       tilt (~> 2.0)
-    sinatra-contrib (2.0.5)
-      backports (>= 2.8.2)
-      multi_json
-      mustermann (~> 1.0)
-      rack-protection (= 2.0.5)
-      sinatra (= 2.0.5)
-      tilt (>= 1.3, < 3)
-    sinatra-erb (0.1.0)
-      hoe (>= 1.4.0)
-      sinatra (> 0.1.7)
-    sinatra-flash (0.3.0)
-      sinatra (>= 1.0.0)
     sqlite3 (1.4.1)
     thin (1.7.2)
       daemons (~> 1.0, >= 1.0.9)
@@ -83,15 +59,9 @@ DEPENDENCIES
   dm-migrations
   dm-postgres-adapter
   dm-sqlite-adapter
-  dm-timestamps
-  dm-validations
-  mail
   pg
   sass
   sinatra
-  sinatra-contrib
-  sinatra-erb
-  sinatra-flash
   sqlite3
   thin
 
