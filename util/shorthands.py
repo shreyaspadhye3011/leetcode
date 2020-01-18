@@ -1,3 +1,11 @@
+# for in reversed
+for i in reversed(range(5)):
+    print(i)    # 4,3,2,1,0
+
+# for with step
+for i in range(10, 4, -2):  # start, stop, step :: [stop > start]
+    print(i)    # 10,8,6   
+
 # list comprehension
 
 # mapping
