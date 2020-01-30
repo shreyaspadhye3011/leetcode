@@ -37,6 +37,12 @@ def connectedCities(n, g, originCities, destinationCities):
                 min_n -= 1
         
     return result
+
+# optimized: 
+# 1. sort list
+# 2. create mapping for all multiples
+# 3. for every element in the list, iterate through the 
+
         
         
         
