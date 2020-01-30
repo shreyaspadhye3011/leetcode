@@ -48,6 +48,9 @@ int('101', 2)   # O: 5
 # get all subsets of a set of size n
 import itertools
 list(itertools.combinations([1, 2, 3], 2)) # get all subsets with 2 elements
+# get all permuations of size n
+from itertools import permutations
+list(permutations(['1','2','3'],2)) # (1,2) != (2,1)
 
 # mapping
 [i * 2 for i in range(10) if i * 2 > 4]
