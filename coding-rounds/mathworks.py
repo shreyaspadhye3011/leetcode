@@ -18,7 +18,6 @@ import sys
 #
 
 def connectedCities(n, g, originCities, destinationCities):
-    
     print(originCities)
     print(destinationCities)
     result = []
