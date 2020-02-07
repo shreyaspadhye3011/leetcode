@@ -68,3 +68,9 @@ print("Safe" if 2 < 1 else "Unsafe")
 
 # filter
 # TODO
+
+# date
+import datetime
+datetime.datetime.strptime('15:30','%H:%M') # change string to time
+datetime.datetime.now()     # get current time
+# also time objects can be compared directly

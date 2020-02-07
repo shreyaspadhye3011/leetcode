@@ -10,6 +10,8 @@
 # When submitting, leetcode shows my solution as 2, whereas execution in jupyter or even leetcode interactive shows answer as 3?
 # Strange! post on forums and understand
 
+# optimization: land_locations can be a doctionary instead of a list and then you use the sane for visited_dict functionality and find and remove keys (land_locations) whenever they are marked. So you do not have to go through the whole thing of retrieving next land_location and checking whether it's visited. You can be sure that land_locations at all times maintains the unvisited locations due to the removal procedure of newighbours 
+
 
 class Solution(object):
     grid = []

@@ -6,6 +6,9 @@
 #Hint: when question realted to BST, you can directly call insert for every element and your tree will be ready
 #Hint: use the parent index & child index relation
 
+# bfs: when hierarchy and order of access matters eg right side view of a tree
+# dfs: to access all connected nodes to a node eg number of islands
+
 class Node:
     def __init__(self, data):
         self.left = None
