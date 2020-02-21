@@ -13,10 +13,9 @@ for i in range(10, 4, -2):  # start, stop, step :: until [element > stop]
 
 # list comprehension
 
-
-# lists
+# join list elements into one string element
 a = ['a', 'b', 'c', 'd']    # implode lists or join
-''.join(a)
+''.join(a)                  # imp: remember that this only works woth string elements. Not woth int. To make it work for int, type cast
 # o: 'abcd'
 
 # dictionaries
@@ -39,11 +38,16 @@ s = [(k, d[k]) for k in sorted(d, key=d.get, reverse=True)]
 ch = 'a'
 x = chr(ord(ch) + 2) # x -> c
 
+# BINARY
 # convert an integer number to binary
 "{0:b}".format(9) # O: 1001 : Useful when questions like create a superset of an array eg. [2,3,4] : [[2], [3], [4], [2,3], [3,4], [2,4], [2,3,4], None] i.e 8 sets and you can use binary representations from 1 (001) -> 7 (111) to get all these sets. Although the complexity will be 2^n 
 
 # convert binary to int
 int('101', 2)   # O: 5
+
+# get complement (reverse. Not 2's complement. For 2's complement simply use ~ on a decimal numbner)
+''.join([str((int(c) ^ 1)) for c in "0011"]) # o: 1100 # approach: XOR each bit by 1 and save. join list to string. type castings used because iteration only works on string, but XOR only works on number and join only works on string
+
 
 # get all subsets of a set of size n
 import itertools
