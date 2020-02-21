@@ -15,8 +15,9 @@ for i in range(10, 4, -2):  # start, stop, step :: until [element > stop]
 
 # join list elements into one string element
 a = ['a', 'b', 'c', 'd']    # implode lists or join
-''.join(a)                  # imp: remember that this only works woth string elements. Not woth int. To make it work for int, type cast
+''.join(a)                  # imp: remember that this only works with string elements. Not woth int. To make it work for int, type cast
 # o: 'abcd'
+''.join([str(elem) for elem in a])     # when a has int elements
 
 # dictionaries
 # get "key" value or return "default" if key doesn't exist
@@ -41,6 +42,8 @@ x = chr(ord(ch) + 2) # x -> c
 # BINARY
 # convert an integer number to binary
 "{0:b}".format(9) # O: 1001 : Useful when questions like create a superset of an array eg. [2,3,4] : [[2], [3], [4], [2,3], [3,4], [2,4], [2,3,4], None] i.e 8 sets and you can use binary representations from 1 (001) -> 7 (111) to get all these sets. Although the complexity will be 2^n 
+bin(4) # O: '-0b100'    # notice that the response is binary. it has this 0b thing appended in beginning
+bin(~4) # O: '-0b101'   # 2's complement 
 
 # convert binary to int
 int('101', 2)   # O: 5
