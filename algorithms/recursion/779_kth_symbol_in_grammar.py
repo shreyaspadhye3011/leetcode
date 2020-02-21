@@ -10,14 +10,14 @@ class Solution(object):
         :type K: int
         :rtype: int
         """
-        res = nth_row(N)
-        print(res)
+        res = self.nth_row(N)
+        # print(res)
         return int(res[K-1])
     
-    def nth_row(n):
+    def nth_row(self, n):
         if n == 1:
             return "0"
-        p = nth_row(n-1)
+        p = self.nth_row(n-1)
         # if n is even, append complement of prev sequence
         if n % 2 == 0:
             return p + ''.join([str((int(c) ^ 1)) for c in p])
@@ -26,5 +26,8 @@ class Solution(object):
             return p + p[::-1]
 
 obj = Solution()
-obj.kthGrammar(5, 2)
-
+obj.kthGrammar(5, 2) # o: 1 | 0110100110010110
+obj.kthGrammar(1, 1) # o: 0 | 0
+obj.kthGrammar(2, 1) # o: 0 | 01
+obj.kthGrammar(2, 2) # o: 1 | 01
+obj.kthGrammar(4, 5) # o: 1 | 01101001
