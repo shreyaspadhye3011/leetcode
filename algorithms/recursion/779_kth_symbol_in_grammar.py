@@ -3,6 +3,8 @@
 # For row m, when m is even, pattern(m-1) is taken & !(pattern(m-1)) is appended to get value of row m
 # when m is odd, pattern(m-1) is taken & rev(pattern(m-1)) is appended to get value of row m
 
+# Issue: Time Limit Exceeded
+
 class Solution(object):
     def kthGrammar(self, N, K):
         """
