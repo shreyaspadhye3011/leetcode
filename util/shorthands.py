@@ -1,3 +1,9 @@
+# Checking every element in an array against every other
+length = len(array)
+for idx in range(length):
+    for idx2 in range(idx+1, length):
+        # a = array[idx] + array[idx2]
+
 # lists & sort
 a = [5, 5, 1, 7, 9, 1]
 list(set(a))    # remove redundant elements. Note: will automatically sort
