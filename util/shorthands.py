@@ -39,6 +39,20 @@ my_set = set(b)     # creating a set from a list # O: {4, 5, 6, 7}
 # i.e. you can sort in O(n) using this concept! (possibly Radix sort type working) -- basically it creates a hash entry for every element -- But can practically be used only for limited size of arrays as after a while it will lead to collision in hash key and it will no longer be a constant access time
 # Conclusion: can try this method for small test cases
 
+# More on Arrays / Lists:
+a.pop()   # removes the last element of the array i.e O(1)
+# Note: Lists behave as Stacks by default
+a.pop(0)  # remove first element from the array ~ O(N) complexity. pop(k) has O(k) complexity in python
+a.remove(value)   # remove first value from list that matches the given value
+
+# Queues
+# Indexed access is O(1) at both ends but slows to O(n) in the middle. For fast random access, use lists instead.
+# Reference: https://medium.com/@shuangzizuobh2/how-well-do-you-code-python-9bec36bbc322
+# Reference: https://docs.python.org/2/library/collections.html#collections.deque 
+deque(['f', 'g', 'h', 'i', 'j'])
+d.pop()         # 'j'   O(1)
+d.popleft()     # 'f'   O(1)
+
 
 # for in with reversed index
 for i in reversed(range(5)):
@@ -128,3 +142,4 @@ datetime.datetime.now()     # get current time
     # b. While appending (in the end), if you run out of space, always add 2 * N new blocks (by same copy method as static array). Therefore, whenever you run out of space, you give yourself double the space. Thus, giving constant time insertions for a long time as space is available and no copy / shift is required
     # This leads to an amortized complexity of O(1) for append in dynamic arrays. Notice that the worst case when you run out of memory is taking O(N) time but OVERALL the constant time insertions dominate. Therefore, O(1)
 # 4. Note that insertion at front or middle is still O(N) in case of dynamic array. though the extra double init space does help but you need to always perform SHIFT operation for insertion in front or middle
+
