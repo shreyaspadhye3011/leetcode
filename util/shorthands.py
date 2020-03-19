@@ -52,6 +52,7 @@ a.remove(value)   # remove first value from list that matches the given value
 deque(['f', 'g', 'h', 'i', 'j'])
 d.pop()         # 'j'   O(1)
 d.popleft()     # 'f'   O(1)
+# Note: Both are O(1) because these are built on top of linked list implementations (pointers to both ends) along with array concepts of contiguous memory for quick retrieval -- A very high level understanding
 
 
 # for in with reversed index
