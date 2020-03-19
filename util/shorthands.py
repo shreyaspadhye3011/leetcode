@@ -53,7 +53,7 @@ deque(['f', 'g', 'h', 'i', 'j'])
 d.pop()         # 'j'   O(1)
 d.popleft()     # 'f'   O(1)
 # Note: Both are O(1) because these are built on top of linked list implementations (pointers to both ends) along with array concepts of contiguous memory for quick retrieval -- A very high level understanding
-
+# Note: Both stacks / lists and queues support ppek() operation which just looks at the top or last element respectively without removing it
 
 # for in with reversed index
 for i in reversed(range(5)):
@@ -63,7 +63,12 @@ for i in reversed(range(5)):
 for i in range(10, 4, -2):  # start, stop, step :: until [element > stop]
     print(i)    # 10,8,6   
 
-# list comprehension
+# strings in python
+# strings in C are mutable i.e. you can add strings in constant time because they are implemented as array of characters under the hood and constant time append is possible in dynamic arrays
+# But strings in Python, Java, JavaScript, Golang are IMMUTABLE!
+# i.e when you do something like `str1 + str2` -- it is actually a copy operatiom of cost O(n+m) where both strings are copied to new location that represent the new resultant string
+# Therefore, when you have lot of string manipulation involved, change the string to actual array of characters before working (mutating) on it
+# You can use functions like split() to do this
 
 # join list elements into one string element
 a = ['a', 'b', 'c', 'd']    # implode lists or join
