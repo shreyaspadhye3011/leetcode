@@ -9,6 +9,14 @@ a = [5, 5, 1, 7, 9, 1]
 list(set(a))    # remove redundant elements. Note: will automatically sort
 sorted(a)       # sort the list
 
+# list slice
+a = [2, 3, 4, 5, 6]
+a[1:4]  # [3, 4, 5] -> [strtIdx:endIdx] :: strtIdx(inclusive) -- endIdx(excluding)
+a[1:]   # [3, 4, 5, 6]
+a[:3]   # [2, 3, 4]
+a[::-1] # [6, 5, 4, 3, 2]
+# IMP: Remeber that slicing is an O(N) space and time intensive operation. Don't end up using it inside a for loop multiple times just because it's convenient. It'll shoot up your complexity even though your code looks neat and less in number of operations
+
 # O(1) search Time! -- use Set instead of lists
 # sets and disctionary
 # imp: search in set is O(1) just like a dictionary. Dictionary's retrieval is also O(1)
