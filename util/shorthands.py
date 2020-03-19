@@ -17,6 +17,13 @@ a[:3]   # [2, 3, 4]
 a[::-1] # [6, 5, 4, 3, 2]
 # IMP: Remeber that slicing is an O(N) space and time intensive operation. Don't end up using it inside a for loop multiple times just because it's convenient. It'll shoot up your complexity even though your code looks neat and less in number of operations
 
+# list and insert -- i.e in middle of the array
+list1 = [ 1, 2, 3, 4, 5, 6]
+list1.append(7) # [1, 2, 3, 4, 5, 6, 7] # append
+# insert 10 at 4th index  
+list1.insert(4, 10)  
+print(list1)    # [1, 2, 3, 4, 10, 5, 6, 7]
+
 # O(1) search Time! -- use Set instead of lists
 # sets and disctionary
 # imp: search in set is O(1) just like a dictionary. Dictionary's retrieval is also O(1)
@@ -33,7 +40,7 @@ my_set = set(b)     # creating a set from a list # O: {4, 5, 6, 7}
 # Conclusion: can try this method for small test cases
 
 
-# for in reversed
+# for in with reversed index
 for i in reversed(range(5)):
     print(i)    # 4,3,2,1,0
 
