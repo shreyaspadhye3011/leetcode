@@ -70,6 +70,10 @@ for i in range(10, 4, -2):  # start, stop, step :: until [element > stop]
 # Therefore, when you have lot of string manipulation involved, change the string to actual array of characters before working (mutating) on it
 # You can use functions like split() to do this
 
+# replace a substring in a given string
+string = "node in node node"  
+print(string.replace("node", "Node"))  # Node in Node Node
+
 # join list elements into one string element
 a = ['a', 'b', 'c', 'd']    # implode lists or join
 ''.join(a)                  # imp: remember that this only works with string elements. Not woth int. To make it work for int, type cast
