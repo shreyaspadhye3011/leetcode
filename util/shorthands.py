@@ -6,13 +6,14 @@ for idx in range(length-1):
 
 # int max & minimum possible value
 import sys
-max = sys.maxsize             # 9223372036854775807
+max = sys.maxsize       # 9223372036854775807
 min = -sys.maxsize - 1  # -9223372036854775808
 
 # lists & sort
 a = [5, 5, 1, 7, 9, 1]
 list(set(a))    # remove redundant elements. Note: will automatically sort
-sorted(a)       # sort the list
+a.sort()        # sort the original list
+sorted(a)       # return a sorted version of the list. #IMP: The original list doesn't change. Basically, can be used for iterating
 
 # list slice
 a = [2, 3, 4, 5, 6]
@@ -116,7 +117,6 @@ int('101', 2)   # O: 5
 
 # get complement (reverse. Not 2's complement. For 2's complement simply use ~ on a decimal numbner)
 ''.join([str((int(c) ^ 1)) for c in "0011"]) # o: 1100 # approach: XOR each bit by 1 and save. join list to string. type castings used because iteration only works on string, but XOR only works on number and join only works on string
-
 
 # get all subsets of a set of size n
 import itertools
