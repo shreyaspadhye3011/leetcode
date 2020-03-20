@@ -4,6 +4,11 @@ for idx in range(length-1):
     for idx2 in range(idx+1, length):
         # a = array[idx] + array[idx2]
 
+# int max & minimum possible value
+import sys
+max = sys.maxsize             # 9223372036854775807
+min = -sys.maxsize - 1  # -9223372036854775808
+
 # lists & sort
 a = [5, 5, 1, 7, 9, 1]
 list(set(a))    # remove redundant elements. Note: will automatically sort
