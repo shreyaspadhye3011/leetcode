@@ -1,6 +1,6 @@
-# Checking every element in an array against every other
+# Checking every element against every other upcoming number in an array
 length = len(array)
-for idx in range(length):
+for idx in range(length-1):
     for idx2 in range(idx+1, length):
         # a = array[idx] + array[idx2]
 
