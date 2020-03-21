@@ -17,11 +17,23 @@ sorted(a)       # return a sorted version of the list. #IMP: The original list d
 
 # list slice
 a = [2, 3, 4, 5, 6]
+# <start_from : stop_at : reverse>
 a[1:4]  # [3, 4, 5] -> [strtIdx:endIdx] :: strtIdx(inclusive) -- endIdx(excluding)
 a[1:]   # [3, 4, 5, 6]
 a[:3]   # [2, 3, 4]
 a[::-1] # [6, 5, 4, 3, 2]
 # IMP: Remeber that slicing is an O(N) space and time intensive operation. Don't end up using it inside a for loop multiple times just because it's convenient. It'll shoot up your complexity even though your code looks neat and less in number of operations
+max_array = [2, 3, 4, 5]
+# print last 3 numbers
+max_array[-3:]          # [3, 4, 5]
+# print last 3 numbers, reverse
+max_array[:-4:-1]       # [5, 4, 3]
+# print first 3 numbers, reverse
+    max_array[2::-1]    # [4, 3, 2] -> <start_from:stop_at:reverse=True> = note that it started from back, from index 2 and printed the whole list as no end given so it prints till start
+    # Similarly, skip first and print 2, reverse
+    max_array[2:0:-1]   # [4, 3] -> <start_from:stop_at:reverse=True>
+# Note: with -1, indexing remains same, just direction of traversal changes
+# Note: stop_at is always excliusive, i.e. that index will NOT be included in the sliced array
 
 # list and insert -- i.e in middle of the array
 list1 = [ 1, 2, 3, 4, 5, 6]
