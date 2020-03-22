@@ -9,11 +9,25 @@ import sys
 max = sys.maxsize       # 9223372036854775807
 min = -sys.maxsize - 1  # -9223372036854775808
 
+# ----------------------- LISTS --------------------------- #
+
+# list append, insert, pop & remove
+list1 = [ 1, 2, 3, 4, 5, 6]
+list1.append(7)     # [1, 2, 3, 4, 5, 6, 7] # append
+# insert 10 at 4th index  
+list1.insert(4, 10)  # [1, 2, 3, 4, 10, 5, 6, 7]
+a.pop()   # removes the last element of the array i.e O(1)
+# Note: Lists behave as Stacks by default
+a.pop(0)  # remove first element from the array ~ O(N) complexity. pop(k) has O(k) complexity in python
+a.remove(value)   # remove first value from list that matches the given value
+
 # lists & sort
 a = [5, 5, 1, 7, 9, 1]
 list(set(a))    # remove redundant elements. Note: will automatically sort
 a.sort()        # sort the original list
+a.sort(reverse=True)    # descending
 sorted(a)       # return a sorted version of the list. #IMP: The original list doesn't change. Basically, can be used for iterating
+sorted(a, reverse=True) # descending
 
 # list slice
 a = [2, 3, 4, 5, 6]
@@ -35,12 +49,7 @@ max_array[:-4:-1]       # [5, 4, 3]
 # Note: with -1, indexing remains same, just direction of traversal changes
 # Note: stop_at is always excliusive, i.e. that index will NOT be included in the sliced array
 
-# list and insert -- i.e in middle of the array
-list1 = [ 1, 2, 3, 4, 5, 6]
-list1.append(7) # [1, 2, 3, 4, 5, 6, 7] # append
-# insert 10 at 4th index  
-list1.insert(4, 10)  
-print(list1)    # [1, 2, 3, 4, 10, 5, 6, 7]
+# ----------------------- LIST SECTION ENDS --------------------------- #
 
 # O(1) search Time! -- use Set instead of lists
 # sets and disctionary
@@ -56,12 +65,6 @@ my_set = set(b)     # creating a set from a list # O: {4, 5, 6, 7}
 # Note that the conversion to set also sorts the elements! Also this happens in O(n) time. Iterating through each element and each to a hash set: https://stackoverflow.com/questions/34642155/what-is-time-complexity-of-a-list-to-set-conversion
 # i.e. you can sort in O(n) using this concept! (possibly Radix sort type working) -- basically it creates a hash entry for every element -- But can practically be used only for limited size of arrays as after a while it will lead to collision in hash key and it will no longer be a constant access time
 # Conclusion: can try this method for small test cases
-
-# More on Arrays / Lists:
-a.pop()   # removes the last element of the array i.e O(1)
-# Note: Lists behave as Stacks by default
-a.pop(0)  # remove first element from the array ~ O(N) complexity. pop(k) has O(k) complexity in python
-a.remove(value)   # remove first value from list that matches the given value
 
 # Queues
 # Indexed access is O(1) at both ends but slows to O(n) in the middle. For fast random access, use lists instead.
@@ -169,4 +172,20 @@ datetime.datetime.now()     # get current time
     # b. While appending (in the end), if you run out of space, always add 2 * N new blocks (by same copy method as static array). Therefore, whenever you run out of space, you give yourself double the space. Thus, giving constant time insertions for a long time as space is available and no copy / shift is required
     # This leads to an amortized complexity of O(1) for append in dynamic arrays. Notice that the worst case when you run out of memory is taking O(N) time but OVERALL the constant time insertions dominate. Therefore, O(1)
 # 4. Note that insertion at front or middle is still O(N) in case of dynamic array. though the extra double init space does help but you need to always perform SHIFT operation for insertion in front or middle
+
+# JSON handling
+# Reading a JSON file as dictionary
+with open('distros.json', 'r') as f:
+    distros_dict = json.load(f)
+for distro in distros_dict:
+    print(distro['Name'])
+
+# parsing JSON
+parsed_json = (json.loads(json_data))
+
+# extra
+print(json.dumps(parsed_json, indent=4, sort_keys=True))
+loaded_json = json.loads(json_data)
+for x in loaded_json:
+	print("%s: %d" % (x, loaded_json[x]))
 
