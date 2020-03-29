@@ -65,6 +65,12 @@ my_set = set(b)     # creating a set from a list # O: {4, 5, 6, 7}
 # Note that the conversion to set also sorts the elements! Also this happens in O(n) time. Iterating through each element and each to a hash set: https://stackoverflow.com/questions/34642155/what-is-time-complexity-of-a-list-to-set-conversion
 # i.e. you can sort in O(n) using this concept! (possibly Radix sort type working) -- basically it creates a hash entry for every element -- But can practically be used only for limited size of arrays as after a while it will lead to collision in hash key and it will no longer be a constant access time
 # Conclusion: can try this method for small test cases
+# Set Difference
+set1 = {1, 3, 5, 6}
+set2 = {3, 5}
+set1 - set2 # {1, 6}
+set2 - set1 # set() -> empty set
+list(set1)  # create list from a set
 
 # Queues
 # Indexed access is O(1) at both ends but slows to O(n) in the middle. For fast random access, use lists instead.
