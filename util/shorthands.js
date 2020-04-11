@@ -1,3 +1,5 @@
+// Reference: https://www.guru99.com/javascript-interview-questions-answers.html
+
 // Timeout: call a function after a delay
 setTimeout(function(){
   // code to exdcute after delay
@@ -45,3 +47,31 @@ navigator.appName     // browser application
 
 // declaring global var in JS
 globalVariable = "Test";
+
+// Styling
+document.getElementById("myText").style.fontSize = "20";
+document.getElementById("myText").style.display = "none";
+document.getElementById("myText").className = "anyclass";
+document.getElementById("myText").classList.add("anyclass");
+document.getElementById("myText").classList.remove("anyclass");
+
+var newP = document.createElement("p"); 
+var textNode = document.createTextNode(" This is a new text node"); 
+newP.appendChild(textNode); 
+document.getElementById("firstP").appendChild(newP);
+//.replaceChild(existing.parentNode.firstChild, newP)
+
+// delete key with its value
+var student= {age:20, batch:"ABC"};
+delete student.age;
+
+// storing items
+localStorage.setItem("key", "value");
+localStorage.getItem("key");
+sessionStorage.setItem("key", "value");   // cleared when user quits the 
+sessionStorage.getItem("key");
+
+// Void(0) is used to call another method without refreshing the page.
+
+// 34. What is the data type of variables of in JavaScript?
+// A: All variables in the JavaScript are object data types.
