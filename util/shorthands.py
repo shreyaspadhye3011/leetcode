@@ -1,6 +1,15 @@
 # Formating strings
 "I am a {} {}".format("disco", "dancer")
 
+# check whether a number is prime or not. Just call this number inside a loop of k if you want to find k prime numbers
+def isPrime(number):
+    divisor = 2 
+    while divisor <= number / 2:
+        if number % divisor == 0:
+            return False
+        divisor += 1
+    return True
+
 # Checking every element against every other upcoming number in an array
 length = len(array)
 for idx in range(length-1):
@@ -104,9 +113,14 @@ for i in range(10, 4, -2):  # start, stop, step :: until [element > stop]
 string = "node in node node"  
 print(string.replace("node", "Node"))  # Node in Node Node
 
-# join list elements into one string element
+# Flatten array: join list elements into one string element
 a = ['a', 'b', 'c', 'd']    # implode lists or join
 ''.join(a)                  # imp: remember that this only works with string elements. Not woth int. To make it work for int, type cast
+# IMP - join only works for char elements and NOT for integers
+# For int array, use:
+ch = ''
+for i in a:
+    ch += i
 # o: 'abcd'
 ''.join([str(elem) for elem in a])     # when a has int elements
 
