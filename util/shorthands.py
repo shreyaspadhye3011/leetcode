@@ -125,7 +125,11 @@ s = [(k, d[k]) for k in sorted(d, key=d.get, reverse=True)]
 
 # character manipulation
 ch = 'a'
-x = chr(ord(ch) + 2) # x -> c
+x = chr(ord(ch) + 2)    # x -> c
+'l'.upper()             # L
+'A'.lower()             # a
+# .islower()
+# .isupper()
 
 # BINARY
 # convert an integer number to binary
