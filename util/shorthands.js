@@ -70,6 +70,10 @@ localStorage.setItem("key", "value");
 localStorage.getItem("key");
 sessionStorage.setItem("key", "value");   // cleared when user quits the 
 sessionStorage.getItem("key");
+// cookies
+document.cookie = "username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";   // save cookie
+// retrieve cookie
+document.cookie
 
 // Void(0) is used to call another method without refreshing the page.
 
