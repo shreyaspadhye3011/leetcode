@@ -1,3 +1,6 @@
+# Formating strings
+"I am a {} {}".format("disco", "dancer")
+
 # Checking every element against every other upcoming number in an array
 length = len(array)
 for idx in range(length-1):
