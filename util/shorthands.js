@@ -30,6 +30,35 @@ fs.readFile('./script.js', function(error, data) {
   console.log(data);
 });
 
+// Closures
+// Function for getting the id of a dom element,
+// giving it a new, unique id if it doesn't have an id yet
+const getUniqueId = (() => {
+  let nextGeneratedId = 0;
+  return element => {
+    if (!element.id) {
+      element.id = `generated-uid-${nextGeneratedId}`;
+      nextGeneratedId++;
+    }
+    return element.id;
+  };
+})();
+
+// Lambda / ES6 function style
+var msg = (x,y) => { 
+  console.log(x, y);
+} 
+msg(10, 20)
+// Notice that paranthesis are optional for single argument
+var msg1 = x => { 
+  console.log(x);
+} 
+msg1(10)
+// Notice that braces are optional for single statement
+var disp = () => console.log("Hello World");
+
+
+
 // Datatypes: 
 Number
 String
