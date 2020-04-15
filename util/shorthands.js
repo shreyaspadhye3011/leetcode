@@ -23,18 +23,29 @@ const data = [
     age: 40,
   },
 ];
-
 const arr1 = data.filter(d => d.age > 37);
-console.log('arr1', arr1);
-
+console.log('arr1', arr1); 
+// arr1 [
+//   { name: 'Ted', gender: 'male', age: 38 },
+//   { name: 'Alice', gender: 'female', age: 40 }
+// ]
 const arr2 = data.filter(d => d.gender === 'female');
 console.log('arr2', arr2);
-
+// arr2 [
+//   { name: 'Carol', gender: 'female', age: 36 },
+//   { name: 'Alice', gender: 'female', age: 40 }
+// ]
 const ageAndGender = d => d.age > 37 && d.gender === 'female';
-
 const arr3 = data.filter(ageAndGender);
 console.log('arr3', arr3);
+// arr3 [ { name: 'Alice', gender: 'female', age: 40 } ]
 
+// Array map
+const array1 = [1, 4, 9, 16];
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
 
 // Timeout: call a function after a delay
 setTimeout(function(){
