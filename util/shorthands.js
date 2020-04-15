@@ -149,7 +149,52 @@ msg1(10)
 // Notice that braces are optional for single statement
 var disp = () => console.log("Hello World");
 
+// IMP Promises
+function someAsynFunction() {
+  return new Promise((resolve, reject) => {
+     if (somethingWasSuccesful) {
+        resolve();     
+     } else {
+        reject();
+     }
+  });
+}
+// usage
+someAsyncFunction
+   .then(runAFunctionIfItResolved(withTheResolvedValue))
+   .catch(orARunAfunctionIfItRejected(withTheRejectedValue));
+// return promise with data
+return new Promise((resolve, reject) => {
+  if(somethingSuccesfulHappened) {  // this can be any business logic. API call, DB etc
+     const successObject = {
+        msg: 'Success',
+        data,//...some data we got back
+     }
+     resolve(successObject); 
+  } else {
+     const errorObject = {
+        msg: 'An error occured',
+        error, //...some error we got back
+     }
+     reject(errorObject);
+  }
+});
 
+// Anonymous Functions
+const prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
+for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
+
+  // For each of our buttons, when the user clicks it...
+  document.getElementById(`btn-${btnNum}`).onclick = (frozenBtnNum => {
+    return () => {
+
+      // Tell her what she's won!
+      alert(prizes[frozenBtnNum]);
+    };
+  })(btnNum); // LOOK! We're passing btnNum to our anonymous function here!
+}
+
+// Closure: Accessing variables outside the scope of a function
 
 // Datatypes: 
 Number
