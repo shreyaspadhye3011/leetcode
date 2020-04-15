@@ -1,17 +1,43 @@
 // Reference: https://www.guru99.com/javascript-interview-questions-answers.html
 
 // Arrays
+[1, 2, 3].includes(2)   // true
+[1, 2, 3].includes(21)  // false
+[2, 56, 8, 67, 9, 67].indexOf(67)  // 3
+[2, 56, 8, 67, 9].indexOf(6)  // -1
+[2, 56, 8].reverse()    // [8, 56, 2]
+
+
 let arr = [1, 2];
 arr.push(3);    // arr is [1, 2, 3]
 // .pop()       // removes and returns from end of array eg 3, here
 arr.unshift(0); // arr is [0, 1, 2, 3] // append at beginning
 var ar = ['zero', 'one', 'two', 'three']; ar.shift(); // returns "zero" (removes from beginning)
 
-console.log(apps);
+// traversing an array: Notice: traverses indexes
+data = [2, 56, 8, 67, 9, 67]
+for(var idx in data) {
+  console.log(data[idx])  
+}
 
 // Filter JS array
 myarr = [32, 33, 16, 40]
 console.log('myarr', myarr.filter(val => val > 18));   // myarr [ 32, 33, 40 ]
+
+// Array map
+const array1 = [1, 4, 9, 16];
+// pass a function to map
+const map1 = array1.map(x => x * 2);
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
+
+// ________******************************______ //
+
+// traversing a dict: Notice: traverses keys
+for(var key in dict) {
+  var value = dict[key];
+  // do something with "key" and "value" variables
+}
 
 // Filter JS objects
 const data = [
@@ -52,13 +78,6 @@ const ageAndGender = d => d.age > 37 && d.gender === 'female';
 const arr3 = data.filter(ageAndGender);
 console.log('arr3', arr3);
 // arr3 [ { name: 'Alice', gender: 'female', age: 40 } ]
-
-// Array map
-const array1 = [1, 4, 9, 16];
-// pass a function to map
-const map1 = array1.map(x => x * 2);
-console.log(map1);
-// expected output: Array [2, 8, 18, 32]
 
 // Timeout: call a function after a delay
 setTimeout(function(){
