@@ -1,5 +1,9 @@
 // Reference: https://www.guru99.com/javascript-interview-questions-answers.html
 
+// Filter JS array
+myarr = [32, 33, 16, 40]
+console.log('myarr', myarr.filter(val => val > 18));   // myarr [ 32, 33, 40 ]
+
 // Filter JS objects
 const data = [
   {
