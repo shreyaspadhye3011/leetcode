@@ -1,12 +1,25 @@
 // Reference: https://www.guru99.com/javascript-interview-questions-answers.html
 
+// Strings
+parseInt('1')     // 1 -> number
+var a = "" + 1;   // "1" -> typeof(a) -> string [Converting int to string]
+"How are you doing today?".split(" ")   // get all words
+"How are you doing today?".split("")    // get all chars (includes spaces)
+
+// simple for loop
+var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+var text = "";
+var i;
+for (i = 0; i < cars.length; i++) {
+  text += cars[i] + " ";
+}
+
 // Arrays
 [1, 2, 3].includes(2)   // true
 [1, 2, 3].includes(21)  // false
 [2, 56, 8, 67, 9, 67].indexOf(67)  // 3
 [2, 56, 8, 67, 9].indexOf(6)  // -1
 [2, 56, 8].reverse()    // [8, 56, 2]
-
 
 let arr = [1, 2];
 arr.push(3);    // arr is [1, 2, 3]
