@@ -44,6 +44,11 @@ const map1 = array1.map(x => x * 2);
 console.log(map1);
 // expected output: Array [2, 8, 18, 32]
 
+// Slicing arrays
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+console.log(animals.slice(2)); // ["camel", "duck", "elephant"]
+console.log(animals.slice(2, 4)); // ["camel", "duck"]
+
 // ________******************************______ //
 
 // traversing a dict: Notice: traverses keys
