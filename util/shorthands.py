@@ -140,6 +140,13 @@ dict.pop("key", "default")
 d = {"aa": 3, "bb": 4, "cc": 2, "dd": 1}
 s = [(k, d[k]) for k in sorted(d, key=d.get, reverse=True)]
 
+# initialize a dictionary : defaultdict
+from collections import defaultdict
+wordlist =["a", "a", "b"]
+word_count = defaultdict(int)
+for w in wordlist: 
+  word_count[w] +=1
+
 # character manipulation
 ch = 'a'
 x = chr(ord(ch) + 2)    # x -> c

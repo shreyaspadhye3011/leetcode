@@ -29,8 +29,13 @@ var ar = ['zero', 'one', 'two', 'three']; ar.shift(); // returns "zero" (removes
 
 // traversing an array: Notice: traverses indexes
 data = [2, 56, 8, 67, 9, 67]
-for(var idx in data) {
-  console.log(data[idx])  
+for(let idx in data) {
+  console.log(idx);         // 0, 1, 2, 3, 4, 5
+  console.log(data[idx]) ;  // 2, 56, 8, 67, 9, 67
+}
+
+for (let i of arr) {
+  console.log(i);           // 2, 56, 8, 67, 9, 67
 }
 
 // Filter JS array
