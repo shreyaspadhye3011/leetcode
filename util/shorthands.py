@@ -1,3 +1,9 @@
+# Conversion / casting
+int(5.3)    # 5
+float(5)    # 5.0
+int("12")   # 12
+float("12")   # 12.0
+
 # Formating strings
 "I am a {} {}".format("disco", "dancer")
 
