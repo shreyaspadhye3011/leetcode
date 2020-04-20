@@ -24,6 +24,7 @@ for (i = 0; i < cars.length; i++) {
 let arr = [1, 2];
 arr.push(3);    // arr is [1, 2, 3]
 // .pop()       // removes and returns from end of array eg 3, here
+// .shift()     // removes and returns from beginning
 arr.unshift(0); // arr is [0, 1, 2, 3] // append at beginning
 var ar = ['zero', 'one', 'two', 'three']; ar.shift(); // returns "zero" (removes from beginning)
 
