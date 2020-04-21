@@ -229,3 +229,7 @@ loaded_json = json.loads(json_data)
 for x in loaded_json:
 	print("%s: %d" % (x, loaded_json[x]))
 
+pattern = ""
+if (pattern):
+  print("will not reach")  # will not print 
+
