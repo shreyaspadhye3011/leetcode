@@ -233,3 +233,5 @@ pattern = ""
 if (pattern):
   print("will not reach")  # will not print 
 
+min = a if a < b else b     # ternary operator
+
