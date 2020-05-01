@@ -7,8 +7,13 @@ function euclidean_distance(f, g, precision) {
 }
 
 console.log(euclidean_distance(Math.sin, Math.cos, 100));
-  
 
+function euclidean_distance(f, g, precision) { 
+    function iter(sum, x) {
+        return x == precision ? sum : iter(sum + (math_abs(f(x) - g(x))**2), (x+1));
+    }
+    return iter(0, 0) ** (1/2);
+}
 
 // function eucDistance(a, b) {
 //     return a
