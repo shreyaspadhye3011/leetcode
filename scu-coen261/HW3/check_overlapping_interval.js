@@ -1,5 +1,5 @@
-function make_interval(x, y) { 
-    return pair(x, y); 
+function make_interval(x) { 
+    return pair(x[0], x[1]); 
 }
 function lower_bound(i) { 
     return head(i);
@@ -16,28 +16,18 @@ function add_interval(x, y) {
                          upper_bound(x) + upper_bound(y));
 }
 
+
+
+function check_overlapping_intervals(intervalOne, intervalTwo) {
+    let inter1 = make_interval(intervalOne);
+    let inter2 = make_interval(intervalTwo);
+    display(print_interval(inter1));
+    display(print_interval(inter2));
+    // return is_overlap(array[i]) ? true : check_overlapping_interval(array, i+1);
+}
+
+check_overlapping_intervals([1,3], [2,4]);
+
 // print_interval(add_interval(make_interval(1, 2), 
 //                             make_interval(3, 5)));
 
-function is_overlap() {
-    
-}
-
-function check_overlapping_interval(array, i=0) {
-    if (i > array_length(array)) { return false; }
-    return is_overlap(array[i]) ? true : check_overlapping_interval(array, i+1);
-}
-
-// check_overlapping_interval(sor)
-
-const sort = (arr) => {
-    if (arr.length === 0) return [];
-    const [curr, ...rest] = arr;
-    const left = rest.filter(item => item <= curr);
-    const right = rest.filter(item => item > curr);
-    return sort(left)
-      .concat([curr])
-      .concat(sort(right));
-  };
-
-  console.log((sort([5, 2, 6, 3, 8, 1])));
