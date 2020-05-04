@@ -1,3 +1,4 @@
+// Todo: add is_null usage
 function interleave_lists(first, second, interleaved) {
   // Todo: Always call with second as smaller
   if (first !== null && second !== null && array_length(second) > array_length(first)) { interleave_lists(second, first); }
@@ -21,4 +22,9 @@ function interleave_lists(first, second, interleaved) {
   }
 }
 
-interleave_lists(list(1,2,3), list(4,5,6), null);
+
+let result = interleave_lists(list(1,2,3), list(4,5,6), null);
+
+let chck = pair(1, pair(2, null));
+display(chck);
+// for_each(x => display(x), result);
