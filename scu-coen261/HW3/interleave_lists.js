@@ -1,3 +1,4 @@
+// Todo: add creation from start -- then reverse
 // Todo: add is_null usage
 function interleave_lists(first, second, interleaved) {
   display(first);
