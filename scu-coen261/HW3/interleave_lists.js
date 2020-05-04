@@ -1,7 +1,10 @@
 // Todo: add is_null usage
 function interleave_lists(first, second, interleaved) {
   // if both empty
-  if (first === null && second === null) { return interleaved; }
+  if (first === null && second === null) { 
+      display(interleaved);
+      return interleaved; 
+  }
   // first still has elements
   else if (second === null) { 
     interleaved = pair(interleaved, head(first)); 
@@ -12,24 +15,29 @@ function interleave_lists(first, second, interleaved) {
     if (interleaved === null) {
       interleaved = pair(head(first), pair(head(second), null));
     } else {
-      interleaved = pair(interleaved, pair(head(first), head(second)));
+      interleaved = pair(head(first), pair(head(second), interleaved));
     }
-    display(interleaved);
+    // display(interleaved);
     interleave_lists(tail(first), tail(second), interleaved);
   }
 }
 
 function interleave_lists_helper(first, second) {
+    let result = [];
     // always call interleave_lists with first array as larger
     if (array_length(first) >= array_length(second)) { 
-        return interleave_lists(reverse(first), reverse(second), null); 
+         result = interleave_lists(reverse(first), reverse(second), null); 
+         display(result);
+         return result;
     } else {
-        return interleave_lists(reverse(second), reverse(first), null); 
+        result = interleave_lists(reverse(second), reverse(first), null); 
+        return result;
     }
 }
 
 let result = interleave_lists_helper(list(1,2,3), list(4,5,6));
+display(result);
 
-let chck = pair(3, pair(1, pair(2, null)));
-display(chck);
+// let chck = pair(3, pair(1, pair(2, null)));
+// display(chck);
 // for_each(x => display(x), result);
