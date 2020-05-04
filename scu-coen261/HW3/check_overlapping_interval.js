@@ -21,8 +21,9 @@ function add_interval(x, y) {
 function check_overlapping_intervals(intervalOne, intervalTwo) {
     let inter1 = make_interval(intervalOne);
     let inter2 = make_interval(intervalTwo);
-    display(print_interval(inter1));
-    display(print_interval(inter2));
+    // display(print_interval(inter1));
+    // display(print_interval(inter2));
+    return lower_bound(inter2) < upper_bound(inter1) || lower_bound(inter1) < upper_bound(inter2) ? true : false; 
     // return is_overlap(array[i]) ? true : check_overlapping_interval(array, i+1);
 }
 

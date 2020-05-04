@@ -102,3 +102,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+scu-coen261/lispjs
