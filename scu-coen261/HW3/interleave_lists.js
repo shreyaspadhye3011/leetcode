@@ -6,7 +6,7 @@ function interleave_lists(first, second, interleaved) {
   }
   // first still has elements
   else if (second === null) { 
-    interleaved = pair(interleaved, head(first)); 
+    interleaved = pair(head(first), interleaved); 
     return interleave_lists(tail(first), null, interleaved);
   }
   // if both still have elements, interleave
@@ -32,8 +32,7 @@ function interleave_lists_helper(first, second) {
     }
 }
 
-let result = interleave_lists_helper(list(1,2,3), list(4,5,6));
-display(result);
+interleave_lists_helper(list(1,2,3,7), list(4,5,6));
 
 // let chck = pair(3, pair(1, pair(2, null)));
 // display(chck);
