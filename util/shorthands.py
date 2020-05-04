@@ -192,14 +192,30 @@ list(permutations(['1','2','3'],2)) # (1,2) != (2,1)
 print("Safe" if 2 < 1 else "Unsafe")
 # o: Unsafe
 
-# lambda
-# TODO
+# lambda -- Anonymous functions assigned to variables
+x = lambda a, b: a * b
+print(x(5, 6))      # 30
 
+# Remember: map & filter always return map & filter objects -- pass them in list() to get lists
 # map
-# TODO
+# map(fun, iter)
+def addition(n): 
+    return n + n 
+# We double all numbers using map() 
+numbers = (1, 2, 3, 4) 
+result = map(addition, numbers) 
+print(list(result)      # [2, 4, 6, 8]
 
-# filter
-# TODO
+# filter - 1: Based on filter function
+# https://www.programiz.com/python-programming/methods/built-in/filter
+nums = [-1, 3, 0, -3, 4, 4, -29]
+filteredNums = filter(lambda a : a>0, nums) # can also use a proper function in place of lambda
+print(list(filteredNums)) # [3, 4, 4]
+
+# filter - 2: Based on None: returns every legit value: skips False, None, 0
+nums = [-1, 3, 0, False, None, 4, -29, 'a', 'false']
+filteredNums = filter(None, nums)
+list(filteredNums)  # [-1, 3, 4, -29, 'a', 'false']
 
 # date
 import datetime
