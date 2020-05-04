@@ -22,6 +22,10 @@ for idx in range(length-1):
     for idx2 in range(idx+1, length):
         # a = array[idx] + array[idx2]
 
+# for each with both index and value
+for idx, val in enumerate(ints):
+    print(idx, val)
+
 # int max & minimum possible value
 import sys
 max = sys.maxsize       # 9223372036854775807
@@ -234,4 +238,10 @@ if (pattern):
   print("will not reach")  # will not print 
 
 min = a if a < b else b     # ternary operator
+
+# do while
+# python does not have `do while`, use:
+    while True:
+        if (condition):
+            break
 
