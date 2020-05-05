@@ -1,10 +1,8 @@
-// Todo: add creation from start -- then reverse
 // Todo: add is_null usage
 function interleave_lists(first, second, interleaved) {
   // if both empty
   // display(interleaved);
   if (first === null && second === null) { 
-      display("here");
       return interleaved; 
   }
   // first still has elements
@@ -21,9 +19,9 @@ function interleave_lists(first, second, interleaved) {
       // display(tail(second));
     } else {
       // interleaved = pair(head(first), pair(head(second), interleaved));
-      display(head(first));
-      display(interleaved);
-      display("oh");
+      // display(head(first));
+      // display(interleaved);
+      // display("oh");
       interleaved = append(interleaved, pair(head(first), pair(head(second), null)));
       // display(append(interleaved, head(first)));
       // interleaved = append(interleaved, head(second));
@@ -33,18 +31,18 @@ function interleave_lists(first, second, interleaved) {
   }
   
   function interleave_lists_helper(first, second) {
-    let result = [];
+  //   let result = [];
     // always call interleave_lists with first array as larger
     if (length(first) >= length(second)) { 
-         result = interleave_lists(first, second, null); 
-         return result;
+          return interleave_lists(first, second, null); 
+      //   return result;
     } else {
-        result = interleave_lists(second, first, null); 
-        return result;
+        return interleave_lists(second, first, null); 
+      //   return result;
     }
   }
   
-  interleave_lists_helper(list(1,2,3,7,8), list(4,5,6));
+  interleave_lists_helper(list(1,2,3), list(4,5,6,7,8));
   
   // append(list(1, 4), 3);
   
