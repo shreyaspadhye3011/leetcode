@@ -1,3 +1,4 @@
+// Playground Session: https://tinyurl.com/y6ueyh7l
 // Todo: add is_null usage
 function interleave_lists(first, second, interleaved) {
   // if both empty

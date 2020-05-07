@@ -94,15 +94,19 @@ set1 - set2 # {1, 6}
 set2 - set1 # set() -> empty set
 list(set1)  # create list from a set
 
-# Queues
+# Queues -- VIMP
 # Indexed access is O(1) at both ends but slows to O(n) in the middle. For fast random access, use lists instead.
 # Reference: https://medium.com/@shuangzizuobh2/how-well-do-you-code-python-9bec36bbc322
 # Reference: https://docs.python.org/2/library/collections.html#collections.deque 
+from collections import deque
 deque(['f', 'g', 'h', 'i', 'j'])
+access = deque([])  # initializing queues
 d.pop()         # 'j'   O(1)
 d.popleft()     # 'f'   O(1)
+d.append('s')   # add in end
+a.insert(3, '4')    # add at sepcific index
 # Note: Both are O(1) because these are built on top of linked list implementations (pointers to both ends) along with array concepts of contiguous memory for quick retrieval -- A very high level understanding
-# Note: Both stacks / lists and queues support ppek() operation which just looks at the top or last element respectively without removing it
+# Note: Both stacks / lists and queues support peek() operation which just looks at the top or last element respectively without removing it
 
 # for in with reversed index
 for i in reversed(range(5)):

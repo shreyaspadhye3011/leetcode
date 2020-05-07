@@ -1,4 +1,4 @@
-// Session: https://tinyurl.com/yalr6v4t
+// Playground Session: https://tinyurl.com/ycnny6o7
 
 function make_interval(x) { 
     return pair(x[0], x[1]); 
@@ -14,8 +14,8 @@ function check_overlapping_intervals(intervalOne, intervalTwo) {
     let inter1 = make_interval(intervalOne);
     let inter2 = make_interval(intervalTwo);
     return lower_bound(inter1) < lower_bound(inter2) 
-    ? (lower_bound(inter2) < upper_bound(inter1) ? true : false)
-    : (lower_bound(inter1) < upper_bound(inter2) ? true : false); 
+    ? lower_bound(inter2) < upper_bound(inter1) 
+    : lower_bound(inter1) < upper_bound(inter2); 
 }
 
 // check_overlapping_intervals([12,13], [0,4]); // false
