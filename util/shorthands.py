@@ -41,6 +41,7 @@ list1.insert(4, 10)  # [1, 2, 3, 4, 10, 5, 6, 7]
 a.pop()   # removes the last element of the array i.e O(1)
 # Note: Lists behave as Stacks by default
 a.pop(0)  # remove first element from the array ~ O(N) complexity. pop(k) has O(k) complexity in python
+# Note: use any valid index in place of 0 to remove ith element from start
 a.remove(value)   # remove first value from list that matches the given value
 
 # lists & sort
