@@ -1,7 +1,13 @@
-// https://tinyurl.com/y94t8bel
+// https://tinyurl.com/ydg57gjk
 
 const foldr = op => init => xs => is_null(xs) ? init : op(head(xs), foldr(op)(init)(tail(xs)));
 const foldl = op => init => xs => is_null(xs) ? init : foldl(op)(op(init, head(xs)))(tail(xs));
+
+// Basics
+const Nil = null;
+const Cons = a => remaining => append(list(a), remaining);
+const Const = a => b => a;
+const flip = xs => list(tail(xs), head(xs));
 
 // 1. length
 const length = (xs) => foldr((xs,n) => n+1)(0)(xs); 
@@ -31,4 +37,5 @@ display(flatten([[2, null], [[3, [7, null]], [[4, [8, [3, null]]], [[4, null], n
 const heador = xs => default_value => is_null(xs) ? default_value : head(xs); 
 display(heador([2, [3, [4, [4, null]]]])(-1), "Heador:");
 display(heador(null)(-1), "Heador (default):");
+
 
