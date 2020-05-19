@@ -8,7 +8,7 @@ const lookup = dict => k => !is_null(dict) &&
                                              	   lookup(tail(dict))(k));
 
 const contains_l = (set, x) => {
-    display(set);
+    // display(set);
   return !is_null(set) && (x === head(set)) || !is_null(set) && contains_l(tail(set), x); 
 };
 
@@ -28,6 +28,15 @@ const insert_chain_hs = k => dict => {
      else { return append(dict, pair(k, pair(k, null))); }
 };
 
+const insert_dict = (k, v) => dict => pair(pair(k, v), dict);
+
+const update_dict = dict => (k, v) => {
+  return is_null(dict) ? null 
+  : key(head(dict)) === k
+    ? insert_dict(k, v)(update_dict(tail(dict))(k, v))
+    : insert_dict(key(head(dict)), value(head(dict)))(update_dict(tail(dict))(k, v));
+};
+
 const insert_hs = (set, x) => {
   const key = hash(x);
   const chain = lookup(set)(key);
@@ -36,15 +45,17 @@ const insert_hs = (set, x) => {
       return insert_chain_hs(key)(set);
   } else {
     //   display(x);
-      return insert_l(x, chain);
+      const new_list = insert_l(x, chain);
+      display(new_list);
+      update_dict(set)(key, new_list);
   }
 };
 
-const a = insert_hs(null, 6);   
-display(a);         // [[6, [6, null]], null]
+const a = insert_hs(null, 6);
+display(a);
 const b = insert_hs(a, 36);
-display(b);         // [[6, [6, null]], [5, [5, null]]]
-insert_hs(b, 37);   // [37, [6, null]] (all good just need to update list at key 6 with this value)
+display(b);
+insert_hs(b, 37);
 
 
 
