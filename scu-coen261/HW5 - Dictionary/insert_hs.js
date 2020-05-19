@@ -25,7 +25,10 @@ const contains_hs = (hashset, x) => {
 
 const insert_chain_hs = k => dict => {
      if (is_null(dict)) { return pair(pair(k, pair(k, null)), null); }
-     else { return append(dict, pair(k, pair(k, null))); }
+     else { 
+        //  return pair(append(dict, pair(k, pair(k, null))), null); 
+         return insert_dict(k, pair(k, null))(dict);
+     }
 };
 
 const insert_dict = (k, v) => dict => pair(pair(k, v), dict);
@@ -40,14 +43,15 @@ const update_dict = dict => (k, v) => {
 const insert_hs = (set, x) => {
   const key = hash(x);
   const chain = lookup(set)(key);
-//   display(chain);
+  display(chain);
   if (chain === false) {
       return insert_chain_hs(key)(set);
   } else {
     //   display(x);
       const new_list = insert_l(x, chain);
+      display("helo");
       display(new_list);
-      update_dict(set)(key, new_list);
+      return update_dict(set)(key, new_list);
   }
 };
 

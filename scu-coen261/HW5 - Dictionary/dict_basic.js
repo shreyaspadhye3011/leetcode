@@ -26,6 +26,7 @@ const hungarian = build_dict(list(pair(1, "egy"), pair(2, "ketto"), pair(3, "har
 update_dict(hungarian)(2, "milo");
 
 
+
 // output of hungarian: (structure of a dictionary)
 // [
 //   [1, "egy"], [
@@ -36,3 +37,22 @@ update_dict(hungarian)(2, "milo");
 //       ]
 //   ]
 // ]
+
+
+// most likely output of hashset: (structure of a dictionary list)
+// [
+//   [1, [1, null]], 
+//   [2, [2, null]], 
+//   null
+// ]
+
+// [
+//   [
+//     [6, [6, null]], 
+//     [5, [5, null]]
+//   ], 
+//   null
+// ]
+
+// const hungarian = build_dict(list(pair(1, list(2, 3)), pair(7, list(12, 13))));
+// output: [[1, [2, [3, null]]], [[7, [12, [13, null]]], null]]
