@@ -24,3 +24,15 @@ const hungarian = build_dict(list(pair(1, "egy"), pair(2, "ketto"), pair(3, "har
 // hungarian;
 // lookup(hungarian)(7);
 update_dict(hungarian)(2, "milo");
+
+
+// output of hungarian: (structure of a dictionary)
+// [
+//   [1, "egy"], [
+//       [2, "ketto"], [
+//           [3, "harom"], [
+//               [2, "lib"], null
+//           ]
+//       ]
+//   ]
+// ]

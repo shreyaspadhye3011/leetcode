@@ -24,8 +24,8 @@ const contains_hs = (hashset, x) => {
 };
 
 const insert_chain_hs = k => dict => {
-     if (is_null(dict)) { return pair(k, pair(k, list())); }
-     else { return pair(dict, pair(k, list())); }
+     if (is_null(dict)) { return pair(pair(k, pair(k, null)), null); }
+     else { return append(dict, pair(k, pair(k, null))); }
 };
 
 const insert_hs = (set, x) => {
@@ -40,8 +40,9 @@ const insert_hs = (set, x) => {
   }
 };
 
-insert_hs(null, 6);
-// insert_hs(a, 36);
+const a = insert_hs(null, 6);
+a;
+insert_hs(a, 36);
 
 
 
