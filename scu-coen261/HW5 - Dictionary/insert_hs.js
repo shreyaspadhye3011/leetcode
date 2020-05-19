@@ -8,7 +8,8 @@ const lookup = dict => k => !is_null(dict) &&
                                              	   lookup(tail(dict))(k));
 
 const contains_l = (set, x) => {
-  return !is_null(set) && x === head(set) || contains_l(tail(set), x); 
+    display(set);
+  return !is_null(set) && (x === head(set)) || contains_l(tail(set), x); 
 };
 
 const insert_l = (x, set) => {
@@ -22,17 +23,26 @@ const contains_hs = (hashset, x) => {
   return !is_null(chain) && contains_l(chain, x);
 };
 
-const insert_chain_hs = (k, v) => dict => pair(pair(k, list()), dict);
+const insert_chain_hs = k => dict => {
+     if (is_null(dict)) { return pair(k, pair(k, list())); }
+     else { return pair(dict, pair(k, list())); }
+};
 
 const insert_hs = (set, x) => {
   const key = hash(x);
   const chain = lookup(set)(key);
-  if (is_null(chain)) {
-      insert_chain_hs(key, set);
+//   display(chain);
+  if (!chain) {
+      return insert_chain_hs(key)(set);
   } else {
-      insert_l(x, chain);
+    //   display(x);
+      return insert_l(x, chain);
   }
 };
+
+insert_hs(null, 6);
+// insert_hs(a, 36);
+
 
 
 
