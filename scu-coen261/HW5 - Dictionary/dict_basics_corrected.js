@@ -14,3 +14,5 @@ const lookup = dict => k => !is_null(dict) &&
 const hungarian = build_dict(list(pair(1, "egy"), pair(2, "ketto"), pair(3, "harom")));
 
 lookup(hungarian)(2);
+
+display(key(head(dict)));
