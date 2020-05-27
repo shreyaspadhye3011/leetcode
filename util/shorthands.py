@@ -1,3 +1,6 @@
+# TODO:
+# Add code to read line by line input from a file
+
 # Conversion / casting
 int(5.3)    # 5
 float(5)    # 5.0
