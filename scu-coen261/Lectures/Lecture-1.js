@@ -1,3 +1,6 @@
+// https://tinyurl.com/coen261-1
+// https://tinyurl.com/coen261-2
+
 // basic function
 function square(x) {
     return x * x;
@@ -50,6 +53,8 @@ const a = (x) => {
 const a = (x) => (y) => square(x) + square(y);
 
 a(3)(3);
+
+// ------------------------------------------------ //
 
 // Exercise 1.5 SICP JS
 function p() {

@@ -2,6 +2,17 @@
 # Add code to read line by line input from a file
 
 # Conversion / casting
+isinstance(value, int) # check if a value is of int type
+
+# IMP: if a string value can be legitimately turned into int eg "6" -> True. "ss" -> False
+def RepresentsInt(s):
+    try: 
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+
 int(5.3)    # 5
 float(5)    # 5.0
 int("12")   # 12
