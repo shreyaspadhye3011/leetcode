@@ -17,7 +17,7 @@ left(left(a));
 // ------------------------------------------------ //
 
 // My PR: 
-// Session: https://api2.sourceacademy.nus.edu.sg/rees
+// Playground Session: https://api2.sourceacademy.nus.edu.sg/rees
 const tree = value => left => right => list(value, left, right);
 const not_defined = "N/A";
 const top = tree => is_null(tree) ? null : head(tree);
