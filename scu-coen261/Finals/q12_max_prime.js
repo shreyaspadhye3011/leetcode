@@ -12,5 +12,4 @@ const get_max_prime_factor = n => current_divisor => max_prime => {
     : get_max_prime_factor(n)(current_divisor+1)(max_prime);
 };
 // todo: use helper to pass init values
-// todo: test for primes etc
-get_max_prime_factor(15)(2)(2);     // 5
+get_max_prime_factor(600851475143)(2)(2);     // 6857
