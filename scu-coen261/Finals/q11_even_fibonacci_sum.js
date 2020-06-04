@@ -5,6 +5,9 @@ const KI = a => b => b;
 const stream_tail = xs => tail(xs)();
 const take = n => s => is_null(s) || n <= 0 ? null : 
                                               pair(head(s), () => take(n-1)(stream_tail(s)));
+                                              
+const take_sum = n => s => sum => is_null(s) || n <= 0 ? null : 
+                                              pair(sum+head(s), () => take_sum(n-1)(stream_tail(s))(sum+head(s)));
 
 const foreach = f => xs => is_null(xs) ? true : KI(f(head(xs)))(foreach(f)(stream_tail(xs)));
 const sum_each = xs => sum => is_null(xs) ? sum : sum_each(stream_tail(xs))(sum+head(xs));
@@ -28,5 +31,6 @@ function sieve(stream) {
 const even_fibs = sieve(fibs);
 
 even_fibs;
-display_stream(take(8)(even_fibs));
+// display_stream(take(8)(even_fibs));
 sum_each(take(100)(even_fibs))(0);
+// take_sum(1000)(even_fibs)(0);
