@@ -10,4 +10,9 @@ const lcm_helper = a => b => multiplier => is_divisible(a*multiplier)(b)
                                             ? a*multiplier : lcm_helper(a)(b)(multiplier+1);
                                             
 
-lcm(7)(9);
+// todo: create this list dynamically
+// any number that is divisible by these will definitely be divisible by 1-10
+const number_list = list(20, 19, 18, 17, 16, 15, 14, 13, 12, 11);
+number_list;
+head(number_list);  // 20
+tail(number_list);  // [19, [18, [17, [16, [15, [14, [13, [12, [11, null]]]]]]]]]
