@@ -16,58 +16,48 @@ const cons = tree => tree(cons);
 
 const $ = x => is_string(x) ? x : (!is_function(x) || (x(".") === undefined)) ? stringify(x) : x(".");
 const scan = x => (!is_function(x) || (x(scan) === undefined)) ? flatten(x) : x(scan);
-const foldl = (op, z) => x => (!is_function(x) || (x(foldl) === undefined)) ? op(z,x) : x(foldl)(op,z);
 const size = v => (!is_function(v) || (v(size) === undefined)) ? 1 : v(size);
 
 const single = a => dispatch(list(
-    // ".",  "single(" + $(a) + ")",
     cons, b => tree(digit1(b), empty, digit1(a)),
     scan, scan(a)
 ));    
 
 const empty = dispatch(list(
-    // ".",  "<>",
     cons, single,
     scan, null
 ));
 
 const tree = (left, subtree, right) => dispatch(list(
-//   ".",  "tree(" + $(left) + "," + $(subtree) + "," + $(right) + ")",
   cons, x => left(cons)(subtree, right)(x),
   scan, flatmap(scan)(list(right, subtree, left))
 ));
 
 const digit1 = a => dispatch(list(
-//   ".", "[" + $(a) + "]",
   cons, (subtree, right) => x => tree(digit2(x,a), subtree, right),
   scan, flatmap(scan)(list(a))
 ));
 
 const digit2 = (a,b) => dispatch(list(
-//   ".", "[" + $(a) + "," + $(b) + "]",
   cons, (subtree, right) => x => tree(digit3(x,a,b), subtree, right),
   scan, flatmap(scan)(list(b,a))
 ));
 
 const digit3 = (a,b,c) => dispatch(list(
-//   ".", "[" + $(a) + "," + $(b) + "," + $(c) + "]",
   cons,(subtree, right) => x => tree(digit4(x,a,b,c), subtree, right),
   scan, flatmap(scan)(list(c,b,a))
 ));
 
 const digit4 = (a,b,c,d) => dispatch(list(
-//   ".", "[" + $(a) + "," + $(b) + "," + $(c) + "," + $(d) + "]",
   cons,(subtree, right) => x => tree(digit2(x,a),subtree(cons)(node3(b,c,d)),right),
   scan, flatmap(scan)(list(d,c,b,a))
 ));
 
 const node2 = (a,b) => dispatch(list(
-//   ".",  "(" + $(a) + "," + $(b) + ")",
   scan, flatmap(scan)(list(b,a))
 ));
 
 const node3 = (a,b,c) => dispatch(list(
-//   ".",  "(" + $(a) + "," + $(b) + "," + $(c) + ")",
   scan, flatmap(scan)(list(c,b,a))
 ));
 
