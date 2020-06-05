@@ -1,3 +1,7 @@
+// Author: Shreyas Padhye, spadhye@scu.edu, 00001556287
+// Courtesy: Prof. Vlad Patryshev & SICP JS
+// https://api2.sourceacademy.nus.edu.sg/scanltr
+
 const lookup = dict => key => is_null(dict) ?  undefined :
                               head(head(dict)) === key ? tail(head(dict)) :
                               lookup(tail(dict))(key);
