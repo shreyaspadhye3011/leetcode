@@ -34,7 +34,7 @@ const empty = dispatch(list(
 const tree = (left, subtree, right) => dispatch(list(
   ".",  "tree(" + $(left) + "," + $(subtree) + "," + $(right) + ")",
   cons, x => left(cons)(subtree, right)(x),
-  scan, flatmap(scan)(list(left, subtree, right))
+  scan, flatmap(scan)(list(right, subtree, left))
 ));
 
 const digit1 = a => dispatch(list(
@@ -73,4 +73,4 @@ const node3 = (a,b,c) => dispatch(list(
 
 const build = n => n === 0 ? empty : build(n-1)(cons)(n);
 const t = build(30);
-display($(t));
+display(scan(t));
