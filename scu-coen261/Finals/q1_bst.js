@@ -1,5 +1,6 @@
 // Author: Shreyas Padhye, spadhye@scu.edu, 00001556287
 // sourceacademy: https://api2.sourceacademy.nus.edu.sg/bintree
+
 const tree = value => left => right => list(value, left, right);
 const not_defined = "N/A";
 const top = tree => is_null(tree) ? null : head(tree);
