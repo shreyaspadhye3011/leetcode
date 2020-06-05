@@ -20,57 +20,57 @@ const foldl = (op, z) => x => (!is_function(x) || (x(foldl) === undefined)) ? op
 const size = v => (!is_function(v) || (v(size) === undefined)) ? 1 : v(size);
 
 const single = a => dispatch(list(
-    ".",  "single(" + $(a) + ")",
+    // ".",  "single(" + $(a) + ")",
     cons, b => tree(digit1(b), empty, digit1(a)),
     scan, scan(a)
 ));    
 
 const empty = dispatch(list(
-    ".",  "<>",
+    // ".",  "<>",
     cons, single,
     scan, null
 ));
 
 const tree = (left, subtree, right) => dispatch(list(
-  ".",  "tree(" + $(left) + "," + $(subtree) + "," + $(right) + ")",
+//   ".",  "tree(" + $(left) + "," + $(subtree) + "," + $(right) + ")",
   cons, x => left(cons)(subtree, right)(x),
   scan, flatmap(scan)(list(right, subtree, left))
 ));
 
 const digit1 = a => dispatch(list(
-  ".", "[" + $(a) + "]",
+//   ".", "[" + $(a) + "]",
   cons, (subtree, right) => x => tree(digit2(x,a), subtree, right),
   scan, flatmap(scan)(list(a))
 ));
 
 const digit2 = (a,b) => dispatch(list(
-  ".", "[" + $(a) + "," + $(b) + "]",
+//   ".", "[" + $(a) + "," + $(b) + "]",
   cons, (subtree, right) => x => tree(digit3(x,a,b), subtree, right),
-  scan, flatmap(scan)(list(a,b))
+  scan, flatmap(scan)(list(b,a))
 ));
 
 const digit3 = (a,b,c) => dispatch(list(
-  ".", "[" + $(a) + "," + $(b) + "," + $(c) + "]",
+//   ".", "[" + $(a) + "," + $(b) + "," + $(c) + "]",
   cons,(subtree, right) => x => tree(digit4(x,a,b,c), subtree, right),
-  scan, flatmap(scan)(list(a,b,c))
+  scan, flatmap(scan)(list(c,b,a))
 ));
 
 const digit4 = (a,b,c,d) => dispatch(list(
-  ".", "[" + $(a) + "," + $(b) + "," + $(c) + "," + $(d) + "]",
+//   ".", "[" + $(a) + "," + $(b) + "," + $(c) + "," + $(d) + "]",
   cons,(subtree, right) => x => tree(digit2(x,a),subtree(cons)(node3(b,c,d)),right),
-  scan, flatmap(scan)(list(a,b,c,d))
+  scan, flatmap(scan)(list(d,c,b,a))
 ));
 
 const node2 = (a,b) => dispatch(list(
-  ".",  "(" + $(a) + "," + $(b) + ")",
-  scan, flatmap(scan)(list(a,b))
+//   ".",  "(" + $(a) + "," + $(b) + ")",
+  scan, flatmap(scan)(list(b,a))
 ));
 
 const node3 = (a,b,c) => dispatch(list(
-  ".",  "(" + $(a) + "," + $(b) + "," + $(c) + ")",
-  scan, flatmap(scan)(list(a,b,c))
+//   ".",  "(" + $(a) + "," + $(b) + "," + $(c) + ")",
+  scan, flatmap(scan)(list(c,b,a))
 ));
 
 const build = n => n === 0 ? empty : build(n-1)(cons)(n);
 const t = build(30);
-display(scan(t));
+scan(t);
