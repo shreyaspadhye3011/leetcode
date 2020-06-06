@@ -8,6 +8,8 @@
 
 // fib(0);
 
+// Author: Shreyas Padhye, spadhye@scu.edu, 00001556287
+// https://api2.sourceacademy.nus.edu.sg/evenfibsum
 
 // returns sum of all even valued terms in the first n numbers of the fibonacci sequence
 const fib_sum = n => {
