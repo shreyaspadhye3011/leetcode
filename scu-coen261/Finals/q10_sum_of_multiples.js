@@ -1,5 +1,6 @@
-// sourceacademy: https://api2.sourceacademy.nus.edu.sg/sumofmultiples
 // Author: Shreyas Padhye, spadhye@scu.edu, 00001556287
+// sourceacademy: https://api2.sourceacademy.nus.edu.sg/sumofmultiples
+
 // Sum of multiples - returns the sum of positive multples of 3 or 5 that are below a specified limit: 1000
 const sum_of_multiples = limit => {
     const predicate = num => (num % 3 === 0 || num % 5 === 0);

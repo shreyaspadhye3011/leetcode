@@ -1,5 +1,6 @@
 // Author: Shreyas Padhye, spadhye@scu.edu, 00001556287
 // Courtesy: Prof. Vlad Patryshev & SICP JS
+// sourceacademy: https://api2.sourceacademy.nus.edu.sg/insertsl
 
 function contains_sl(set, x) {
     return !is_null(set) && (x === head(set) ||
@@ -12,4 +13,3 @@ function contains_sl(set, x) {
   
   const l = list();
   insert_sl(insert_sl(insert_sl(insert_sl(l, 99), 90), 95), 99);  // [90, [95, [99, null]]]
-  // seems to be working. need to find bug
