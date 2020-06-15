@@ -80,9 +80,9 @@ max_array[-3:]          # [3, 4, 5]
 # print last 3 numbers, reverse
 max_array[:-4:-1]       # [5, 4, 3]
 # print first 3 numbers, reverse
-    max_array[2::-1]    # [4, 3, 2] -> <start_from:stop_at:reverse=True> = note that it started from back, from index 2 and printed the whole list as no end given so it prints till start
-    # Similarly, skip first and print 2, reverse
-    max_array[2:0:-1]   # [4, 3] -> <start_from:stop_at:reverse=True>
+max_array[2::-1]    # [4, 3, 2] -> <start_from:stop_at:reverse=True> = note that it started from back, from index 2 and printed the whole list as no end given so it prints till start
+# Similarly, skip first and print 2, reverse
+max_array[2:0:-1]   # [4, 3] -> <start_from:stop_at:reverse=True>
 # Note: with -1, indexing remains same, just direction of traversal changes
 # Note: stop_at is always excliusive, i.e. that index will NOT be included in the sliced array
 
@@ -156,7 +156,7 @@ for i in a:
 # sort a string and return string
 q = "qssi"
 "".join(sorted(q))  # 'iqss'
-sorted(q)           # returns --> ['i', 'q', 's', 's']
+sorted(q)           # returns --> ['i', 'q', 's', 's'] but doesn't change q --- # REMEMBER: q doesn't change when you use "sorted"
 
 # ------------------------------------------------------------------ #
 
