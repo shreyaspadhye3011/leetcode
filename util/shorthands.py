@@ -58,6 +58,18 @@ a.pop(0)  # remove first element from the array ~ O(N) complexity. pop(k) has O(
 # Note: use any valid index in place of 0 to remove ith element from start
 a.remove(value)   # remove first value from list that matches the given value
 
+# List Concatenation
+l = [1, 2, 43, 8]
+l = l + [7, 6] # O(N) operation! it is concatenating two lists so internally creates a new list
+# Result: [1, 2, 43, 8, 7, 6]
+# Better:
+l += [7, 6]         # O(1) Adds to same reference in end using extend()
+# same as
+l.extend([7, 6])    # O(1) complexity as adds at back of same list. doesn't create new reference
+# Result: [1, 2, 43, 8, 7, 6]
+# https://www.programiz.com/python-programming/methods/list/extend
+# https://stackoverflow.com/questions/33191470/difference-in-complexity-of-append-and-concatenate-for-this-list-code
+
 # lists & sort
 a = [5, 5, 1, 7, 9, 1]
 list(set(a))    # remove redundant elements. Note: will automatically sort
@@ -146,6 +158,11 @@ print(string.replace("node", "Node"))  # Node in Node Node
 a = ['a', 'b', 'c', 'd']    # implode lists or join
 ''.join(a)                  # imp: remember that this only works with string elements. Not woth int. To make it work for int, type cast
 # IMP - join only works for char elements and NOT for integers
+
+# IMP: string concatenation takes O(n) time! Therefore if concatentaion is a major part of your algo, use array append and then "".join(array) to get resultant string which will have amortized O(1) time
+# i.e. Instead of `str +=`, use res_array & then ``"".join(res_array)` approach coz str+ takes O(n) time every time you add a character due to the underlying implementation (read more)
+
+
 # For int array, use:
 ch = ''
 for i in a:
