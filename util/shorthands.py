@@ -162,10 +162,12 @@ sorted(q)           # returns --> ['i', 'q', 's', 's'] but doesn't change q --- 
 
 
 # dictionaries
-
 d = {"aa": 3, "bb": 4, "cc": 2, "dd": [1, 3]}
 list(d.keys())      # returns all keys as a list
 list(d.values())    # returns all values in the dict as a list
+# access keys in sorted fashion
+for a in sorted(d.keys()):
+  print(a)
 
 # get "key" value or return "default" if key doesn't exist
 dict.get("key", "default") 
