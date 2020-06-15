@@ -154,6 +154,11 @@ for i in a:
 ''.join([str(elem) for elem in a])     # when a has int elements
 
 # dictionaries
+
+d = {"aa": 3, "bb": 4, "cc": 2, "dd": [1, 3]}
+list(d.keys())      # returns all keys as a list
+list(d.values())    # returns all values in the dict as a list
+
 # get "key" value or return "default" if key doesn't exist
 dict.get("key", "default") 
 
