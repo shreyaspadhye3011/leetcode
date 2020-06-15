@@ -153,6 +153,13 @@ for i in a:
 # o: 'abcd'
 ''.join([str(elem) for elem in a])     # when a has int elements
 
+# sort a string and return string
+q = "qssi"
+"".join(sorted(q))  # 'iqss'
+
+# ------------------------------------------------------------------ #
+
+
 # dictionaries
 
 d = {"aa": 3, "bb": 4, "cc": 2, "dd": [1, 3]}
