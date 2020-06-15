@@ -156,6 +156,7 @@ for i in a:
 # sort a string and return string
 q = "qssi"
 "".join(sorted(q))  # 'iqss'
+sorted(q)           # returns --> ['i', 'q', 's', 's']
 
 # ------------------------------------------------------------------ #
 
