@@ -135,6 +135,11 @@ a.insert(3, '4')    # add at sepcific index
 # Note: Both are O(1) because these are built on top of linked list implementations (pointers to both ends) along with array concepts of contiguous memory for quick retrieval -- A very high level understanding
 # Note: Both stacks / lists and queues support peek() operation which just looks at the top or last element respectively without removing it
 
+# reverse list iteration
+a = ['a', 'b', 'c']
+for item in reversed(a):
+    print(item)    # ['c', 'b', 'a']
+
 # for in with reversed index
 for i in reversed(range(5)):
     print(i)    # 4,3,2,1,0
