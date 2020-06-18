@@ -20,7 +20,7 @@ parent([1,2], "no")     # O: ([1, 2, 'yes'], 'no')
 # Conversion / casting
 isinstance(value, int) # check if a value is of int type
 
-# IMP: if a string value can be legitimately turned into int eg "6" -> True. "ss" -> False
+# IMP: check if a string value can be legitimately turned into int eg "6" -> True. "ss" -> False
 def RepresentsInt(s):
     try: 
         int(s)
