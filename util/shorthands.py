@@ -1,6 +1,11 @@
 # TODO:
 # Add code to read line by line input from a file
 
+# Pass by reference (or object sharing) & Pass by Value
+# In python: 
+# immutable arguments like integers, strings or tuples are passed by value i.e. change inside function to the parameter won't reflect outside
+# all other mutable objects like lists, dictionaries etc are passed by reference
+
 # Conversion / casting
 isinstance(value, int) # check if a value is of int type
 
