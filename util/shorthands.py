@@ -5,6 +5,17 @@
 # In python: 
 # immutable arguments like integers, strings or tuples are passed by value i.e. change inside function to the parameter won't reflect outside
 # all other mutable objects like lists, dictionaries etc are passed by reference
+def parent(arr, str):
+  changeValues(arr, str)
+  return arr, str
+
+def changeValues(arr, str):
+  # array append reflects in parent: Call by reference
+  arr.append("yes")
+  # string change doesn't change value in parent: Call by Value
+  str = "yes"
+
+parent([1,2], "no")     # O: ([1, 2, 'yes'], 'no')
 
 # Conversion / casting
 isinstance(value, int) # check if a value is of int type
