@@ -317,3 +317,7 @@ min = a if a < b else b     # ternary operator
         if (condition):
             break
 
+# enums
+# TODO: Add more resources
+# https://www.tutorialspoint.com/enum-in-python
+
