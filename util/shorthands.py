@@ -5,6 +5,8 @@
 # In python: 
 # immutable arguments like integers, strings or tuples are passed by value i.e. change inside function to the parameter won't reflect outside
 # all other mutable objects like lists, dictionaries etc are passed by reference
+
+# Note: You can result {} dict to control variables that you want to pass by reference.
 def parent(arr, str):
   changeValues(arr, str)
   return arr, str
@@ -336,4 +338,10 @@ min = a if a < b else b     # ternary operator
 # enums
 # TODO: Add more resources
 # https://www.tutorialspoint.com/enum-in-python
+
+# tuple assignment
+r,c = 2, 4 or r,c = (2, 4) # both work
+c   # 4
+(r,c) == (2,4)             # True
+# when returning or checking, need to use tuple
 
