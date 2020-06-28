@@ -29,7 +29,7 @@ for obj in word_list:
 # 1 cea <class '__main__.WordObject'>
 # 2 aeca <class '__main__.WordObject'>
 
-# sorting a list of objects
+# sorting a list of objects - https://docs.python.org/3/howto/sorting.html
 word_list.sort(key=lambda x: x.value)
 
 for obj in word_list:

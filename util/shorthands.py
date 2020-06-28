@@ -52,7 +52,7 @@ def isPrime(number):
 length = len(array)
 for idx in range(length-1):
     for idx2 in range(idx+1, length):
-        # a = array[idx] + array[idx2]
+        a = array[idx] + array[idx2]
 
 # for each with both index and value
 for idx, val in enumerate(ints):
@@ -95,6 +95,9 @@ a.sort()        # sort the original list
 a.sort(reverse=True)    # descending
 sorted(a)       # return a sorted version of the list. #IMP: The original list doesn't change. Basically, can be used for iterating
 sorted(a, reverse=True) # descending
+# sorting a list of objects
+# for more info see: class_design_basics.py or https://docs.python.org/3/howto/sorting.html
+word_list.sort(key=lambda x: x.value)   # where value is an attribute of the comprising object in the list
 
 # list slice
 a = [2, 3, 4, 5, 6]
