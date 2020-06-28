@@ -353,3 +353,5 @@ words = ["yace", "cea", "aeca"]
 sorted_chars = list(map(lambda word: ''.join(sorted(word)), words))
 # ['acey', 'ace', 'aace']
 
+# Sorting a string can even be O(N) by counting sort as you know the toal number of characters in ASCII: 127
+# https://stackoverflow.com/questions/4433915/why-is-sorting-a-string-on-log-n#:~:text=O(n%20log%20n)%20is,choose%20to%20solve%20this%20task.
