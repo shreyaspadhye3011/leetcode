@@ -348,3 +348,8 @@ c   # 4
 (r,c) == (2,4)             # True
 # when returning or checking, need to use tuple
 
+# sort characters in a string + example of map and lambda
+words = ["yace", "cea", "aeca"]
+sorted_chars = list(map(lambda word: ''.join(sorted(word)), words))
+# ['acey', 'ace', 'aace']
+
