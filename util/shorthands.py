@@ -75,6 +75,14 @@ a.pop()   # removes the last element of the array i.e O(1)
 a.pop(0)  # remove first element from the array ~ O(N) complexity. pop(k) has O(k) complexity in python
 # Note: use any valid index in place of 0 to remove ith element from start
 a.remove(value)   # remove first value from list that matches the given value
+# empty, non-empty check
+s = []
+# check if list is empty
+if not s:
+    print("works")
+# check if list has elements
+if s:
+    pass
 
 # List Concatenation
 l = [1, 2, 43, 8]
@@ -355,3 +363,12 @@ sorted_chars = list(map(lambda word: ''.join(sorted(word)), words))
 
 # Sorting a string can even be O(N) by counting sort as you know the toal number of characters in ASCII: 127
 # https://stackoverflow.com/questions/4433915/why-is-sorting-a-string-on-log-n#:~:text=O(n%20log%20n)%20is,choose%20to%20solve%20this%20task.
+
+# sorting a list based on another list eg here: indices sorted based on strings in a different list (of course the strings and the indices are complementary) 
+words = ["race", "blink", "oy", "yo", "linkb", "care"]
+sorted_words = list(map(lambda word: ''.join(sorted(word)), words))   # ['acer', 'bikln', 'oy', 'oy', 'bikln', 'acer']
+# sorted_words = ["".join(sorted(w)) for w in words]        # another way of creating list after sorting characters of every string
+indices = [i for i in range(len(words))]
+indices.sort(key=lambda x: sorted_words[x])
+indices
+# [0, 5, 1, 4, 2, 3]    # which represents the indices of words if they were sorted in sorted_words - leading to grouping of anagrams
