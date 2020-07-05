@@ -106,6 +106,10 @@ sorted(a, reverse=True) # descending
 # sorting a list of objects
 # for more info see: class_design_basics.py or https://docs.python.org/3/howto/sorting.html
 word_list.sort(key=lambda x: x.value)   # where value is an attribute of the comprising object in the list
+# sort auxiliary array (of indices) based on another array (strings)
+sorted_words = ["race", "blink", "oy", "yo", "linkb", "care"].sort()
+indices = [0, 1, 2, 3, 4, 5]
+indices.sort(key=lambda x: sorted_words[x]) 
 
 # list slice
 a = [2, 3, 4, 5, 6]
