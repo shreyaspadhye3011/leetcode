@@ -20,7 +20,15 @@ def changeValues(arr, str):
 parent([1,2], "no")     # O: ([1, 2, 'yes'], 'no')
 
 # Conversion / casting
-isinstance(value, int) # check if a value is of int type
+int(5.3)    # 5
+float(5)    # 5.0
+int("12")   # 12
+float("12")   # 12.0
+
+# check type
+type([5, 6, 89]) == list    # True
+type(7) == int         # True
+isinstance(value, int) # check if a value is of int type -- can use for custom class as well -- need to test
 
 # IMP: check if a string value can be legitimately turned into int eg "6" -> True. "ss" -> False
 def RepresentsInt(s):
@@ -29,12 +37,6 @@ def RepresentsInt(s):
         return True
     except ValueError:
         return False
-
-
-int(5.3)    # 5
-float(5)    # 5.0
-int("12")   # 12
-float("12")   # 12.0
 
 # Formating strings
 "I am a {} {}".format("disco", "dancer")
