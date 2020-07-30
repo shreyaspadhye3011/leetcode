@@ -238,10 +238,15 @@ dict.get("key", "default")
 # similar to get but also sets the default in dictionary along with returning it
 dict.setdefault("key", [])     
 
-# remove and return if "key" exists. If not return "default"
+# remove and return if "key" exists. 
 del dict["key"]
-# or
-dict.pop("key", "default")     
+# or: if not return "default"
+dict.pop("key", "default")  
+
+# setting tuple as dict key. Note: Only Immutable objects can be set as keys. Therefore list directly cannot be a key to a dict. Tuple can be
+# https://stackoverflow.com/questions/7027199/hashing-arrays-in-python
+a[tuple([4,5,6])] = 5   # can directly use tuple for key. list -> tuple just for demo purposes 
+a[(4,5,6)]              # returns 5
 
 # sort dictionary in descending order and return a list
 d = {"aa": 3, "bb": 4, "cc": 2, "dd": 1}
