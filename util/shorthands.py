@@ -247,6 +247,7 @@ dict.pop("key", "default")
 # https://stackoverflow.com/questions/7027199/hashing-arrays-in-python
 a[tuple([4,5,6])] = 5   # can directly use tuple for key. list -> tuple just for demo purposes 
 a[(4,5,6)]              # returns 5
+# frozenset: immutable form of a set
 
 # sort dictionary in descending order and return a list
 d = {"aa": 3, "bb": 4, "cc": 2, "dd": 1}
