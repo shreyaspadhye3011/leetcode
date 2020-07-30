@@ -315,6 +315,10 @@ datetime.datetime.now()     # get current time
 # also time objects can be compared directly
 
 # Dynamic Arrays: amortized analysis
+# TLDR;
+# Insertion at end: Amortized O(1)
+# Insertion at middle or end: O(N)
+#
 # Reference: AlgoExpert
 # 1. Lists in Python or arrays in JavsScript are dynamic arrays underhood
 # 2. For static arrays, increasing array size, inserting in  middle or end or front is O(N) time & O(1) space: Process: copy the whole array to a new location which can hold the updated size of the array. Array is always contiguous memory blocks. O(1) space because the old space is cleared once copied
