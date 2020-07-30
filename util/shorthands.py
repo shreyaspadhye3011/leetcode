@@ -85,12 +85,18 @@ if not s:
 # check if list has elements
 if s:
     pass
+# list difference - based on sets
+array = [4, 6, 7]
+integer = 7
+list(set(array) - set([integer]))
+# result: [4, 6] Note: second argument can be any list
 
 # List Concatenation
+# Method A: Avoid:
 l = [1, 2, 43, 8]
 l = l + [7, 6] # O(N) operation! it is concatenating two lists so internally creates a new list
 # Result: [1, 2, 43, 8, 7, 6]
-# Better:
+# Method B: Better:
 l += [7, 6]         # O(1) Adds to same reference in end using extend()
 # same as
 l.extend([7, 6])    # O(1) complexity as adds at back of same list. doesn't create new reference
