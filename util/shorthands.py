@@ -243,15 +243,23 @@ del dict["key"]
 # or: if not return "default"
 dict.pop("key", "default")  
 
+# sort dictionary in descending order and return a list
+d = {"aa": 3, "bb": 4, "cc": 2, "dd": 1}
+s = [(k, d[k]) for k in sorted(d, key=d.get, reverse=True)]
+
 # setting tuple as dict key. Note: Only Immutable objects can be set as keys. Therefore list directly cannot be a key to a dict. Tuple can be
 # https://stackoverflow.com/questions/7027199/hashing-arrays-in-python
 a[tuple([4,5,6])] = 5   # can directly use tuple for key. list -> tuple just for demo purposes 
 a[(4,5,6)]              # returns 5
 # frozenset: immutable form of a set
 
-# sort dictionary in descending order and return a list
-d = {"aa": 3, "bb": 4, "cc": 2, "dd": 1}
-s = [(k, d[k]) for k in sorted(d, key=d.get, reverse=True)]
+# List values in dictionary are references: if you mutate an array stored in a dictionary after storing it, the value stored in doctionary also changes!
+d = {}
+arr = [3, 5, 6] 
+d[1] = arr
+arr.append(7)
+d[1] # [3,5,6,7] even though you did not change the dictionary value, the reference is the same!
+# use tuples for non-mutation
 
 # initialize a dictionary : defaultdict
 from collections import defaultdict
