@@ -253,6 +253,9 @@ a[tuple([4,5,6])] = 5   # can directly use tuple for key. list -> tuple just for
 a[(4,5,6)]              # returns 5
 # frozenset: immutable form of a set
 
+# tuples
+# remember that single values tuples are created like: (5,) and not simply (5) bcz of paranthesis and syntax related issues
+
 # List values in dictionary are references: if you mutate an array stored in a dictionary after storing it, the value stored in doctionary also changes!
 d = {}
 arr = [3, 5, 6] 
