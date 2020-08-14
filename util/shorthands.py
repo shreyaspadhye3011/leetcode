@@ -187,7 +187,12 @@ for i in reversed(range(5)):
 
 # for with step
 for i in range(10, 4, -2):  # start, stop, step :: until [element > stop]
-    print(i)    # 10,8,6   
+    print(i)    # 10,8,6 
+
+# set
+s = {1, 3, 4}
+s2 = {4, 5, 7}
+s.update(s2)  # {1, 3, 4, 5, 7}
 
 # strings in python
 # strings in C are mutable i.e. you can add strings in constant time because they are implemented as array of characters under the hood and constant time append is possible in dynamic arrays
