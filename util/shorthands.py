@@ -394,6 +394,7 @@ c   # 4
 (r,c) == (2,4)             # True
 # when returning or checking, need to use tuple
 
+# ---- Lists Extended Concepts
 # sort characters in a string + example of map and lambda
 words = ["yace", "cea", "aeca"]
 sorted_chars = list(map(lambda word: ''.join(sorted(word)), words))
@@ -410,3 +411,17 @@ indices = [i for i in range(len(words))]
 indices.sort(key=lambda x: sorted_words[x])
 indices
 # [0, 5, 1, 4, 2, 3]    # which represents the indices of words if they were sorted in sorted_words - leading to grouping of anagrams
+
+# Understanding Array Assignment & copy
+# Array assignment in a temp variable is a shallow copy. it is just a copy of reference
+# var assignment = O(1) time & space
+# deep copy using copy = O(n) time & O(n) space
+l = [1, 45, 7]
+id(l)
+m = l                   # reference copy or shallow copy
+n = l.copy()            # deep copy
+print(id(l)==id(m))     # True
+print(id(l)==id(n))     # False
+
+
+
