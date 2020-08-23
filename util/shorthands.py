@@ -148,6 +148,7 @@ my_set = {1, 2, 3}    # initializing a non-empty set
 3 in my_set         # True   
 my_set.add(4)       # add element. Remember: set does not store duplicates
 my_set.remove(2)    # remove an element
+my_set.discard(2)   # similar to remove. But will not raise an error if 2 doesn't exist in set
 a = set()           # initialziing empty set
 # IMP:
 b = [7, 4, 5, 6, 5]
@@ -161,6 +162,10 @@ set2 = {3, 5}
 set1 - set2 # {1, 6}
 set2 - set1 # set() -> empty set
 list(set1)  # create list from a set
+set1.update(set2) # {1, 3, 5, 6}    # update a set with another set
+set1.update([8, 0]) # {0, 1, 3, 5, 6, 8}    # update a set with a list
+set1.intersection(set2)
+set1.union(set2)
 
 # Queues -- VIMP
 # Indexed access is O(1) at both ends but slows to O(n) in the middle. For fast random access, use lists instead.
