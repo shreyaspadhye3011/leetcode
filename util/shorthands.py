@@ -166,6 +166,9 @@ set1.update(set2) # {1, 3, 5, 6}    # update a set with another set
 set1.update([8, 0]) # {0, 1, 3, 5, 6, 8}    # update a set with a list
 set1.intersection(set2)
 set1.union(set2)
+# IMP: Remember that sets are unordered so there's no get(ith-element) function
+# but there is pop() which retrieves and removes an element from the set but as set is unordered (internally), you can't be sure which element it will return
+# Think? : Is there a scope of implementing a set like DS which also implements indexing or at least ordered pop - think in terms of questions like findCommonAncestors where rather thatn going with the logic of getting ancestors of one node and checking from other's traversal, you do a set intersection everytime
 
 # Queues -- VIMP
 # Indexed access is O(1) at both ends but slows to O(n) in the middle. For fast random access, use lists instead.
