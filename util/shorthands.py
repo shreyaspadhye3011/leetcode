@@ -65,6 +65,8 @@ import sys
 max = sys.maxsize       # 9223372036854775807
 min = -sys.maxsize - 1  # -9223372036854775808
 
+import math
+math.inf        # inf --> maximum possible value (not int)
 # ----------------------- LISTS --------------------------- #
 
 # list append, insert, pop & remove
