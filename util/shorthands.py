@@ -1,6 +1,7 @@
 # TODO:
 # Add code to read line by line input from a file
 
+# ----
 # Pass by reference (or object sharing) & Pass by Value
 # In python: 
 # immutable arguments like integers, strings or tuples are passed by value i.e. change inside function to the parameter won't reflect outside
@@ -18,12 +19,25 @@ def changeValues(arr, str):
   str = "yes"
 
 parent([1,2], "no")     # O: ([1, 2, 'yes'], 'no')
+# ----
 
 # Conversion / casting
-int(5.3)    # 5
-float(5)    # 5.0
-int("12")   # 12
-float("12")   # 12.0
+int(5)          # 5
+int(5.3)        # 5
+int('12')       # 12
+int('12.9')     # Throws ValueError
+float(5)        # 5.0
+float(5.3)      # 5.3
+float('12')     # 12.0
+float('12.9')   # 12.9
+
+# Value check catch -- In python True & 1 internally mean same thing
+# Be careful when using EXACT value check for Booleans and 0 & 1. 
+# eg if you need a value to be exactly 1, check int(value) inside try-catch where value is a valid integer (int, integer wrapped in quotes or a float value)
+True == 1           # True : True is same as 1
+False == 0          # True : False is same as 0
+True in [0,1]       # True : True is same as 1
+'True' in [0,1]     # False : string `True` is not as same as True
 
 # check type
 type([5, 6, 89]) == list    # True
