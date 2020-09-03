@@ -237,7 +237,6 @@ a = ['a', 'b', 'c', 'd']    # implode lists or join
 # IMP: string concatenation takes O(n) time! Therefore if concatentaion is a major part of your algo, use array append and then "".join(array) to get resultant string which will have amortized O(1) time
 # i.e. Instead of `str +=`, use res_array & then ``"".join(res_array)` approach coz str+ takes O(n) time every time you add a character due to the underlying implementation (read more)
 
-
 # For int array, use:
 ch = ''
 for i in a:
@@ -249,6 +248,19 @@ for i in a:
 q = "qssi"
 "".join(sorted(q))  # 'iqss'
 sorted(q)           # returns --> ['i', 'q', 's', 's'] but doesn't change q --- # REMEMBER: q doesn't change when you use "sorted"
+
+
+# get all substrings of a string
+def getAllSubstrings(string):
+  sub_strings = []
+  length = len(string)
+  for i in range(length):
+    for j in range(i+1,length+1):
+      sub_strings.append(string[i:j])
+  return sub_strings
+
+string = "men"
+getAllSubstrings(string) # ['m', 'me', 'men', 'e', 'en', 'n']
 
 # ------------------------------------------------------------------ #
 
