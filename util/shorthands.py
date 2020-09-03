@@ -1,3 +1,7 @@
+# Problem Solving:
+# 1. Take your time to understand the question. If you understand the concept well, you will code well. Understand the question super well. Draw it out
+# 2. Then while coding, keep the drawing / conceptual overview / sample input/output in front of you for ease of visualizing test cases
+
 # TODO:
 # Add code to read line by line input from a file
 
