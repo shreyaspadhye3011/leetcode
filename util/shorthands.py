@@ -254,17 +254,18 @@ q = "qssi"
 sorted(q)           # returns --> ['i', 'q', 's', 's'] but doesn't change q --- # REMEMBER: q doesn't change when you use "sorted"
 
 
-# get all substrings of a string
-def getAllSubstrings(string):
-  sub_strings = []
-  length = len(string)
-  for i in range(length):
-    for j in range(i+1,length+1):
-      sub_strings.append(string[i:j])
-  return sub_strings
-
-string = "men"
-getAllSubstrings(string) # ['m', 'me', 'men', 'e', 'en', 'n']
+# get all substrings of a string -- avoid using string slicing. String slicing is O(m) time
+# O(n*n)
+def getAllSubstrings(s): 
+    n = len(s)
+    result = []
+    for i in range(n): 
+        temp="" 
+        for j in range(i,n): 
+            temp+=s[j] 
+            result.append(temp) 
+    return result
+print(getAllSubstrings("many"))     # ['m', 'ma', 'man', 'many', 'a', 'an', 'any', 'n', 'ny', 'y']
 
 # ------------------------------------------------------------------ #
 
