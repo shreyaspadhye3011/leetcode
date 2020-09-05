@@ -195,7 +195,7 @@ set1.union(set2)
 # Reference: https://medium.com/@shuangzizuobh2/how-well-do-you-code-python-9bec36bbc322
 # Reference: https://docs.python.org/2/library/collections.html#collections.deque 
 from collections import deque
-deque(['f', 'g', 'h', 'i', 'j'])
+deque(['f', 'g', 'h', 'i', 'j'])    # O(n)
 access = deque([])  # initializing queues
 d.pop()         # 'j'   O(1)
 d.popleft()     # 'f'   O(1)
