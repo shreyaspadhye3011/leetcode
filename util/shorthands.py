@@ -229,10 +229,18 @@ s.update(s2)  # {1, 3, 4, 5, 7}
 # Therefore, when you have lot of string manipulation involved, change the string to actual array of characters before working (mutating) on it
 # You can use functions like split() to do this
 
-# strings are IMMUTABLE in python
+# strings are IMMUTABLE in python. Task: Change a particular character in string
 stri = "abac"
-stri[1] = "e"
+stri[0] = "w"
 # TypeError: 'str' object does not support item assignment
+# Use replace function
+stri = "abac"
+stri.replace('a', 'w', 1)   # wbac. count argument (1) is optional. it represents how many occurences to change. if you skip the argument, all occurences will be changed
+# OR work with list:
+s = list("abac")    # ['a', 'b', 'a', 'c']
+s[1] = 'w'          # ['w, 'b', 'a', 'c']
+print("".join(s))   # wbac
+# Caution: This is an O(n) time operation so be careful while using it. If you have to do multiple times. Always work with array as first and return string by joining in the end once you are done
 
 # replace a substring in a given string
 string = "node in node node"  
