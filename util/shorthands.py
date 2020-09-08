@@ -229,6 +229,11 @@ s.update(s2)  # {1, 3, 4, 5, 7}
 # Therefore, when you have lot of string manipulation involved, change the string to actual array of characters before working (mutating) on it
 # You can use functions like split() to do this
 
+# strings are IMMUTABLE in python
+stri = "abac"
+stri[1] = "e"
+# TypeError: 'str' object does not support item assignment
+
 # replace a substring in a given string
 string = "node in node node"  
 print(string.replace("node", "Node"))  # Node in Node Node
