@@ -159,6 +159,9 @@ max_array[2:0:-1]   # [4, 3] -> <start_from:stop_at:reverse=True>
 # Note: with -1, indexing remains same, just direction of traversal changes
 # Note: stop_at is always excliusive, i.e. that index will NOT be included in the sliced array
 
+max([2, 4, 7, 12, 1])   # 1
+max([2, 4, 7, 12, 1])   # 12
+
 # ----------------------- LIST SECTION ENDS --------------------------- #
 
 # O(1) search Time! -- use Set instead of lists
