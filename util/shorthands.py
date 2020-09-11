@@ -314,6 +314,10 @@ s = [(k, d[k]) for k in sorted(d, key=d.get, reverse=True)]
 a[tuple([4,5,6])] = 5   # can directly use tuple for key. list -> tuple just for demo purposes 
 a[(4,5,6)]              # returns 5
 # frozenset: immutable form of a set
+# eg to keep track of unordered pairs
+s = set()
+s.add(frozenset([3,2])) # {frozenset({2, 3})}
+frozenset([2,3]) in s   # True
 
 # tuples
 # remember that single values tuples are created like: (5,) and not simply (5) bcz of paranthesis and syntax related issues
