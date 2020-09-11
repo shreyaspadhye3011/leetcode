@@ -313,6 +313,7 @@ s = [(k, d[k]) for k in sorted(d, key=d.get, reverse=True)]
 # https://stackoverflow.com/questions/7027199/hashing-arrays-in-python
 a[tuple([4,5,6])] = 5   # can directly use tuple for key. list -> tuple just for demo purposes 
 a[(4,5,6)]              # returns 5
+# Similarly set can't be stored in a set or hash-map. Use frozenset
 # frozenset: immutable form of a set
 # eg to keep track of unordered pairs
 s = set()
