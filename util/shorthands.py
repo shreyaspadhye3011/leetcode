@@ -74,9 +74,17 @@ for idx in range(length-1):
     for idx2 in range(idx+1, length):
         a = array[idx] + array[idx2]
 
-# for each with both index and value
+# Enumerate: for each with both index and value
+ints = [13, 4, 9]
 for idx, val in enumerate(ints):
-    print(idx, val)
+    print(idx, val)    # prints index & value both
+# works on strings also. which is great so you don't need slice
+for i, char in enumerate("abs"):
+  print(i, char)    # 0 a, 1 b, 2 c
+# accepts optional parameter to pivot starting counter
+# Note: parameter not to be confused with index. it will still iterate whole thing. the parameter is just to offset starting index
+for i, char in enumerate("abs", 1):
+  print(i, char)    # 1 a, 2 b, 3 c
 
 # int max & minimum possible value
 import sys
