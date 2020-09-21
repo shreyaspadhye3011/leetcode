@@ -328,6 +328,13 @@ s = set()
 s.add(frozenset([3,2])) # {frozenset({2, 3})}
 frozenset([2,3]) in s   # True
 
+# changing key of a dictionary. Use pop(key) to assign into new key
+a_dict = {"a": 1, "B": 2, "C": 3}
+new_key = "A"
+old_key = "a"
+a_dict[new_key] = a_dict.pop(old_key)
+print(a_dict)   # {'B': 2, 'C': 3, 'A': 1}
+
 # tuples
 # remember that single values tuples are created like: (5,) and not simply (5) bcz of paranthesis and syntax related issues
 
