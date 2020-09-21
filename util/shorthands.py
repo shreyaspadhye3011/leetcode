@@ -353,6 +353,18 @@ word_count = defaultdict(int)
 for w in wordlist: 
   word_count[w] +=1
 
+# sort a dictionary (based on value or key)
+orders = {'cappuccino': 54,'latte': 56,'espresso': 72,'americano': 48,'cortado': 41}
+# dict.items() returns the dictionary as a collection of tuples
+sort_orders = sorted(orders.items(), key=lambda x: x[1], reverse=True)    # x[1] sorted by value. if you pass x[0], it will be sorted by name
+# create dictionary out of the sorted list
+orders = dict(sort_orders)
+print(orders)  # {'espresso': 72, 'latte': 56, 'cappuccino': 54, 'americano': 48, 'cortado': 41}
+# to check items() response:
+for i in sort_orders:
+	print(i[0], i[1])
+
+
 # character manipulation
 ch = 'a'
 x = chr(ord(ch) + 2)    # x -> c
