@@ -335,9 +335,6 @@ old_key = "a"
 a_dict[new_key] = a_dict.pop(old_key)
 print(a_dict)   # {'B': 2, 'C': 3, 'A': 1}
 
-# tuples
-# remember that single values tuples are created like: (5,) and not simply (5) bcz of paranthesis and syntax related issues
-
 # List values in dictionary are references: if you mutate an array stored in a dictionary after storing it, the value stored in doctionary also changes!
 d = {}
 arr = [3, 5, 6] 
@@ -364,6 +361,8 @@ print(orders)  # {'espresso': 72, 'latte': 56, 'cappuccino': 54, 'americano': 48
 for i in sort_orders:
 	print(i[0], i[1])
 
+# tuples
+# remember that single values tuples are created like: (5,) and not simply (5) bcz of paranthesis and syntax related issues
 
 # character manipulation
 ch = 'a'
