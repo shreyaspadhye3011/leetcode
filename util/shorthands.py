@@ -523,5 +523,11 @@ print(d1, d2)   # {'a': [2, 3, 4], 'b': [1, 8]} {'a': [2, 3, 4]} -- All good. Th
 d1['a'].append(99)  
 print(d1, d2)   # {'a': [2, 3, 4, 99], 'b': [1, 8]} {'a': [2, 3, 4, 99]} -- Uh oh. Change in the lisgt of one dict changes other. Though the dicts were copied but the lists inside them were still a referenced
 
+# Solution: Use deepcopy
+# Remember that it is a time & space intensive operation. But may be useful for simple programs or brute force
+# https://stackoverflow.com/questions/14204326/how-to-copy-a-dictionary-of-lists
+from copy import deepcopy
+d2 = deepcopy(d1)
+
 
 
