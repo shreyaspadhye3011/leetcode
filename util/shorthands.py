@@ -514,4 +514,14 @@ print(id(l)==id(m))     # True
 print(id(l)==id(n))     # False
 
 
+# --------- dict extended
+l1 = [2,3,4]
+d1 = {'a': l1}
+d2=d1.copy()
+d1['b'] = [1,8]
+print(d1, d2)   # {'a': [2, 3, 4], 'b': [1, 8]} {'a': [2, 3, 4]} -- All good. Thanks to copy(). Change in one dict doesn't change the other. If you did not use copy, it would
+d1['a'].append(99)  
+print(d1, d2)   # {'a': [2, 3, 4, 99], 'b': [1, 8]} {'a': [2, 3, 4, 99]} -- Uh oh. Change in the lisgt of one dict changes other. Though the dicts were copied but the lists inside them were still a referenced
+
+
 
