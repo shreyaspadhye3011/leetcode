@@ -259,6 +259,11 @@ s[1] = 'w'          # ['w, 'b', 'a', 'c']
 print("".join(s))   # wbac
 # Caution: This is an O(n) time operation so be careful while using it. If you have to do multiple times. Always work with array as first and return string by joining in the end once you are done
 
+# Split doesn't get you chars of a string
+"asd".split()   # ['asd'] # Split default works on a space as a delimeter
+"asd".split("") # Error: ValueError: empty separator
+list("asd")     # Works!
+
 # replace a substring in a given string
 string = "node in node node"  
 print(string.replace("node", "Node"))  # Node in Node Node
