@@ -245,6 +245,12 @@ stri = "abac"
 stri[0] = "w"
 # TypeError: 'str' object does not support item assignment
 # Use replace function
+
+# Though they can't be changed at an index, But they can be accessed at an index
+s1 = 'abx'
+s2 = 'vbl'
+s1[1] == s2[1] # True
+
 stri = "abac"
 stri.replace('a', 'w', 1)   # wbac. count argument (1) is optional. it represents how many occurences to change. if you skip the argument, all occurences will be changed
 # OR work with list:
