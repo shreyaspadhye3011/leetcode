@@ -82,7 +82,7 @@ for idx, val in enumerate(ints):
 for i, char in enumerate("abs"):
   print(i, char)    # 0 a, 1 b, 2 c
 # accepts optional parameter to pivot starting counter
-# Note: parameter not to be confused with index. it will still iterate whole thing. the parameter is just to offset starting index
+# IMP: Note: parameter not to be confused with index. it will still iterate whole thing. the parameter is just to offset starting index
 for i, char in enumerate("abs", 1):
   print(i, char)    # 1 a, 2 b, 3 c
 
