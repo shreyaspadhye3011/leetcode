@@ -224,7 +224,7 @@ for item in reversed(a):
 for i in reversed(range(5)):
     print(i)    # 4,3,2,1,0
 
-# for with step
+# for with step (Reverse use of range)
 for i in range(10, 4, -2):  # start, stop, step :: until [element > stop]
     print(i)    # 10,8,6 
 
