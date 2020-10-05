@@ -170,6 +170,9 @@ max_array[2:0:-1]   # [4, 3] -> <start_from:stop_at:reverse=True>
 max([2, 4, 7, 12, 1])   # 1
 max([2, 4, 7, 12, 1])   # 12
 
+# initializing lists using list comprehension
+rewards = [0 for i in range(len(a))]    # [0, 0, 0, 0, 0]
+
 # ----------------------- LIST SECTION ENDS --------------------------- #
 
 # O(1) search Time! -- use Set instead of lists
@@ -502,6 +505,11 @@ c   # 4
 # -------------------------------- Extended: --------------------------------
 
 # ---- Lists Extended Concepts
+# Auxiliary indices array sorted based on a target array
+target_arr = [34, 6, 7, 0, 2, 12, 10]
+indices = [i for i in range(len(arr))]
+indices.sort(key=lambda x: arr[x])    # [3, 4, 1, 2, 6, 5, 0]
+
 # sort characters in a string + example of map and lambda
 words = ["yace", "cea", "aeca"]
 sorted_chars = list(map(lambda word: ''.join(sorted(word)), words))

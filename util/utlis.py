@@ -1,3 +1,8 @@
+# --- Auxiliary indices array sorted based on a target array
+target_arr = [34, 6, 7, 0, 2, 12, 10]
+indices = [i for i in range(len(arr))]
+indices.sort(key=lambda x: arr[x])    # [3, 4, 1, 2, 6, 5, 0]
+
 # --- File to store util functions which can be useful
 
 # takes in an sorted array in descending order & a target, returns the first number from left which is smaller or equal to the target. If no number is smaller than the given number, return None
