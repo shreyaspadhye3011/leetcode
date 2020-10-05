@@ -490,10 +490,16 @@ min = a if a < b else b     # ternary operator
 # https://www.tutorialspoint.com/enum-in-python
 
 # tuple assignment
-r,c = 2, 4 or r,c = (2, 4) # both work
+r,c = 2,4 or r,c = (2, 4) # both work
 c   # 4
 (r,c) == (2,4)             # True
-# when returning or checking, need to use tuple
+# when returning or checking, need to use tuple brackets. Can't work without ()
+
+
+
+
+
+# -------------------------------- Extended: --------------------------------
 
 # ---- Lists Extended Concepts
 # sort characters in a string + example of map and lambda
@@ -539,6 +545,15 @@ print(d1, d2)   # {'a': [2, 3, 4, 99], 'b': [1, 8]} {'a': [2, 3, 4, 99]} -- Uh o
 # https://stackoverflow.com/questions/14204326/how-to-copy-a-dictionary-of-lists
 from copy import deepcopy
 d2 = deepcopy(d1)
+
+# ---------- Loops extended
+# Updating looping var (i) inside a for loop doesn't have impact on the loop itself. It creates a new var
+for i in range(2, 8):
+  i+=2      # this is a new 'i' whixh prints. Not the same as the looping variable, i
+  print (i) # 4 5 6 7 8 9
+# Compare to output of:
+for i in range(2, 8,2):
+  print (i) # 2 4 6
 
 
 
