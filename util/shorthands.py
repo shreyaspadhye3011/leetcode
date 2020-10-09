@@ -556,6 +556,20 @@ from copy import deepcopy
 d2 = deepcopy(d1)
 
 # ---------- Loops extended
+# until loop simulation
+# example: print until r gets equal to c (diagonal print for zigzag question - algoexpert)
+row = 3
+col = 0
+r = row
+c = col
+while True:
+    print((r,c))
+    if r == col and c == row:
+        break
+    r -= 1
+    c += 1
+# (3, 0)(2, 1)(1, 2)(0, 3)
+
 # Updating looping var (i) inside a for loop doesn't have impact on the loop itself. It creates a new var
 for i in range(2, 8):
   i+=2      # this is a new 'i' whixh prints. Not the same as the looping variable, i
