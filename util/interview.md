@@ -13,3 +13,4 @@
 4. [IMP] Always aim for a working solution first and then optimization
 5. Write clean, abstracted code
 6. Write pseudo code / abstracted code and then fill in details (create functions and directly use. can fill in body later)
+7. SIMPLIFY PROBLEM! Valued immensely at companies like Google. Can you break a complex problem to a small problem set? and use the solution to propose a solution to the original problem? (Much beyond concepts of DP or Divide & Conquer. This is basic problem solving. eg ZigZag traversal of a matrix(algoexpert) can be broken down into plankUp & plankDown)
