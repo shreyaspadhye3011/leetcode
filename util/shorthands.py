@@ -35,6 +35,9 @@ float(5.3)      # 5.3
 float('12')     # 12.0
 float('12.9')   # 12.9
 
+# Operators
+10 ** 2     # 100 Power in python is **
+
 # Value check catch -- In python True & 1 internally mean same thing
 # Be careful when using EXACT value check for Booleans and 0 & 1. 
 # eg if you need a value to be exactly 1, check int(value) inside try-catch where value is a valid integer (int, integer wrapped in quotes or a float value)
@@ -504,6 +507,9 @@ c   # 4
 
 
 # -------------------------------- Extended: --------------------------------
+# math
+import math
+math.ceil(3/2)  # 2 ceiling function. Rounds to next integer
 
 # ---- Lists Extended Concepts
 # Auxiliary indices array sorted based on a target array
