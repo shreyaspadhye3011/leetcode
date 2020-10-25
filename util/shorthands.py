@@ -509,7 +509,11 @@ c   # 4
 # -------------------------------- Extended: --------------------------------
 # math
 import math
-math.ceil(3/2)  # 2 ceiling function. Rounds to next integer
+math.ceil(3/2)  # 2. ceiling function. Rounds to next integer
+math.floor(3/2) # 1. Rounds down to prevvious integer
+# most likely won't need for negative numbers. But if you do, it will be all based on numerb line
+math.floor(-3/2) # -2. Notice that -2 is the previous integer to -1.5 on the number line
+math.ceil(-3/2) # -1. Notice that -1 is the next integer to -1.5 on the number line
 
 # ---- Lists Extended Concepts
 # Auxiliary indices array sorted based on a target array
