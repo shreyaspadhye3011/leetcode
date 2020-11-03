@@ -180,9 +180,9 @@ rewards = [0 for i in range(len(a))]    # [0, 0, 0, 0, 0]
 # ----------------------- LIST SECTION ENDS --------------------------- #
 
 # O(1) search Time! -- use Set instead of lists
-# sets and disctionary
+# sets and dictionary
 # imp: search in set is O(1) just like a dictionary. Dictionary's retrieval is also O(1)
-my_set = {1, 2, 3}    # initializing a non-empty set
+my_set = {1, 2, 3}  # initializing a non-empty set
 3 in my_set         # True   
 my_set.add(4)       # add element. Remember: set does not store duplicates
 my_set.remove(2)    # remove an element
