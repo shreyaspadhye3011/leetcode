@@ -34,6 +34,9 @@ float(5)        # 5.0
 float(5.3)      # 5.3
 float('12')     # 12.0
 float('12.9')   # 12.9
+int('a12.9')    # Throws ValueError
+# Add symbol to an existing number
+int("-" + str(123)) # -123 (int)
 
 # Operators
 10 ** 2     # 100 Power in python is **
@@ -209,7 +212,7 @@ set1.union(set2)
 # Think? : Is there a scope of implementing a set like DS which also implements indexing or at least ordered pop - think in terms of questions like findCommonAncestors where rather thatn going with the logic of getting ancestors of one node and checking from other's traversal, you do a set intersection everytime
 
 # Queues -- VIMP
-# Indexed access is O(1) at both ends but slows to O(n) in the middle. For fast random access, use lists instead.
+# Indexed access is O(1) at both ends but slows to O(n) in the middle. For fast RANDOM access, use lists instead.
 # Reference: https://medium.com/@shuangzizuobh2/how-well-do-you-code-python-9bec36bbc322
 # Reference: https://docs.python.org/2/library/collections.html#collections.deque 
 from collections import deque
@@ -219,6 +222,10 @@ d.pop()         # 'j'   O(1)
 d.popleft()     # 'f'   O(1)
 d.append('s')   # add in end
 a.insert(3, '4')    # add at sepcific index
+
+# Create deque from a string
+from collections import deque
+deque("asd")
 # Note: Both are O(1) because these are built on top of linked list implementations (pointers to both ends) along with array concepts of contiguous memory for quick retrieval -- A very high level understanding
 # Note: Both stacks / lists and queues support peek() operation which just looks at the top or last element respectively without removing it
 
