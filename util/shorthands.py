@@ -434,9 +434,29 @@ list(permutations(['1','2','3'],2)) # [('1', '2'), ('1', '3'), ('2', '1'), ('2',
 print("Safe" if 2 < 1 else "Unsafe")
 # o: Unsafe
 
+# --- functions
+
 # lambda -- Anonymous functions assigned to variables
 x = lambda a, b: a * b
 print(x(5, 6))      # 30
+
+# https://realpython.com/python-kwargs-and-args/
+# Use ** to unpack dictionaries, use * to unpack iterables
+# Sending dynamic parameters (keyword based) to a function:
+# Example:
+dict = {'first_param'='value-1'}
+more_param_available = True
+if more_param_available:
+    dict['sec_param'] = 'value-2'
+my_function(**dict)
+# same as: my_function(first_param='value-1', sec_param='value-2')
+# Basically ** will unpack the dictionary and send it as keyword arguments
+
+# Order of arguments
+# https://realpython.com/python-kwargs-and-args/#ordering-arguments-in-a-function
+# 1. Standard arguments
+# 2. *args arguments
+# 3. **kwargs arguments
 
 # Remember: map & filter always return map & filter objects -- pass them in list() to get lists
 # map
