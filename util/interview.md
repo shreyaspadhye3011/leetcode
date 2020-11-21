@@ -1,5 +1,11 @@
 # TODO: Add more pointers from Interview Prep keeo note
 
+## Optimization Techniques (Think:)
+1. Hash / Disctionary
+2. Preprocessing like sorting, hash creation, heap creation (if min/max needs to be retrieved), Trie creation (for string), Disjoint set (to find out which set does an element belong to, union in constant time)
+3. * Two Pointer
+4. Divide & Conquer - like DP (can I use a smaller problem's solution to create the larger solution)
+
 ## Mindset
 1. It's a discussion. 
 2. Even if you're struggling, don't hold off from sharing some insightful ideas. They want to see how you problem solve. How you communicate
