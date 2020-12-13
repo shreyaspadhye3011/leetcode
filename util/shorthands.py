@@ -394,6 +394,16 @@ print(orders)  # {'espresso': 72, 'latte': 56, 'cappuccino': 54, 'americano': 48
 for i in sort_orders:
 	print(i[0], i[1])
 
+# IMP: Ordered dictionary: That *guarantees* to maintain the order of insertion unlike regular dictionary
+# https://www.geeksforgeeks.org/ordereddict-in-python/#:~:text=Starting%20from%20Python%203.7%2C%20insertion,the%20help%20of%20popitem%20function.
+from collections import OrderedDict
+od = OrderedDict() 
+od['a'] = 1
+od['b'] = 2
+od['c'] = 3
+od['d'] = 4
+# {a: 1, b: 2, c: 3, d: 4}
+
 # tuples
 # remember that single values tuples are created like: (5,) and not simply (5) bcz of paranthesis and syntax related issues
 
