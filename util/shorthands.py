@@ -223,11 +223,10 @@ d.popleft()     # 'f'   O(1)
 d.append('s')   # add in end
 a.insert(3, '4')    # add at sepcific index
 # slice deque
->>> import collections, itertools
->>> q = collections.deque(xrange(10, 20))
->>> q
+import collections, itertools
+q = collections.deque(range(10, 20))
 deque([10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
->>> list(itertools.islice(q, 3, 7))
+list(itertools.islice(q, 3, 7))
 [13, 14, 15, 16]
 
 
