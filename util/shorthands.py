@@ -335,6 +335,12 @@ list(d.values())    # returns all values in the dict as a list
 for a in sorted(d.keys()):
   print(a)
 
+# d.keys(): get keys
+# d.values(): get values
+# d.items(): get both key & value
+for key, value in d.items(): 
+    print(key, value) 
+
 # get "key" value or return "default" if key doesn't exist
 dict.get("key", "default") 
 
@@ -379,7 +385,7 @@ d[1] # [3,5,6,7] even though you did not change the dictionary value, the refere
 # initialize a dictionary : defaultdict
 from collections import defaultdict
 wordlist =["a", "a", "b"]
-word_count = defaultdict(int)
+word_count = defaultdict(int)   # all initialized by 0
 for w in wordlist: 
   word_count[w] +=1
 
