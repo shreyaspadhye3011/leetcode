@@ -404,6 +404,9 @@ for i in sort_orders:
 # https://www.geeksforgeeks.org/ordereddict-in-python/#:~:text=Starting%20from%20Python%203.7%2C%20insertion,the%20help%20of%20popitem%20function.
 # https://www.georgevreilly.com/blog/2017/02/21/OrderedDictInitialization.html
 # imp: Note that Or­dered­Dict is noticeably slower than dict in Python 2.7, so only use Or­dered­Dict when insertion order matters.
+
+# NOTE: Not working properly in Leetcode's question. Not sure why. (not iterating in order)
+# https://leetcode.com/explore/interview/card/amazon/76/array-and-strings/2964/
 from collections import OrderedDict
 od = OrderedDict() 
 od['a'] = 1
