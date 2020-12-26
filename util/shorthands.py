@@ -344,8 +344,10 @@ for key, value in d.items():
 # get "key" value or return "default" if key doesn't exist
 dict.get("key", "default") 
 
-# similar to get but also sets the default in dictionary along with returning it
-dict.setdefault("key", [])     
+# https://www.w3schools.com/python/ref_dictionary_setdefault.asp
+# gets the value associated with the key if exists, if not sets the default in dictionary along with returning it
+dict.setdefault("key", "default_value")
+dict.setdefault("key2", [])
 
 # remove and return if "key" exists. 
 del dict["key"]
