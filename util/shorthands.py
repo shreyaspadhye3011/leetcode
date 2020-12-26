@@ -402,6 +402,8 @@ for i in sort_orders:
 
 # IMP: Ordered dictionary: That *guarantees* to maintain the order of insertion unlike regular dictionary
 # https://www.geeksforgeeks.org/ordereddict-in-python/#:~:text=Starting%20from%20Python%203.7%2C%20insertion,the%20help%20of%20popitem%20function.
+# https://www.georgevreilly.com/blog/2017/02/21/OrderedDictInitialization.html
+# imp: Note that Or­dered­Dict is noticeably slower than dict in Python 2.7, so only use Or­dered­Dict when insertion order matters.
 from collections import OrderedDict
 od = OrderedDict() 
 od['a'] = 1
@@ -558,6 +560,23 @@ c   # 4
 
 
 # -------------------------------- Extended: --------------------------------
+# assertion
+x = "hello"
+#if condition returns False, AssertionError is raised:
+assert x == "goodbye", "x should be 'hello'"
+
+# doc strings
+# https://www.python.org/dev/peps/pep-0257/
+def complex(real=0.0, imag=0.0):
+    """Form a complex number.
+
+    Keyword arguments:
+    real -- the real part (default 0.0)
+    imag -- the imaginary part (default 0.0)
+    """
+    if imag == 0.0 and real == 0.0:
+        return complex_zero
+
 # math
 import math
 math.ceil(3/2)  # 2. ceiling function. Rounds to next integer

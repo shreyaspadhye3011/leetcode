@@ -8,6 +8,7 @@ indices.sort(key=lambda x: arr[x])    # [3, 4, 1, 2, 6, 5, 0]
 # takes in an sorted array in descending order & a target, returns the first number from left which is smaller or equal to the target. If no number is smaller than the given number, return None
 # Approach: Modified Binary search
 # Complexity: O(log n) where n is the length of the array
+# Pre requisite: for complexity to be O(log n) and this function to be useful, array should be already sorted
 
 # Note: passed array is in descending order
 # Note: that to return for an unsorted array, do a single pass and return in O(n) time. This is useful only when the array is already sorted
