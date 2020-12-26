@@ -24,6 +24,7 @@ class solution:
             count += 1
             accessed.append(currWord)
             for iword in self.getRegEx(currWord):
+                # gets the list associated with the key if exists, if not set the default (blank list []) in dictionary along with returning it
                 for rword in self.dict.setdefault(iword, []):
                     if rword not in accessed:
                         access.append(rword)
