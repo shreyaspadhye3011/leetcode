@@ -420,8 +420,11 @@ od['d'] = 4
 # tuples
 # remember that single values tuples are created like: (5,) and not simply (5) bcz of paranthesis and syntax related issues
 
-# get ascii for a character
+# get ascii (integer) for a character
 ord('a')    # 97
+# get character from an ascii (integer)
+chr(97)     # 'a'
+
 # character manipulation
 ch = 'a'
 x = chr(ord(ch) + 2)    # x -> c
