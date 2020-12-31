@@ -435,11 +435,12 @@ x = chr(ord(ch) + 2)    # x -> c
 
 # BINARY
 # convert an integer number to binary
-"{0:b}".format(9) # O: 1001 : Useful when questions like create a superset of an array eg. [2,3,4] : [[2], [3], [4], [2,3], [3,4], [2,4], [2,3,4], None] i.e 8 sets and you can use binary representations from 1 (001) -> 7 (111) to get all these sets. Although the complexity will be 2^n 
-bin(4) # O: '-0b100'    # notice that the response is binary. it has this 0b thing appended in beginning
+"{0:b}".format(9)       # 1001 : Useful when questions like create a superset of an array eg. [2,3,4] : [[2], [3], [4], [2,3], [3,4], [2,4], [2,3,4], None] i.e 8 sets and you can use binary representations from 1 (001) -> 7 (111) to get all these sets. Although the complexity will be 2^n 
+"{0:b}".format(-13)     # -1101
+bin(4)  # O: '-0b100'    # notice that the response is binary. it has this 0b thing appended in beginning
 bin(~4) # O: '-0b101'   # 2's complement 
 
-# convert binary to int
+# convert binary string to int
 int('101', 2)   # O: 5
 
 # get complement (reverse. Not 2's complement. For 2's complement simply use ~ on a decimal numbner)
