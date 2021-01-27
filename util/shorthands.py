@@ -605,6 +605,7 @@ indices.sort(key=lambda x: arr[x])    # [3, 4, 1, 2, 6, 5, 0]
 # sort characters in a string + example of map and lambda
 words = ["yace", "cea", "aeca"]
 sorted_chars = list(map(lambda word: ''.join(sorted(word)), words))
+# logic: for every word in words (using map) -> sort the word -> returns array -> ''.join() to convert back to string
 # ['acey', 'ace', 'aace']
 
 # Sorting a string can even be O(N) by counting sort as you know the toal number of characters in ASCII: 127
