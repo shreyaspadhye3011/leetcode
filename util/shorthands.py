@@ -111,6 +111,23 @@ a.pop()   # removes the last element of the array i.e O(1)
 a.pop(0)  # remove first element from the array ~ O(N) complexity. pop(k) has O(k) complexity in python
 # Note: use any valid index in place of 0 to remove ith element from start
 a.remove(value)   # remove first value from list that matches the given value
+
+# find index of the first occurence of an element 
+alphabets = ['a', 'e', 'i', 'o', 'g', 'l', 'i', 'u']
+# index of 'i' in alphabets
+index = alphabets.index('e')   # 2
+# 'i' after the 4th index is searched
+index = alphabets.index('i', 4)   # 6
+# 'i' between 3rd and 5th index is searched
+# start -> inclusive
+# end -> not inclusive
+index = alphabets.index('i', 3, 6)   # Error!
+# Returns ValueError when value not found. Also notice '6' not inclusive. but '3' is
+
+# find index of all occurences of an element in an array
+my_list = [3, 3, 2, 2, 1, 5, 5, 2]
+indices = [i for i, x in enumerate(my_list) if x == 2]  # [2, 3, 7]
+
 # empty, non-empty check
 s = []
 # check if list is empty
