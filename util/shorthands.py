@@ -170,6 +170,15 @@ sorted_words = ["race", "blink", "oy", "yo", "linkb", "care"].sort()
 indices = [0, 1, 2, 3, 4, 5]
 indices.sort(key=lambda x: sorted_words[x]) 
 
+# "In the Python spirit of "ask for forgiveness, not permission", here's one way" (https://stackoverflow.com/a/2574650)
+# get element at a list index, if it exists. if not send default (just like .get for dictionary)
+try:
+    b = a[4]
+except IndexError:
+    # return default
+    b = 0
+# can also be used for setting in a list (if looping inside a for)
+
 # list slice
 a = [2, 3, 4, 5, 6]
 # <start_from : stop_at : reverse>
@@ -352,6 +361,9 @@ list(d.values())    # returns all values in the dict as a list
 for a in sorted(d.keys()):
   print(a)
 
+# update a dictionary with another dictionary
+d.update({"ee": 7}) # {'aa': 3, 'bb': 4, 'cc': 2, 'dd': [1, 3], 'ee': 7}
+
 # d.keys(): get keys
 # d.values(): get values
 # d.items(): get both key & value
@@ -366,7 +378,7 @@ dict.get("key", "default")
 dict.setdefault("key", "default_value")
 dict.setdefault("key2", [])
 
-# remove and return if "key" exists. 
+# remove and return if "key" exists. if not -> will give KeyError
 del dict["key"]
 # or: if not return "default"
 dict.pop("key", "default")  
