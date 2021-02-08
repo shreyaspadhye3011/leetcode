@@ -205,6 +205,7 @@ max([2, 4, 7, 12, 1])   # 12
 
 # initializing lists using list comprehension
 rewards = [0 for i in range(len(a))]    # [0, 0, 0, 0, 0]
+x = [[0 for i in range(10)] for j in range(10)]
 
 # ----------------------- LIST SECTION ENDS --------------------------- #
 
