@@ -29,7 +29,8 @@ class Solution(object):
         land_locations = []
         self.rowLen = len(grid)
         self.colLen = len(grid[0])       # considering symmetric matrix. Also add defensive condition on index 0 access
-
+        
+        # TODO: can be wrapped in a separate function called get land locations
         for row in range(self.rowLen):
             for col in range(self.colLen):
                 if grid[row][col ] == "1":
