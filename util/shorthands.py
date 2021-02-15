@@ -351,6 +351,20 @@ def getAllSubstrings(s):
     return result
 print(getAllSubstrings("many"))     # ['m', 'ma', 'man', 'many', 'a', 'an', 'any', 'n', 'ny', 'y']
 
+# Heaps - Python Library
+# https://docs.python.org/3/library/heapq.html#basic-examples
+from heapq import heappush, heappop
+def heapsort(iterable):
+    h = []
+    # heapify -- could even use heapify(iterable)
+    for value in iterable:
+        heappush(h, value)
+    return [heappop(h) for i in range(len(h))]
+heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0]) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# h[0] -- get smallest element without popping
+# heappushpop(h, item) -- push an element & return smallest. faster than individual push & subsequent pop action 
+
 # ------------------------------------------------------------------ #
 
 
