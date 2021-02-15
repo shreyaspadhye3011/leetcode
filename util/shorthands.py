@@ -203,7 +203,11 @@ sum([2, 3, 4])          # 9
 min([2, 4, 7, 12, 1])   # 1
 max([2, 4, 7, 12, 1])   # 12
 
-# initializing lists using list comprehension
+# initializing lists 
+# a) using pythonic expressions
+[0] * 5     # [0, 0, 0, 0, 0]
+[[0]] * 5   # [[0], [0], [0], [0], [0]]
+# b) using list comprehension
 rewards = [0 for i in range(len(a))]    # [0, 0, 0, 0, 0]
 x = [[0 for i in range(10)] for j in range(10)]
 
@@ -350,6 +354,10 @@ def getAllSubstrings(s):
             result.append(temp) 
     return result
 print(getAllSubstrings("many"))     # ['m', 'ma', 'man', 'many', 'a', 'an', 'any', 'n', 'ny', 'y']
+
+# Sorting strings in O(n) time
+# https://stackoverflow.com/questions/11003606/linear-time-sorting-algorithm-for-strings
+# Create a Trie & do DFS on it ?
 
 # --- Heaps - Python Library
 # https://docs.python.org/3/library/heapq.html#basic-examples
