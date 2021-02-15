@@ -298,12 +298,6 @@ stri = "abac"
 stri[0] = "w"
 # TypeError: 'str' object does not support item assignment
 # Use replace function
-
-# Though they can't be changed at an index, But they can be accessed at an index
-s1 = 'abx'
-s2 = 'vbl'
-s1[1] == s2[1] # True
-
 stri = "abac"
 stri.replace('a', 'w', 1)   # wbac. count argument (1) is optional. it represents how many occurences to change. if you skip the argument, all occurences will be changed
 # OR work with list:
@@ -311,6 +305,11 @@ s = list("abac")    # ['a', 'b', 'a', 'c']
 s[1] = 'w'          # ['w, 'b', 'a', 'c']
 print("".join(s))   # wbac
 # Caution: This is an O(n) time operation so be careful while using it. If you have to do multiple times. Always work with array as first and return string by joining in the end once you are done
+
+# Though they can't be changed at an index, But they can be accessed at an index
+s1 = 'abx'
+s2 = 'vbl'
+s1[1] == s2[1] # True
 
 # Split doesn't get you chars of a string
 "asd".split()   # ['asd'] # Split default works on a space as a delimeter
@@ -337,10 +336,15 @@ for i in a:
 ''.join([str(elem) for elem in a])     # when a has int elements
 
 # sort a string and return string
+# Method I:
 q = "qssi"
+# NO! - very inefficient (O n log n) if you know that alphabets are ascii bound a-zA-Z. 26 alphabets (2x becasue of case)
 "".join(sorted(q))  # 'iqss'
 sorted(q)           # returns --> ['i', 'q', 's', 's'] but doesn't change q --- # REMEMBER: q doesn't change when you use "sorted"
 
+# Method II:
+# https://www.geeksforgeeks.org/case-specific-sorting-of-strings-in-on-time-and-o1-space/
+# O(n) time
 
 # get all substrings of a string -- avoid using string slicing. String slicing is O(m) time
 # O(n*n)
