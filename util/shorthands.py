@@ -351,7 +351,7 @@ def getAllSubstrings(s):
     return result
 print(getAllSubstrings("many"))     # ['m', 'ma', 'man', 'many', 'a', 'an', 'any', 'n', 'ny', 'y']
 
-# Heaps - Python Library
+# --- Heaps - Python Library
 # https://docs.python.org/3/library/heapq.html#basic-examples
 from heapq import heappush, heappop
 def heapsort(iterable):
@@ -364,6 +364,15 @@ heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0]) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 # h[0] -- get smallest element without popping
 # heappushpop(h, item) -- push an element & return smallest. faster than individual push & subsequent pop action 
+
+# Heap elements can be tuples. This is useful for assigning comparison values (such as task priorities) alongside the main record being tracked:
+h = []
+heappush(h, (5, 'write code'))
+heappush(h, (7, 'release product'))
+heappush(h, (1, 'write spec'))
+heappush(h, (3, 'create tests'))
+heappop(h)
+(1, 'write spec')
 
 # ------------------------------------------------------------------ #
 
