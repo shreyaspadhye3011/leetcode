@@ -508,6 +508,10 @@ print("Safe" if 2 < 1 else "Unsafe")
 # o: Unsafe
 
 # --- functions
+# adding argument type and return type in functinons
+def fiveStarReviews(self, productRatings: List[List[int]], ratingsThreshold: int) -> int
+def getWeight(self, rating: List[int]) -> float
+def isGreaterThanThreshold(self, productRatings: List[List[int]], ratingsThreshold: int) -> bool:
 
 # lambda -- Anonymous functions assigned to variables
 x = lambda a, b: a * b
