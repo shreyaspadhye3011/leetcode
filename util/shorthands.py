@@ -145,12 +145,12 @@ list(set(array) - set([integer]))
 # List Concatenation
 # Method A: Avoid:
 l = [1, 2, 43, 8]
-l = l + [7, 6] # O(N) operation! it is concatenating two lists so internally creates a new list
+l = l + [7, 6] # O(N) space operation! it is concatenating two lists so internally creates a new list
 # Result: [1, 2, 43, 8, 7, 6]
 # Method B: Better:
-l += [7, 6]         # O(1) Adds to same reference in end using extend()
+l += [7, 6]         # O(1) space Adds to same reference in end using extend()
 # same as
-l.extend([7, 6])    # O(1) complexity as adds at back of same list. doesn't create new reference
+l.extend([7, 6])    # O(1) space complexity as adds at back of same list. doesn't create new reference
 # Result: [1, 2, 43, 8, 7, 6]
 # https://www.programiz.com/python-programming/methods/list/extend
 # https://stackoverflow.com/questions/33191470/difference-in-complexity-of-append-and-concatenate-for-this-list-code
