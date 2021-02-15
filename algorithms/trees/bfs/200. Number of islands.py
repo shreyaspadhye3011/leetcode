@@ -48,8 +48,11 @@ class Solution(object):
         # first mark self
         self.visited_dict[(row, col)] = islandCountMarker
         # check whether neighbours exist and mark if it's a piece of connected land 
+        # TODO: shouldn't this include top & left too? -- mostly it should. try to add and submit on leetcode
+        # bottom
         if row + 1 < self.rowLen and self.grid[row + 1][col] == "1":
             self.markNeighbours(row + 1, col, islandCountMarker)
+        # right
         if col + 1 < self.colLen and self.grid[row][col + 1] == "1":
             self.markNeighbours(row, col + 1, islandCountMarker)     
     
