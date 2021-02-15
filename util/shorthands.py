@@ -338,7 +338,7 @@ for i in a:
 # sort a string and return string
 # Method I:
 q = "qssi"
-# NO! - very inefficient (O n log n) if you know that alphabets are ascii bound a-zA-Z. 26 alphabets (2x becasue of case)
+# NO! - very inefficient (O n log n) [Asssuming that sorted doesn't care if the input is a char array and doesn't optimize it] if you know that alphabets are ascii bound a-zA-Z. 26 alphabets (2x becasue of case)
 "".join(sorted(q))  # 'iqss'
 sorted(q)           # returns --> ['i', 'q', 's', 's'] but doesn't change q --- # REMEMBER: q doesn't change when you use "sorted"
 
@@ -738,6 +738,9 @@ for i in range(2, 8):
 # Compare to output of:
 for i in range(2, 8,2):
   print (i) # 2 4 6
+
+# Backtracking
+# https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/ (look at video)
 
 
 
