@@ -211,6 +211,10 @@ max([2, 4, 7, 12, 1])   # 12
 rewards = [0 for i in range(len(a))]    # [0, 0, 0, 0, 0]
 x = [[0 for i in range(10)] for j in range(10)]
 
+# reverse a list
+str_arr = [3, 4, 5]
+str_arr.reverse() # str_arr : [3, 4, 5] (does not return anything)
+
 # ----------------------- LIST SECTION ENDS --------------------------- #
 
 # O(1) search Time! -- use Set instead of lists
