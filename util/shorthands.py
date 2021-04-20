@@ -309,7 +309,14 @@ stri.replace('a', 'w', 1)   # wbac. count argument (1) is optional. it represent
 s = list("abac")    # ['a', 'b', 'a', 'c']
 s[1] = 'w'          # ['w, 'b', 'a', 'c']
 print("".join(s))   # wbac
-# Caution: This is an O(n) time operation so be careful while using it. If you have to do multiple times. Always work with array as first and return string by joining in the end once you are done
+# join() is O(n) where n is length of s
+
+# String concatenation
+# "abc" + "d" # Expensive
+# "".join(s)  # Prefer 
+# Caution: This is an O(m+n) time operation so be careful while using it. If you have to do multiple times. Always work with array as first and return string by joining in the end once you are done
+# https://stackoverflow.com/questions/37133547/time-complexity-of-string-concatenation-in-python
+# https://realpython.com/python-string-split-concatenate-join/#concatenating-and-joining-strings
 
 # Though they can't be changed at an index, But they can be accessed at an index
 s1 = 'abx'
