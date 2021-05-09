@@ -6,9 +6,14 @@ namespace GettingInput
   {
     static void Main()
     {
-      Console.WriteLine("How old are you?");
-      string input = Console.ReadLine();
-      Console.WriteLine($"You are {input} years old!");
+        /* Sample input / ouput */
+        // Console.WriteLine("How old are you?");
+        // string input = Console.ReadLine();
+        // Console.WriteLine($"You are {input} years old!");
+
+        /* Sample string concat + date time */
+        string sampleString = $"Beginning of time is {DateTime.Now} and time zone is {TimeZoneInfo.Local}";
+        Console.WriteLine(sampleString);
     }
   }
 }
