@@ -14,6 +14,13 @@ namespace GettingInput
         /* Sample string concat + date time */
         string sampleString = $"Beginning of time is {DateTime.Now} and time zone is {TimeZoneInfo.Local}";
         Console.WriteLine(sampleString);
+
+        bool isCSharpFun = true;
+        bool isFishTasty = false;
+        Console.WriteLine(isCSharpFun);             // Outputs True
+        Console.WriteLine(isFishTasty);             // Outputs False
+        Console.WriteLine(isCSharpFun == true);     // Outputs True
+        Console.WriteLine(true.ToString());         // Outputs True
     }
   }
 }
